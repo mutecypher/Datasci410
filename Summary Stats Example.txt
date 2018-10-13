@@ -1,0 +1,142 @@
+[MUSIC PLAYING]
+
+So having discussed what we mean by summary statistics and a little bit
+about their characteristics, let's actually
+try an example of applying summary statistics to a data set.
+So you have a data set here.
+It's a fairly simple data set in some ways,
+but it has a fair number of variables in it.
+And it describes a set of automobiles.
+And so let's load that dataset into a Jupyter notebook,
+and we'll create some summary statistics and see what we can learn.
+So the first thing we need to do is load this data set.
+And I'm just going to tell you a few things about that
+just so you see some data munging that has to happen here.
+So we can read the dataset with our pandas read dot csv method,
+but we have these rows with missing values.
+And it turns out the missing value in this dataset
+is coded as a question mark.
+So we need to be careful about that.
+And so we have a list of these columns.
+Notice they're all columns that should be numeric.
+But because they have this question mark in them,
+they actually show up as strings when we're going to read them.
+And so we iterate through that list of columns.
+And we put a numpy nan in there, not a number.
+And we drop na, so we use the pandas drop nas on rows--
+that's axis equals zero.
+And we're doing that in place.
+We don't have to copy that data frame again.
+And now these columns are still character columns.
+So the last thing we need to do is to numeric that bunch of columns.
+I've wrapped that all in a function here.
+So let's just run that, and we're going to load the data.
+It's not going to be real exciting, but you can see it ran successfully.
+So let's just look at a couple characteristics of that data frame.
+
+First off, we can look at its shape.
+It has 195 cases.
+We've probably lost a few because of the missing values.
+In fact, we have.
+And we have 26 columns.
+And you can see the names of some of those columns,
+like make is like the manufacturer of the car.
+And you'll see what some of these are as we go.
+But you could also see that some are of type object, which
+means they're strings basically.
+We have floats.
+The weight of the car or the curb weight of the car
+or the empty weight of the car is given as an integer,
+as is engine size and some other characteristics.
+And the price-- which is the thing we're actually interested in here.
+We're trying to understand what characteristics of these cars
+drive the price.
+So let's go ahead and run what's called the pandas describe method
+on this data frame.
+OK, so we're going to compute some summary
+statistics using this describe method.
+And you'll see what the result is here in a minute.
+So you see our columns here.
+Notice that there are only the numeric valued columns.
+They're either float or integer, like price or compression ratio or stroke.
+And there's quite a few of them in this dataset.
+So as I said, it's a fairly--
+even though it's a fairly small dataset, it's got some complexity.
+So the first thing we see is the count, how many of these values were there.
+Well, in this case, we've removed missing values.
+So they're all 195.
+Not too surprising.
+So our first summary statistic here is mean, so the mean value
+or the average value.
+And you can see they're all over the place.
+Maybe we'll look at price.
+By the way, this data set was from 1985, so the average price of a car
+was just around $13,000 in 1985,
+We can also see the standard deviation.
+So that gives us some idea of the dispersion, you know,
+how broad a distribution do these values have in each of these columns.
+And for example, for price, we can see it's fairly broad.
+8,000 is the standard deviation.
+So even with a mean of 13,000, we have a standard deviation of 8,000.
+Then we can see the min and the max and the three quartiles, 25%, 50%,
+which is the median--
+the 50% quartile is the median because half the values are above
+and half the values are below--
+and 75%.
+So we got min, max, median.
+And so we can see the cheapest car here is $5,000.
+The most expensive car is just over $45,000.
+OK.
+And then our median car price just over $10,000.
+So right away, that tells me something interesting.
+First off, I can see that the median is quite a bit less than the mean.
+So that tells me that this distribution is quite skewed.
+It would have to be skewed because--
+
+and also I can see that the median and the mean
+are much closer to the minimum than the maximum.
+So I'm expecting a distribution where most cars are fairly low cost,
+and yet some cars are very high cost.
+And again, you can see that in the other quartiles, like at the 25%.
+So 25% of our cars are cheaper than $7,700.
+And only 25% of our cars cost more than $16,500.
+So we've learned quite a bit just about the price of these cars.
+And we could look at other statistics here like length,
+or wheelbase, curb weight, et cetera and make
+some inferences about how they're distributed,
+what's interesting about them.
+So another thing you can do when you're getting
+started just exploring a data set, which is obviously
+the overarching point of this lesson, is we can look at the heads.
+Notice I gave it the argument 10 here.
+So the head of the dataframe, if I give it this--
+the default is five.
+But I gave it a value of 10.
+So I'm looking at the first 10 rows here.
+And so it gives me some more idea of what is in these.
+Like make, I can see there's different manufacturer names.
+Body style, I see it's like convertible, and hatchback, and sedan, and wagon.
+Numbered doors, I see that that's actually has a word.
+It could be an integer, but it's actually a word--
+2, 4, 2, 4, et cetera.
+And fuel type, gas--
+I presume there's another type, we'll see that later.
+Aspiration, standard or turbo.
+And engine, front, rear.
+And as you go through this, you get an idea of what is in this data frame.
+I also always look at the head and the tail of a data frame.
+The reason being that if something's wrong with my data frame,
+I often see it in the first few or the last few columns, or excuse me, rows.
+And this looks OK.
+So it looks like our data is cleaned up, and we
+don't have anything to worry about.
+
+So I hope that's giving you some idea about using just simple summary
+statistics.
+We loaded this data frame.
+We looked at some characteristics of the distribution of price.
+We learned that there is a wide distribution of price
+and that most cars are fairly inexpensive.
+And we apparently have a few very expensive cars
+going up as high as $45,000.
+[MUSIC PLAYING]

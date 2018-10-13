@@ -1,0 +1,85 @@
+
+[MUSIC PLAYING]
+
+Hi.
+So we've looked at a number of ways of looking at the distribution
+of a numeric variable-- a histogram-- the most common, box plot--
+where we saw that we could line them up by some categories--
+grouped by some values of a categorical variable.
+And that's good for comparisons.
+We also looked at a smooth representation,
+which is a kernel density plot.
+And that had some advantages and disadvantages over the histogram.
+But what if we combined the kernel density plot with some of the value
+that we got from the box plot, which is that we
+could subset it or do a group by the values of a categorical variable.
+What we'd end up with is something called the violin plot,
+and you'll see when we get to the demo why someone named it that.
+It's a fairly new plot type.
+Of all these plot types I'm showing you in this lesson,
+this one has only been around for maybe 20 years, 10 years.
+And some of these others--
+the box plot was introduced in the '60s, histogram, probably
+in the 19th century, et cetera.
+So this is relatively new.
+And it's pretty clever.
+I like it a lot.
+So let's look at a demo.
+So here's the code.
+Hopefully this is, again, looking fairly familiar.
+And, again, I'm going to use Seaborn--
+the Seaborn package-- because it has a very nice violin-plot method.
+So I'm just setting my plot area, defining my axis, setting that style,
+so it's a white grid, and then saying I'm going to make a violin plot.
+x is going to be fuel-type.
+So remember, fuel-type is actually a categorical variable.
+We have gas and diesel.
+And y, my vertical axis, is going to be price.
+And my data is going to be auto_price.
+So Seaborn is smart enough, in this case,
+to pluck the right columns that I've named here out of my data frame
+that I've given as the data argument.
+And then, of course, I have my axis argument,
+so I'm plotting everything on the same plot.
+And I've got my title and my axis labels.
+By the way, and I've said this before, but I'm just going to re-emphasize it.
+A plot without a title and axis labels is often completely useless.
+You have no idea whether it's cars made in Germany versus cattle
+born in Argentina, or something.
+You just don't know what you're looking at,
+and, surely, your colleagues and bosses will know even less than you.
+So I'm just going to run this for you.
+
+And you can see kind of why this is called a violin plot, right?
+So, in this case, it's a symmetric display.
+
+Imagine the kernel density plot on this side and the kernel density
+plot on that side.
+
+And here's our gas on the left and diesel on the right.
+You can also see they very cleverly, in Seaborn, put the box plot in there too.
+They've snuck that in.
+The dot is the median.
+Here's the first quartile, second quartile, the whiskers.
+So, in fact, in this case, you can see the lowest value is here
+in that it's just an artifact of the span of the kernel density operator
+that we're getting values down as low as we are because really that's
+the lowest value.
+And you can see 1 and 1/2 times the inner quartile range here and there.
+Then there's that bump.
+Remember there was a bump in the mid '30s?
+And we can see that's mostly due to gas cars,
+tapering off to our very expensive gas cars here.
+So this is a very nice display because it gives us
+some advantages of a box plot as well as this kernel-density estimate display.
+And, again, you can imagine if we had 20 categories, or something like that,
+and we could line them all up.
+We would be able to, with our eye, very quickly
+make comparisons between the distributions of some variable grouped
+by those categories.
+So I hope those plots give you some idea of how to produce multiple views.
+Basically, in this case, we've just been looking
+at multiple views of the price of automobiles using various plots,
+and we've derived quite a bit of understanding of how the prices work
+and how they break down by gas and diesel cars.
+[MUSIC PLAYING]

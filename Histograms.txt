@@ -1,0 +1,55 @@
+
+So we looked at bar charts, our bar plots,
+which are a way to show counts for categorical data.
+But for numeric values, what we want to look at is the frequency distribution.
+We want to understand, you know, which range of values are more frequent.
+And to do that we use commonly what's called a histogram.
+So a histogram is like a bar chart, but the difference
+is we've started with numeric values.
+We've binned them into some number of ranges
+and then displayed the counts of how many values
+fall within however many ranges we've specified.
+So let's look at an example here.
+So in this case, we're interested in the price of automobiles.
+And again, I'm just using this lock method.
+And I want all the rows.
+So I've got that colon comma, and then price.
+So I've just selected one column, basically, out of my data frame here,
+my _price data frame.
+And then I .plot .hist.
+So that's the panda's plotting method for a histogram.
+And I'm giving it just one optional argument here, bins = 30.
+The default is, I think, bins = 10, which gives a pretty coarse histogram.
+So let's do this with bins = 30.
+And we'll go ahead and plot.
+And you can see the result.
+So we already knew from our exploratory analysis using summary statistics
+that our cheapest car was just over 5,000.
+Our most expensive car was over 45,000.
+We also knew that the mean price is somewhere around here, 13,000.
+But the median is about 10,000.
+And so from that we inferred that this must be a very skewed histogram.
+And in the quartiles, I think the 25% point was at about 6,300 or something
+if I'm recalling correctly.
+So you can see that, indeed, we do have a very skewed distribution here.
+Many cars are inexpensive.
+And the more expensive they are, the less frequent
+they are until we get to this one very expensive car out here-- well,
+very expensive by 1985 standards.
+And so with this simple histogram just looking at 30 bins of the value--
+so the count, say, in this first bar is just from 5,000 to--
+I think it's probably about--
+5,000 to 6,000 almost.
+And so however many cars-- so it looks like there's 16 or 17 cars in that bin.
+So that's all there is to it.
+A histogram is a very simple kind of display, but you learn a lot from it.
+We just learned a lot about the frequency distribution
+of the price of these automobiles.
+And it's a good idea for all your numeric variables, whenever
+you're starting work on a data set, to look at the histograms,
+to actually know what is in there.
+And there outliers?
+Is it highly skewed, like our price of cars?
+Does it have some other funny property?
+Is it multimodal?
+And you'll find that right away by using a histogram.

@@ -1,0 +1,91 @@
+
+So we've looked at summary statistics a bit.
+And now we're going to move on to one of my favorite topics
+in data science, visualization of data.
+And there's a number of reasons we, as data scientists, spend a lot of time
+not only munching our data but visualizing our data.
+Visualization gives us a way to actually understand and look
+at the relationships in our data.
+Without good visualization we're essentially blind.
+We're just guessing that oh, maybe that variable somehow
+relates to this other label we're trying to predict or something like that.
+So we really don't know what's going on.
+In fact, even when cleaning data and preparing data,
+visualization is important.
+How do you know there are outliers or strange properties
+of a certain variable or several variables
+together, unless you can actually see what's going on.
+So visualization works there.
+And then finally, another reason to do visualization is presentation.
+As data scientists, our value only is achieved
+if our colleagues understand what we're talking about can do something,
+if we present actionable results.
+And it's hard to explain to people abstract concepts,
+but everybody likes a good picture.
+And if you can create good pictures that show
+the concepts you're trying to communicate,
+you're going to be way ahead in terms of how much value you
+can deliver to whatever organization you're working for or serving.
+So visualization has a long history in statistics and data science
+going way back.
+
+And I was fortunate to be involved in some early areas of that going back
+into the 80s.
+But there was a lot of work before that.
+So a landmark book in the history of visualization
+was this 1977 book by John W. Tukey called Exploratory Data Analysis.
+So before, say, the 1960s, statisticians tended
+to view their subject as a mathematical subject.
+The idea of making interesting pictures or looking at data
+was sort of considered secondary.
+It wasn't something you properly should spend a lot of time on.
+And Tukey took a very different view, starting even in the late 50s
+into the 60s.
+And especially with the rise of computers
+capable of displaying graphics, he said wait, we should be looking at data.
+We should be understanding the relationships in as many views
+as we possibly can.
+And in 1977 he published this really seminal book that changed the way a lot
+of statisticians, data analysts-- what nowadays we would call data scientists,
+but that term didn't exist in those days-- thought about data.
+And it was quite a revolution, say when I was in graduate school,
+to have a copy of that book and understand
+the power of just looking at data, of understanding those relationships.
+Spool forward to the early 1990s--
+William Cleveland, Bill Cleveland at Bell Labs, came out with this book
+where he had done--
+he had developed some new visualization methods,
+but also he had done something else that's very important.
+He had actually looked at, done experiments
+on how people perceive the data they see in their plots.
+So he-- and he didn't just use a random sample of people.
+He tested this on colleagues at Bell Labs,
+so presumably other scientists, mathematicians, engineers.
+So these weren't people who were just randomly chosen
+who knew nothing about data.
+They were educated and they understood data.
+But yet he noticed that certain charts and plots, for example pie plots,
+consistently were misinterpreted even by experts.
+And so he came up with this book, 1992, and there's
+a companion volume that came out the next year that kind of expands
+on some of these concepts.
+And so we, with these books and the thought process, we--
+data science and statistics acquired this idea
+of exploratory data analysis, which is that a good way
+to get started on a new dataset is to just explore it,
+to use summary statistics that we already talked
+about, but also a variety of graphs.
+And one of the points here is you need a variety of graphs.
+You can't just make one histogram and say, oh, I know what's going on here.
+You need to do various views, multiple views.
+If your data relationships are complex, and in real world problems
+they virtually always are, you need to create multiple views.
+And so in the rest of this lesson, we're going
+to look at ways to mostly view single numeric variables or count data
+and a little bit of categorical data.
+But you'll see that we develop a better and better understanding of the data.
+Basically we're going to focus on the price of those automobiles as we go.
+So I hope you enjoy doing visualization as much as I do.
+And I hope you engage with it so that you really
+understand relationships in any particular data
+set you're trying to work on.

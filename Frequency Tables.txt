@@ -1,0 +1,112 @@
+q[MUSIC PLAYING]
+
+So in the last demo, we looked at summary statistics for numeric values.
+We looked at things like the mean, and the standard deviation, and the median,
+and the quartiles.
+But what do you do with categorical data?
+Basically, with categorical data, as we said, you have to deal with counts.
+And so how do we summarize, by counts, categorical data?
+And so, in this demonstration, we're going
+to build what's called frequency tables.
+And frequency tables give us a way to summarize categorical data.
+So we're starting from the same data frame we
+used before, this auto price data set.
+But we're going to add a new column, called counts.
+You don't, strictly, have to do that, but it makes the output look better.
+
+And it's all just going to be ones.
+It just gives us something to count, OK, or something to display,
+and you'll see why that works.
+And so the next thing we have to do is we chain some methods, some operators,
+on our data frame.
+And let me just go through this chain.
+I'm going to start at the left, and I'm going to work to the right.
+So under bar price, is the name of the data frame.
+Then, I only need--
+I'm going to-- what I'm trying to do here is find out
+how many cars each of the manufacturers represented in this dataset makes.
+So we can see some manufacturers may have a lot of cars represented here,
+some may have maybe only one.
+Well, we'll have to find out.
+And so we're going to go by-- what we really want is a count by make.
+So we're going to have that counts column, and just the make column.
+We're going to perform a group by make, so now we
+have the data frame grouped by the manufacturer.
+And then we're going to run an aggregation this agg, a-g-g, method.
+And in the method we're using is called count.
+If you look at the documentation for agg,
+you'll see there's various aggregations you can do of data frames.
+And so it's going to do it by the groups.
+So let me run that, and you'll see what happens.
+And so you see, we've got-- and this is why
+I made that column called counts, because now we have a nice column
+called counts, that is the counts.
+We have another column called make.
+And we see there's three Alfa Romeo, six Audi's, et cetera.
+And we can scroll up and down on this and see, for example,
+there's only one Mercury.
+
+But there's a lot of Toyotas, 32 Toyotas.
+So when we do further analysis of this dataset, we should keep that in mind,
+that the number of cars represented for these different manufacturers
+is quite unbalanced.
+Toyota has 32, Mercury only has one.
+Alfa Romeo only had three.
+Isuzu only has two.
+Other are kind of in the middle, like Honda and Mazda, have 13.
+So we have uneven numbers, here.
+So in any further analysis and visualization of the data,
+we should look at that.
+But we want to learn a little more, here.
+Remember, there were different kinds of fuel that the engines of these cars
+could use.
+So we have fuel type, and make, and again, counts.
+So we're going to just look at those three columns, and notice that-- oh,
+by the way, look at this notation.
+See it's a square bracket notation to subset a data frame,
+and then another square bracket, which is my list of column names.
+So don't be confused by that.
+And then I group by--
+now, I have to give it a list of make and fuel type.
+And again, I'm going to aggregate by count.
+So we get a nifty little table, here.
+And you can see my list of cars.
+So you can see, for example, Mazda has two diesel cars, and 11 gas cars.
+All of these manufacturers only have gas cars.
+Mercedes is four and four, diesel and gas.
+Nissan only has one diesel, Peugeot only has one diesel.
+Toyota has, out of all those cars, only three diesels, but 29 gas cars,
+so that's an important thing to keep in mind, et cetera.
+So we can see right away that, not only do them
+different manufacturers have different numbers of cars represented
+in this data set, but also there are a minority of diesel cars,
+I don't think there's any manufacturer that
+has as many diesel cars as gas cars.
+And most of these cars, in fact, are gas cars.
+And we can go even further.
+So we had-- we're going to look at counts again.
+By fuel type, this time aspiration, so that's
+as the engine, a standard or a turbo engine, and the manufacturer.
+And then we're going to group by, again, make, fuel type,
+as we did before, but also aspiration.
+So you can see, you can keep building more and more complex tables.
+And now we can see Alpha Romeo, all three cars are just gas and standard.
+Audi has only one turbo car represented, for example.
+And we can go down to Nissan, has a standard diesel, a turbo gas,
+and the rest are standard, et cetera.
+So Peugeot, all Peugeot diesels are turbo, et cetera, et cetera.
+So you can learn about how the different car manufacturers,
+whether they have standard or turbo, gasoline or diesel,
+looking at a frequency table like this.
+And that's why we call it a frequency table,
+because these counts are the frequency within the dataset
+that that type of car occurs.
+So now we've looked at an easy way to understand categorical data, which
+is using frequency tables.
+And we've looked at doing frequency tables, just based
+on one grouping of the data, using two and even three.
+And you can go further, although interpretation gets harder and harder,
+and maybe how you'd present that, as a useful result, to end users also
+becomes harder and harder.
+So use some caution, don't go overboard on this stuff.
+[MUSIC PLAYING]

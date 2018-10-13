@@ -1,0 +1,61 @@
+
+Hi, so we're about to do some actual plotting here,
+creating some actual visualizations.
+And we're going to use Python tools to do that obviously.
+But I wanted to lay out for you how these tools relate to each other.
+And it's a little confusing if you haven't
+worked with Python plotting before because there's
+lots of different packages.
+They all do-- sometimes they do exactly the same thing.
+Sometimes they do different things or slightly different things.
+And how do they relate?
+Well the first thing to keep in mind is Matplotlib.
+Matplotlib dot or sometimes Matplotlib dot pi plot, that's your base graphics
+system that we're going to use.
+And you can, with a little patience, you can
+create any plot you want in Matplotlib-- maybe a lot of patience.
+The problem is it's very low level.
+It tends to be very granular.
+You have a lot of control, but it may take a lot of code even
+to do what might be simple things.
+So it's good to know.
+You need to know certain aspects of Matplotlib,
+as you'll see, even to work with other packages.
+Another way we're going to create visualizations is with Pandas Plotting.
+Pandas is the data frame package you've been working with.
+And it has plotting methods, quite a few nice plotting methods.
+And they take you a fair distance.
+They're very highly-- unlike Matplotlib, which is very low level,
+Pandas Plotting is quite abstracted.
+So you don't need a lot of code to do a lot.
+The disadvantage, though, is that it's not as granular control as Matplotlib.
+And you'll see, we're going to mix Pandas Plotting with Matplotlib.
+So you can enhance a Pandas plot.
+But you can only go so far with those.
+And sometimes you have to fall back to Matplotlib.
+The other package we're going to work with in this particular lesson
+is called Seaborn.
+And Seaborn is a relatively new statistical graphics
+package that's really powerful.
+It's very highly abstract.
+It's pretty high level.
+So you can create some pretty complicated plot types
+without a lot of code using Seaborn.
+And again you can always fall back to Matplotlib.
+It's based on Matplotlib just like Pandas Plotting.
+So you can use Matplotlib functions to say add axis labels or titles or change
+plot areas and things like that.
+So Pandas Plotting and Seaborn are both based on Matplotlib.
+That's the thing you need to keep in mind.
+And there's lots of other Python graphics packages
+that we don't have time to go into this lesson.
+But you may, as you go-- on for example there's a ggplot2--
+there's a ggpot package based on the R ggplot2 package that's
+still in development.
+But it's really interesting.
+There's something called Plotly or Boracay, which
+give you highly interactive graphics.
+They're based on a different set of base graphics.
+So there's lots of ways you can plot in Python.
+But we're just going to stick to Matplotlib
+and two packages built on Matplotlib, Pandas Plotting and Seaborn.

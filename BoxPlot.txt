@@ -1,0 +1,154 @@
+
+So we just looked at one display that lets
+us look at the frequency of a numeric variable histogram.
+It's the most commonly used one.
+But let's look at some others.
+First one we're going to look at is what's called a box plot.
+And box plots are widely used and sometimes not very well understood.
+So let's start by just trying to understand how you read a box plot.
+So on my screen here I have this little cartoon that explains a box plot.
+So we've got the first quartile, the median, or second quartile,
+and the third quartile, OK?
+So 25% of our values have to be to the left of the first quartile,
+25% of our values have to be to the right of the first quartile.
+25% percent have to be between the first quartile and the median and 25%
+have to be between the median and the third quartile.
+OK?
+So that's the important thing about this.
+It's just showing you sort of a nonparametric or quartile display.
+And we put what we call these whiskers on the positive and negative side.
+And they're simply whatever the first quartile
+is minus 1.5 times the interquartile range or plus 1.5 times
+this interquartile range out the ends.
+Now, if we don't have any values that extreme,
+we simply truncate the whisker at the most extreme value.
+If we have values more extreme, we'll actually display some kind of symbol.
+In some plotting packages, it's a little dot or a circle
+or a plus sign, something to show that there's outliers beyond this range
+or below that range.
+OK?
+So that's how you interpret a box plot.
+And let's go ahead make a box plot.
+We've been using pandas plotting methods up till now
+where I directly operated on a data frame.
+The methods were applied using the dot operator to the data frame.
+In this case, I'm going to go and just use matplotlib's box plot.
+I'll show you where I'm going with that in a minute.
+But partly, I want you to see that you can often
+do these same plots multiple ways.
+But there's more to the story, which we'll get to.
+So basically, you could write this all out as matplotlib.pyplot.boxplot.
+But in this case, I'm going to import matplotlib.pyplot as plt, P-L-T. OK?
+And I'm just going to use the box plot method.
+I'm just going to apply it to that one column, price.
+OK?
+And here we go.
+There's a number of things we can see about this.
+First off, you can see at 5,000, that's where the end of the whisker is.
+So that's 25% of our values.
+That's 25% of our values.
+Again, it's showing that strong skew.
+You know, right away you can see the median,
+that red bar is more to the downside in the box, more to the low in that box.
+So you can see the skew.
+You can also see that this whisker is short, this whisker is long.
+Not only is this whisker long, so that's the 1 and 1/2 times
+that interquartile range, this range here.
+But look at how many plus signs there are.
+And each one of those plus signs is an outlier going all the way
+up to about 45,000 here.
+So we very quickly visually see that we have
+a highly skewed distribution with a lot of the values clumped down low here.
+And then a lot of values really stretched out.
+That last 25% of the values are the highest 25% of the values.
+OK, so you're looking at this and saying, well, OK,
+but I could see that same thing with a histogram in more detail.
+Yes, and that's true and I'll show you some advantages of a box plot
+here in a minute.
+But in the meantime, I wanted to show you something else.
+Notice that this figure isn't very satisfactory.
+There's no axis label.
+So over here on the left, there's numbers.
+And we know their price.
+But if I was showing this to the boss, how would
+that person know that that's price.
+It could be litters of milk produced or it could be anything, right?
+You have no idea.
+And then number one isn't a very interesting label for the x-axis.
+Right?
+And also, there's no title.
+So we don't know what relationship we're showing here.
+But with matplotlib, we can fix all that.
+And we can do more.
+So first off, we can set up a figure.
+And we can use the figure method and we can set a size.
+So I'm going to define a specific size.
+So now I've taken control of the size of my plotting area.
+I can define an axis on that plotting area.
+So an axis is just where are you-- so I could
+have multiple subplots on a plot area.
+In this case, I'm just going to have one.
+So I'm just using the simple approach here.
+I'd do my box plot like I did before.
+But now you see on that axis, I can set a title.
+So I give it some strings that are title.
+I can set a y label.
+So it says auto price.
+And I can set a limit of 0 to 50,000.
+Notice there's also a little problem here that you can't even really see
+the end of the whisker there.
+So let's try to run this and see what happens.
+
+OK.
+So I've got box plot of price.
+So I know what I'm looking at.
+And I know auto price is on the vertical.
+You see, I've got a label.
+And also, I've got 0 here.
+So now I can actually see that part of it.
+By using these various functions from matplotlib,
+I've embellished that plot in useful ways,
+that I know what it is, I can see the full range of the variables
+because I've taken control of that.
+And I've given it a title, et cetera.
+OK?
+But there's one more thing I need to do here.
+Which goes to that question of why bother, why not just use a histogram?
+
+So we're going to do another thing.
+What if I wanted to compare the price by fuel type?
+So remember, we have gas and diesel cars.
+And I can use this by, which basically is shorthand for group by fuel type.
+And notice I use ax equals ax.
+So I'm actually doing something.
+Not to confuse you but just to show you how this can work.
+So I've subsetted my data frame to just those two columns, price and fuel type.
+I'm now using the pandas plot method with by equals fuel type.
+And I say that OK, I'm going to do it on that axis I've defined.
+So I say my axis equals--
+well, that axis ax.
+OK?
+And the rest of this ax.set title set y limb, that's all the same.
+OK?
+And so here we go.
+And box plot of price.
+And we've got auto price and we've got fuel type.
+And you can see, well, interesting.
+OK, so gas cars have a pretty wide range.
+Their median price is quite a bit lower than diesel cars.
+But it's not clear how much-- you can see these interquartile ranges overlap
+so much.
+It's not clear that that's statistically significant.
+But it is clear that there is some difference,
+there is some skew that's more pronounced for gas
+cars than diesel cars.
+And that most of our really expensive cars, presumably luxury cars, out
+here are all gas cars.
+So just by making this simple side by side comparison of gas and diesel cars,
+we've learned quite a bit.
+So I hope that gives you an idea of how you might use box plots.
+And you can imagine using a box plot in a case
+where your categorical variable had 20 categories or something like that.
+Side by side by side, you would then see, you know,
+a general relation between them very quickly once you
+understand how to interpret a box plot.

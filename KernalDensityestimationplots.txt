@@ -1,0 +1,64 @@
+
+So we've looked at two different ways to look
+at distribution properties of numeric variables--
+a histogram and then the box plot.
+The advantage of the box plot being we can subset or group the variable
+by some categorical variable.
+But let's look at a different way to display this which
+is the kernel density estimation plot.
+So imagine like a Gaussian kernel that looks like a bell shaped curve.
+And if we slide that along our distribution,
+we're creating a smooth estimate of the density, the probability
+density of that distribution.
+And we can use, you know, a shorter or longer kernel,
+what's called kernel span or operator span,
+to get a bumpier or smoother kernel density estimate.
+So let's look at an actual example of this
+to give you a feel for how it works.
+I'm going to use yet another package here called Seaborn.
+And I'm using Seaborn, because it makes really nice-looking kernel density
+estimation plots.
+So hopefully, some of this is becoming familiar.
+We're going to set the plot area here.
+I'm going to define my axis.
+And then because I'm using Seaborn, I have
+to set a style for what kind of a grid do I want to be plotting on.
+And I'm just going to use the most basic called a white grid, which
+is just a simple white background.
+And then from Seaborn, I can use a kernel density plot
+of auto price, same [INAUDIBLE] subset.
+And I need to say that I'm using that axis.
+And then I can put my labels.
+I can do a title, an x label, and a y label.
+OK?
+And let me run this for you.
+
+And here's the density plot.
+And you see my title.
+And notice it's now in units of density.
+So if you integrated that entire curve, it would add up to one, OK?
+And there's a couple funny things.
+Because we're smoothing it, you can see it says
+there's some density less than zero.
+Well, that can't be true.
+Cars aren't worth less than zero generally.
+But you do see some characteristics.
+For example, you see this big hump that we saw in the histogram.
+And then you see that it's more or less at about $8,000 maybe.
+You see a second hump out here in the mid 30,000s.
+And you see this long tail going out.
+And we know that the most expensive car is here.
+But also, by changing this operator span, you could make this bumpier.
+But, generally, use a kernel density plot,
+the idea is to get a smooth representation
+like this of the density as an alternative to a histogram.
+You can also plot a histogram and a density plot one over each other
+with Matplotlib or with Seaborn.
+And that's a nice thing to do as well.
+So the kernel density plot gives you a way to provide a smooth representation
+as an alternative to a histogram-- which you remember is chunky, it's binned--
+of the density of your probability distribution.
+And they both show you slightly different things.
+And like I said, sometimes you plot them one over the other
+and see them both together.
+So you can do that or one or the other.

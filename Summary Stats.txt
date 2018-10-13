@@ -1,0 +1,79 @@
+
+[MUSIC PLAYING]
+
+So one of our useful, simple methods for exploring new data
+is simply to compute and examine some summary statistics.
+So imagine I have--
+say, I'll just draw some axes here.
+OK.
+And I have some data with some distribution that might look like that.
+
+And I want to know how do I characterize something like this?
+OK.
+So a simple first thing I can do is I might say, what's the median?
+What's the median of these data?
+So if I put the median on here, half these values--
+if this is a discrete sample, half the values will be over this way.
+The other half will be that way.
+So it just defines the median.
+
+That's also the 50% quartile.
+So I can also draw some other quartiles on here.
+I can say, you know, maybe this one here is
+the 25% quartile, which means that 25% of my samples
+are this way and 75% that way.
+Then I can also put maybe another quartile on here
+which might be somewhere here.
+And that might be my 75% quartile, which again, 75% of the values
+are that way and 25% of the values of that way.
+So that's basically some order statistics.
+So I've got a median, which is in the midpoint, half the values above,
+half the value is below.
+I have a 25% quartile and a 75% quartile.
+All right.
+And I can learn things like, in this case,
+I can tell this is a skewed distribution because my median is
+closer to the 25% quartile than the 75% quartile.
+You see these distances aren't even.
+This one is smaller than over here.
+OK.
+So another statistic I could compute for this case might be the mean.
+
+And the mean is simply 1 over n, the sum of all these values--
+so just sum over x.
+Right?
+Whoops.
+Not a very good n.
+Sorry.
+So one over n, the sum of the values.
+So that's just the sample mean, which we call sometimes mu bar or x bar.
+So we use different notation for that.
+And again, I can tell that this is a skewed
+distribution because my mean and my median, there's a bit of a gap here.
+If this was a perfectly symmetric distribution, the mean and the median
+would be essentially the same.
+But there's a little gap here.
+OK.
+
+So we've already looked at one measure of dispersion here
+which is the interquartile ranges from here to here and then
+between the median and the 25% median and the 75%.
+But about the mean, I can also compute another quantity
+which is the standard deviation.
+And the standard deviation is just 1 over n minus one.
+Now it's n minus one because we have already
+used up one of our degrees of freedom to compute the mean.
+And then it's just the--
+so it's going to be the square root of this whole thing--
+the x i minus x bar, the mean, squared, and then the whole thing
+to the one half.
+So that's my standard-- so again, standard deviation
+gives me a measure of dispersion.
+Interquartile range gives me a measure of dispersion.
+So with just these simple summary statistics,
+we can characterize quite a lot about how spread out our distribution
+is, whether it's symmetric or not, or how asymmetric it is.
+There's other summary statistics you can use, of course,
+but these are the basic ones.
+And you can get a long ways with them.
+[MUSIC PLAYING]

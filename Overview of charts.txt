@@ -1,0 +1,26 @@
+[MUSIC PLAYING]
+
+So now we're ready to actually make some plots.
+And I just wanted to give you a preview of the chart types
+we're going to go through in this lesson.
+And they're all, for the most part, what I call one
+dimensional, or univariate, plot types.
+The first one is a bar plot, which is a way to display counts or frequencies,
+like we did in a frequency table.
+We're going to look at a histogram, which is another univariate plot,
+but it displays the frequencies of the values
+of a numeric variable, which has been binned into the bins of the histogram.
+Then we'll get into some chart types where we can do a little more.
+We can use a categorical variable.
+We can apply some Group By operations, like box plots.
+And I'll explain as we go what a box plot is or a violin plot.
+And there's a third-- there's one other univariate plot, which
+is the kernel density estimation plot.
+And that is like a histogram, but it's a smooth version of a histogram.
+So we'll look at that.
+And you'll see how kind of combining the best ideas of a kernel density
+estimation plot and a histogram and a box plot
+leads to this thing we'll call a violin plot.
+So that's the game plan.
+And we're just going to go through each of those plot types.
+[MUSIC PLAYING]

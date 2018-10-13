@@ -1,0 +1,98 @@
+
+Hi and welcome.
+This is our lesson on exploratory data analysis.
+And what do we mean by that?
+So exploratory data analysis is a process
+we go through as data scientists when we're faced with a new data set,
+and we're trying to learn about what that data might tell us
+or how we can solve a certain problem with that data.
+Or maybe we're going back to old data, but we
+have a new question we want to answer, a new problem we're working on.
+But regardless of the circumstance, what we need to do
+is understand what's in that data, how it relates
+to the problem we're trying to solve.
+And so we need to understand the characteristics of that data.
+And that's not as easy as it sounds, because imagine
+a data set with many attributes, you know, maybe many columns.
+And maybe you've joined tables from many sources.
+And what does it all mean?
+How does it fit together?
+How does that help us predict?
+Maybe we're trying to predict the price of something
+like cars based on their characteristics or housing
+based on its characteristics.
+Or maybe we're trying to classify our customers
+into different categories of interests and what products they
+might be interested in.
+Regardless of what the problem is we're trying to do,
+we need to understand that data.
+And there's a couple methods we use in this so-called exploratory data
+analysis.
+One is summary statistics.
+So summary statistics, we look at things like simple computed quantities
+like the mean.
+Or we might look at counts, counts of categories,
+you know, how many are red versus how many are green kind of thing.
+So those are summary statistics.
+And we'll look at how we compute some of those in Python
+and how we interpret them as we go.
+Also, the other method we use in exploratory data analysis as data
+scientists is visualization.
+And visualization is absolutely essential.
+If we can't visualize data very well, we're working fairly blind.
+You know, we need to see what's there.
+Even if we're just cleaning up the data, getting it ready for some analysis,
+using visualization is a very powerful way
+to see if we're even making progress or what the problems might be
+or what to do next.
+But also visualization helps us understand, you know,
+what relates to what in the data set.
+Maybe a couple of variables are just covariate.
+Maybe we didn't realize--
+I mean, this is a silly example, because you would figure this out.
+But temperature in centigrade and temperature in Fahrenheit,
+they really aren't telling you anything different.
+And you would find that out immediately with a visualization
+if you didn't already know that, which in this case you probably do.
+And then the other part of visualization is,
+what if you need to communicate what you're
+doing to your colleagues and your bosses and your clients or whatever?
+A visualization, a good set of graphics that
+really show the story of what you're doing
+and why is going to be your best tool.
+A lot of words, a lot of, you know, formulas-- forget it.
+Nobody but you is going to understand that.
+But visualizations-- everybody likes a good picture.
+And so to that end, we're going to look at a lot of different visualizations.
+And we're going to do it using Python methods.
+And within Python, there's Matplotlib, Pandas plotting,
+and something called Seaborn.
+So we're going to use three different packages that all relate.
+And we'll talk about, in the lesson, how they relate.
+But we're going to use three different packages
+to produce different kinds of plots, so you get a feel for how plots work.
+In this particular lesson, we're going to stick
+to primarily univariate plot types.
+And so we'll get to other types later in the class.
+But right now, we're just going to stick to univariate plot types.
+And the other thing we're going to get into
+is how do you add attributes to a plot.
+So you have a plot.
+You have an x-axis, a y-axis.
+Well, you need to label those axes.
+Never show people an unlabeled plot.
+No one knows what you're talking about.
+Nobody understands what those numbers mean.
+Maybe you do.
+Maybe you don't even remember.
+You know, you come back to your plot a year later.
+Do you remember?
+You need a title.
+And there's other attributes.
+You might want to control how big the plot is
+or what the aspect ratio is or something like that.
+So we'll get to all that in this particular lesson.
+And I hope you enjoy this.
+Because to me, visualization is really one
+of the most engaging and exciting and interesting tasks
+we do data scientists.
