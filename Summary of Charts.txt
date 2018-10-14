@@ -1,0 +1,47 @@
+
+[MUSIC PLAYING]
+
+OK.
+So we've made it to the end of the lesson.
+And let's go back and just summarize what we've done here.
+So we've looked at various exploratory data analysis methods.
+We looked at some summary statistics.
+So we looked at summary statistics for continuous variables
+like the mean, the median, the quartiles, the min, the max,
+and we looked at how that helps us interpret
+behavior of various variables.
+We also looked at a way to summarize categorical data.
+We looked at frequency tables.
+And we looked at frequency tables that had one, two, and even three variables
+that we performed the group by of.
+We also then spent most of this lesson on visualization.
+We did just one univariate visualization in general.
+And we used matplotlib.
+We used pandas plotting.
+Sometimes we used matplotlib methods to enhance the pandas plot.
+And we use Seaborn package, a statistical charting package.
+And, again, we used matplotlib methods to enhance Seaborn plots.
+And what we looked at was bar plots, which
+was a way to graphically represent a frequency table.
+We looked at histograms, kernel density plots, violin plots, box plots as ways
+to look at numeric variables.
+And with the box plot and the violin plot,
+we could group the plots by some value of a categorical variable.
+So we could compare how the numeric variable changed
+when it was grouped by some category.
+And we also looked at how we understood now that pandas plotting
+and Seaborn are based on matplotlib.
+So we looked at how we could mix matplotlib calls with calls
+from either those packages to create charts that are properly annotated.
+By properly annotated, I mean, at least they have a title,
+an x-axis label, a y-axis label.
+You always want to have charts that at least have that.
+So we didn't look at that, but you could also add legends and other color
+attributes-- things like that--
+to your plot using matplotlib calls.
+So I hope you find exploratory data analysis challenging.
+I'm sure you will.
+But I hope you find it interesting and engaging the way I do because it really
+is a lot of fun to dig through data and find interesting things
+about it using these methods.
+[MUSIC PLAYING]
