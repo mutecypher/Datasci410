@@ -1,0 +1,88 @@
+
+So the first chart type we're going to look at is a bar plot.
+And a bar plot is a way to show the frequency
+of some categorical variables.
+So you have multiple categories.
+You want to display, you know, which one is
+the most frequent maybe to the least frequent, or maybe the least frequent
+to the most frequent.
+You use a bar plot.
+It's a very simple plot type.
+So let me show you how you make one with Python.
+So on my screen here I have the code to do that.
+One thing you should always keep in mind when
+you're using any of those plotting methods that are based on Mathplotlib,
+whether it's Panda's plotting, Mathplotlib itself, Seaborn, et cetera,
+is if you're working in the Jupyter Notebook and you want to see the plot,
+you need to give what's called this magic command where the percent says,
+OK, it tells Jupiter I'm going to give you a magic commend.
+In this case, it's a command for Mathplotlib.
+And the command is in line.
+That means display the graphic in line.
+OK?
+So if you don't see your plots displaying
+in a Jupyter Notebook or your Python plots,
+it's probably because you forgot to include this magic command.
+You only need it once per notebook.
+But if you haven't run that, it's not going to work.
+OK.
+So here we've got, again, our auto price data frame
+and quite a bit of code here to the right, some of which looks similar.
+Because we did a fair amount of this when we looked at frequency tables.
+So up to this point where we do the aggregation,
+all that is just building a frequency table.
+And I've introduced one new bit here just for efficiency, this lock method.
+And so I want all the rows.
+That's why I have just the colon comma there.
+And I just want these two columns.
+OK.
+So it works pretty much like the square bracket,
+except you just have to have this little bit of extra syntax here.
+And it's just a more efficient way of subsetting a Panda's data frame.
+And then, again, in this case, I'm going to group by body style.
+And I'm going to count the body style or how many cars are in each body style.
+And then I'm going to put that count into plot.bar, so the plot
+method and then bar.
+So it's a specific plot type.
+So just keep that in mind.
+
+You know, most of this, all this on the left,
+is just building a frequency table.
+This little bit at the end here on the right is plotting that frequency table.
+So let's go ahead and do that.
+And we've got our frequency.
+You can see sedans.
+You know, we've only got 195 cases in this data set.
+And you can see 90-some.
+So almost half are sedans.
+Hatchbacks are pretty common.
+Convertibles-- not so many convertibles, not so many hard tops,
+and a few wagons, et cetera.
+You can kind of see that convertibles are less frequent than hardtops.
+But it's not that clear.
+So it'd be easier to understand if we had this ordered.
+And so what we can do is everything here is the same, except I've
+added this sort values of the counts.
+So remember, count is an aggregation method.
+Counts was a column we added.
+That's just the counts.
+So we're going to sort the values by the counts and then make the bar plot.
+
+And there's another argument to sort values ascending or descending.
+Ascending happens to be the default. And so now
+I can definitely see that convertibles are the least frequent.
+Sedans are the most frequent.
+And think about this.
+We only have five categories here.
+But if I had like 100 categories, maybe by sales agent or something like that,
+having them ordered would improve my perception
+of how they rank by sales volume or something like that.
+And also, when you present a plot like this to your colleagues,
+having it ordered so they don't have to sit there
+and their eyes don't have to go back and forth
+and back and forth trying to figure this out would really help them.
+
+So that's a simple plot chart type.
+But it's a very powerful plot type.
+Because we can simply show it's a way to visually display
+a frequency table, a bar plot.

@@ -1,0 +1,57 @@
+[MUSIC PLAYING]
+
+Hi.
+So multi-dimensional plotting visualization
+is a very powerful data science technique.
+And it's really important before you start spending a lot of time
+on doing analysis or building models or anything like that,
+you understand the structure in your data.
+And generally, your data is not just a simple--
+maybe, it's just two variables, but it's probably not.
+Our typical dataset might have something like a column that's temperature
+and so we've got some numbers, like this.
+
+So that's case one, two.
+In this case, case four.
+So we've got one--
+But then, we might have velocity and that might be something like this.
+
+And we might have a categorical variable that might be something like type.
+So maybe, it's--
+I don't know what-- type V1, V7, V3, V4--
+some type of something that we're measuring here.
+And et cetera, et cetera.
+We keep filling this screen up here and you
+see that our problem becomes there could be 30, 50 of these variables
+and we want to understand how they relate to something
+we're trying to predict, typically, in data science.
+
+So for example, we might take these two variables and we can do a scatterplot.
+We can have temp on one axis and velocity at another.
+We could take one of these variables--
+like this variable and this variable--
+and we could look at, maybe, box plots by or violin plots
+or something like that.
+By V1, V2, et cetera.
+And we go on and on.
+So we're creating multiple views of the data, and as we do this,
+we don't know which of these views are going to be useful.
+We don't know which of these views are going
+to give us the aha insight that type totally determines the operating
+temperature or something like that, until we really dig into it
+and develop that intuition, develop some understanding of how this all
+fits together.
+And there's a number of issues with if you have high dimensional data--
+and that's what we're going to look at in this lesson--
+
+what are some tips and tricks to get visualizations
+that are informative to you, as the data scientists trying
+to understand the relationships, but also, you
+need to present these results, typically, to a broader audience.
+To your management, your colleagues, whatever.
+And certain things you can show them, certain ways you can show them,
+people will understand.
+Others are just not that useful.
+And so we'll try to, throughout this whole lesson,
+give you guidance on this thing.
+[MUSIC PLAYING]

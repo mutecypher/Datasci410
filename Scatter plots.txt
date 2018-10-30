@@ -1,0 +1,81 @@
+
+[MUSIC PLAYING]
+
+So we're going to make our first bivariate plot here,
+which is the most simple, basic kind of bivariate plot.
+I'm sure you've seen lots of them.
+Maybe you've created lots of them.
+It's a scatter plot.
+And the idea of a scatter plot is you have two numeric variables
+and you want to see the relationship between them.
+So you put one on the horizontal, or x-axis, and the other on the vertical,
+or y-axis.
+So let's just see how that's done using some of the plotting tools we
+have available to us in pandas.
+We're going to have some code here.
+The first thing, just remember because we're--
+pandas plotting is based on matplotlib.
+And we want to display our plots in line.
+So we need to give this magic command, which is--
+the percent sign says it's a magic command, matplotlib, and then in line.
+So we'll display our plot in line.
+And we're going to import matplotlib.pyplot as plot, P-L-T.
+And we're going to create an axis.
+And we're going to make the figure size 6 by 6.
+
+GCA is a method to create an axis.
+OK.
+So just a single axis.
+So this is a way to concatenate all that onto one line to create the axis.
+And first, let me go back.
+We need to import our auto data set.
+So now we have a data frame called auto price.
+And we are going to take that and we're going to do .plot.scatter.
+So it says we're going to do a scatter plot.
+And I'm going to put x.
+I'm going to put city miles per gallon on my x-axis and price
+on my y or vertical axis.
+I'm going to put it on that axis.
+And we need to label this plot because it's a useless plot without labels.
+So we're going to give it a title, auto price versus city MPG.
+We're going to say what our y- and x-axis are, the auto price,
+and the city MPG.
+OK.
+And let's just run that.
+And you'll see what the result is.
+And it's not too surprising.
+Here's our title, auto price versus city MPG.
+Here we've got city, MPG, and auto price.
+OK, the labels, horizontal and vertical.
+And you see the numeric ticks.
+OK.
+So we can start looking at this.
+You see we've got some very expensive cars
+up in this corner that are all pretty much gas guzzlers or fuel guzzlers.
+Remember, there's two types of fuel here.
+So we don't know about that.
+We have some clusters of cars.
+There seem to be areas where maybe it's because auto manufacturers compete
+with each other.
+They tend to make cars that are similar.
+We have a few cars that have remarkably high fuel
+efficiency and pretty low price.
+So somehow, those cars--
+and there's only three of them it looks like.
+They're somehow different from all the other cars.
+You see they sort of stand out by themselves.
+So we've learned some things here.
+We've learned that there seem to be these expensive fuel guzzlers.
+There seem to be these lower cost, extremely fuel-efficient cars.
+And there's a couple of clusters or clumps
+of cars in certain mile per gallon and price ranges.
+But there is a problem here.
+And we'll talk about this in a minute.
+Notice how there is what we call "over-plotting."
+And that just means there's a lot of dots, say, in an area like this.
+We can't really tell how many dots there are.
+So that's just the basics of making a scatter plot with our Python tools.
+In this case, we use pandas plotting.
+We used some matplotlib calls to put proper labels on the axis.
+We learned a bit about miles per gallon of cars versus their price.
+And we also saw this problem of over-plotting.

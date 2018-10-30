@@ -1,0 +1,135 @@
+[MUSIC PLAYING]
+
+So we've looked at one multi-variate plot.
+The scatterplot.
+And we looked at some ways to deal with over plotting of the scatterplot.
+But let's look at another two bi-varient plot that's used a lot is the heat map.
+And the idea of the heat map is you have a vertical axis and a horizontal axis.
+And they can be categorical variables or bend values of a numeric variable.
+And then you see the density, like how--
+basically that counts show the density of how many cases are in each of those.
+Many 2D bins.
+It's kind of like the hex bins plot in a way.
+But it's using square--
+squares and color density rather than hex bins and density.
+So, to do this, we're going to look at an interesting relationship
+here that we might want to know.
+Which is price range and manufacturer.
+So what we're looking for here is, are some manufacturers
+really focused on certain price ranges?
+seems reasonable.
+But we have to do something to transform.
+We need to create a new variable here because we--
+price is a numeric variable right now.
+And we need it to be something that looks more like a categorical variable.
+So, we're going to create a new column called "price under bar bin."
+And we're going to use the pandas cut method on our price column.
+So we got auto under bar price dot lock.
+And then we want all rows.
+And we want just the price column.
+We're going to do that into 20 bins.
+And we're going to have the labels just as the range.
+So they're going to go zero to 19.
+We could also give them some character variables.
+And we'll just look at the head of that date of the new values we get.
+Just the first 10.
+And so you can see cases--
+so this is just case number, one, two, three, four.
+And you can see that one is in price bin 5, 5, 4, 6, 5, 6, 6, etc.
+So it's just a bin.
+Number OK?
+So that's all we've done.
+And we can kind of-- we can look at that using cross tabulation.
+Which is kind of like a way to make--
+another way to make a frequency table.
+So we can do--
+we're going to create a new data frame called "make under bar price."
+And we're going to use this cross-tab method on the price bin
+and on the make, OK?
+So the cross tabulation-- you have to have two variables.
+So, we're going to use price bin and make.
+And cross tabs requires also that they be categorical.
+So we have a categorical-- you know, basically a price bin number
+and a make, which is a manufacturer.
+And then we're-- we've given them each a one.
+So, to get the number of cars in each bin, we just apply the sum on the rows.
+So the rows are--
+or I'm sorry, on the columns.
+So axis equals zero.
+So the columns are the make.
+And then we're going to normalize the number of cars.
+So we want to know--
+so the reason we're doing this, why we're creating this sum.
+And dividing the price by the number of cars
+is we want to have this as a frequency, or as a proportion.
+A zero-- not just the count, but on a zero to one range.
+OK?
+Hopefully that's not too confusing.
+So we've created a cross tab, which is just counts.
+We've summed those counts.
+And then we're dividing through by those counts
+so that we get a normalized variable.
+And we'll just look at the results of that.
+And you can see, like Alfa Romeo has 33%, you know, cars in price bin four.
+And Audi, et cetera.
+And Jaguar doesn't have any in those first four price bins.
+Remember, there's nine price bins.
+We're not seeing them all.
+Peugeot has 18% in price been three.
+18% in price bin four.
+So, it's just looking at the head of that data frame.
+So, we're only looking at the first five rows.
+Now, having done all that, we're ready to actually make a heat map.
+So, again, we'll set up an axis.
+We're going to create a P-color--
+there's several methods we could use to make our heat map.
+But we'll just-- we're using the P-color method on that make price table.
+The one we just--
+it's our-- it's basically our cross tabulated frequency table
+that we've normalized.
+And we're going to use blue, shades of blue.
+And we'll set up the ticks.
+So we've got make, price, and make, price columns.
+So the column names are the manu--
+are going to be the manufacturers.
+We're going to rotate those ticks by 90 degrees.
+And the reason-- notice we're doing this with Mad Plot Live.
+So the reason we're doing that is, there's so many
+makes that we don't want them to lie where the text lies,
+one on top of each other.
+And then we just give them the labels and the titles.
+So, long winded explanation, but let's look at what happens in the end.
+So, we've got price ranges of autos by make.
+And so the darker the blue, the more cars there are.
+So we've got price bin, and we can see Mercury--
+well, Mercury, remember, only had one car.
+And it's in this--
+sort of, price bin six.
+And you can see some car manufacturers tend to have pretty expensive cars.
+Like, let's see, so--
+so you see there's bins in the heat map like that.
+From bin 10 to bin 19.
+And that's Mercedes-Benz.
+OK, so we kind of gather Mercedes-Benz are expensive cars.
+Alfa Romeo has a more clustered--
+Chevrolet, I think there was only one Chevrolet, again.
+So that's tightly clustered.
+And et cetera.
+And you can imagine, you can build a heat map
+with many, many categorical variables.
+Basically hundreds on the axis.
+You can create heat maps with many, many categories for the two variables
+that you're creating the map for.
+Genetic-- people doing genetic mapping use heat maps because they might have
+tens of--
+10,000, or a couple of thousand variables that they
+want to see the relationship to.
+And they'll sometimes sort out those variables in ways
+to highlight patterns.
+And you can see, it's a little tedious in Python to make good heat maps,
+and normalize them, and all that.
+But if you have a lot of categories and you
+want to somehow display a relationship between them,
+it's a really powerful tool if you're willing to put a little work into it.
+[MUSIC PLAYING]
+[TYPING]

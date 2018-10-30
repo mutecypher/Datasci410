@@ -1,0 +1,151 @@
+[MUSIC PLAYING]
+
+So in the last video, we looked at creating a scatterplot using
+pandas plotting and matplotlib.
+But we saw this problem, this over-plotting problem.
+And in this video, we're going to look at some approaches--
+actually three different ways we can approach situations where you
+have over-plotting in scatter plots.
+And this is really common.
+Realize in this auto data set, we only have 195 cases.
+And yet, we have over-plotting.
+What if we were looking at 10,000 house sales over the last many years
+or something like that?
+You might just get a blob of points where you
+can't see any structure, whatsoever.
+You have no idea what's going on.
+So, fortunately in visualization-- a d we, as data scientists,
+have access to--
+well, many tools, three of which we'll talk about here.
+One is setting the transparency of the points so we can see through them more.
+Another is a 2D kernel density estimate plot--
+kind of makes like a contour plot of the density of the points.
+And another is what's called a hexbin plot, which is
+like the 2D equivalent of a histogram.
+So let's look at each of those and see that we get slightly different views
+out of each approach.
+
+So just to remind you where we were, here's
+our scatterplot of auto price versus city miles per gallon.
+And we had these multiple areas where we have distinct over-plotting.
+We can't really see how many points there are.
+We can't count them because they're lying one on top of the other.
+And that's obviously what we mean by over-plotting.
+So our first set transparency--
+a d so this code is almost the same as what we saw in the last demonstration.
+I've only done one extra thing here.
+I've added this alpha equals 0.2.
+And that's a transparency value.
+So alpha equals 1 is the default. That means the point is perfectly opaque.
+Alpha equals 0 means it's perfectly transparent.
+You won't even see it.
+So 0.2 is fairly transparent.
+It's got a density of only 20% of opaque.
+And so I think the best way to understand
+this is just to run this and look.
+
+And you can see these points are now pretty light.
+You know, they're 20% density where there's just a single point.
+And you start to see that, in fact, these clusters where
+we had multiple cars, this one is really very dark.
+So we know there's quite a few points there, maybe fewer stacked
+on top of each other in these areas.
+So that's one way that you get a visual impression that there's really
+a lot of cars in this 31 or 32 miles per gallon
+and this pretty narrow price range.
+For some reason, manufacturers really like
+to offer car models with those characteristics.
+And there's a few other popular areas.
+But they're a little less pronounced, OK.
+So that's interesting.
+But we could look at this a different way.
+We can do a kernel density plot.
+And to do this, we're going to use the seaborn package.
+So I'm going to import seaborn as sns.
+And I'm going to define an axis.
+But in this case, I'm actually going to put the plot on that axis.
+And I'm going to do it--
+the data-- so kdeplot is the function or method from seaborn.
+And I want to have city miles per gallon in price for my x and y.
+
+Shade equals true.
+You'll see what that means in a minute.
+And I've picked a color map.
+In the seaborn documentation, you can see what these color maps are.
+And they're actually the same in matplotlib, so.
+And this is a sort of a bluish set of blue.
+So that's going to be the shade I'm going
+to use for this color density plot.
+It's going to kind of look like a topographic map.
+I'm also going to go ahead and put a scatterplot on top of--
+see, I can use that same axis that I created here
+and put a scatterplot on top of that.
+So I'll see the points, but I also see this density estimate.
+And I've got my title and my axis labels, just like I had before, OK.
+
+And there you have it.
+Let me just make that so you can see it.
+So, again, we've got auto price and city miles per gallon.
+And you can see the density estimate--
+
+the darker the shade of blue, the higher the density.
+So you can see the densest areas kind of in this 23 to 32
+or 31 mile per gallon range.
+So there really are a lot of cars in that range.
+And we also saw that from the over-plotting.
+So this just emphasizes that.
+We can also see there's another little sort of cluster out here, maybe
+around 19, 20 miles per gallon.
+But it's somewhat more expensive cars, maybe in the mid-teens.
+But really, we've got this very dense set of cars down here.
+So this is like a way to look at a 2D density of the counts of the cars.
+And there's one other way we're going to look at to do that,
+which is a hexbin plot.
+And so now I'm going to jump back and use pandas plotting again.
+I'm just showing you there's different ways
+to do this with difference of these packages.
+So again, I set an axis.
+I do my [? auto price.plot.hexbin. ?] And I set my x and y.
+I say grid size, 15.
+So, it's like a 2D histogram.
+So this is going to be 15 bins by 15 bins on that axis.
+And the reason we use hexbins is they tile exactly on a 2D surface.
+So, this is like having a 2D histogram with 15 bins for each
+of city miles per gallon and price, and then all my labels
+that I need to make a nice plot.
+
+And so what do I wind up with?
+First off, I have a density bar over here on the right.
+You can see from 28 down to 0.
+And then, you can see I do have this really dark hexbin.
+Notice how they are hexbins.
+They fit perfectly.
+So the darkest one is maybe centered on 30 or 31
+and in a price of about $8,000.
+Probably the next darkest ones are these two here.
+You can barely see some of these expensive fuel-guzzling cars
+and some of these ultra efficient cars.
+I mean, the bins are so light because there's
+just one car in some of these bins.
+But you can see them.
+You could change this, too, if you wanted
+to see those better at the expense of seeing the really dark bins.
+But what we're trying to do with this kind of plot
+is draw your eye toward where's the densest clumps of car.
+So where is that relationship?
+You know, where are these sort of spots where auto manufacturers evidently
+concentrate their efforts in terms of price and fuel efficiency?
+So that's three ways now we've looked at to deal with over-plotting.
+So don't discount over-plotting.
+You'll see it a lot.
+Don't ignore it.
+Don't show people plots of just blobs where
+they have no idea what you're talking about
+and you probably can't see it either.
+So you can use transparency for mostly mild cases.
+You can use 2D kernel density plots or hexbin plots.
+Hexbin plots, by the way, are the most scalable.
+You can use those with big data cases where
+you might have millions of points.
+And they work just fine because it's just a simple binning process.
+[MUSIC PLAYING]

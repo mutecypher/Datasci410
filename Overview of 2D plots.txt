@@ -1,0 +1,72 @@
+
+So let's talk about some of the issues we
+have when we're trying to visualize a complex dataset
+or trying to understand the relationships of a data
+set before we model it.
+Invariably, we have multiple dimensions in the data set.
+So what does that mean?
+We have multiple dimensions, but we have a 2D plot surface.
+So we're stuck in this certain 2D plane.
+OK.
+So for example, if I draw a set of axes here, I have two axes, right?
+I could try to maybe do some perspective plot with a third dimension,
+but I'm pretty much stuck.
+Regardless of whether I'm printing on paper or looking at a computer screen,
+I am stuck in a 2D world here.
+I can't do anything.
+And so there's a couple of issues, and we'll
+talk about those throughout this lesson, that arise over and over again.
+So one of them is simply this business of when
+you project a large complex dataset onto 2D,
+you get a phenomenon called overplotting.
+So say we start getting some points here, and so, so far we're doing OK,
+right?
+We can see where every little point is, my bad drawing not withstanding.
+OK.
+But say this dataset had certain areas where there was just a lot of values,
+and it starts to become difficult to tell just how many points are there.
+One point's right on top of the other.
+It's just becomes, essentially, it's just visual blob.
+And you can't tell much, and if you ever see this in your plots
+when you're exploring a large complex dataset, just blobs like this,
+you know that you have to back up and think about what you're doing.
+You've got some over plotting going on, OK?
+So what to do?
+So there's a couple things we can try here.
+We can, for example, use contour plots.
+So we might wind up with a contour plot like that,
+and maybe another one like that, in this case.
+And then, you might even get one like this, et cetera.
+
+So with a contour plot like this, now the fact
+that we have tremendous amount of over plotting here
+starts to become less important, because our eye
+is drawn to the area with the high number of contours,
+and we know those are very dense areas with a lot of points.
+Another possibility though is a hex bin plot.
+So we can break this area up into hex size bin.
+So this is like the 2D equivalent of a histogram.
+We already talked about histograms, right?
+So you do something like--
+and you can set different bin sizes.
+
+And the reason we use a hexagon is because they, of course, whoops.
+If you're good at drawing, which I'm not,
+they pack properly in 3D space like this.
+
+And if you color coded these hexagons, you'd
+see these four here have a lot of high density.
+This one actually has nothing in it.
+It's empty.
+So if you're shading them, these would be highly shaded.
+This one would be essentially unshaded.
+So that's another alternative to contour plotting.
+It's actually a very scalable method.
+You can do millions of points on a scatterplot,
+and get something understandable if you use a hex bin plot.
+Rather than, if you put millions of points in a normal scatterplot,
+you're just going to have a huge blob, and you're not going to know anything.
+With a hex bin plot, you'll start to see the high density areas and the low
+density , areas and it will give you a lot of information.
+So that's a little bit about methods we're going to look at to deal
+with this overplotting problem, so we can work with large complex data sets.
