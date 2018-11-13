@@ -1,0 +1,89 @@
+[MUSIC PLAYING]
+
+So having talked about the general idea of using aesthetics
+to project multiple dimensions onto our 2D plotting surface,
+let's go ahead and look at a specific one, which is color.
+On my screen here, I have this code example.
+And we're going to go back and use seaborn.
+Remember, we've used seaborn earlier.
+And I'm using seaborn because it has some nice properties when
+it comes to, say, making a plot using color as an aesthetic.
+So the first part of this is pretty obvious.
+We're going to plot on the X, city miles per gallon, on the Y, the price.
+This is the automotive dataset, obviously.
+Because it says data equals auto under-bar price.
+But then here's the new thing I want to call your attention to, is hue.
+And hue is essentially the shade, or tone of the color.
+And we're going to set that based on this categorical variable
+called fuel type.
+And fuel type, as you recall, only had two possible categories.
+There were gas cars and diesel cars.
+And which colors we pick, we're going to choose from this pallet
+with a funny name called seismic.
+If you look in the documentation for matplotlib,
+you'll see there's lots of really nice color palettes.
+And some not so nice ones, in my opinion.
+But I like seismic.
+There's other ones that would have been good here.
+There's one other tricky bit here I wanted to call your attention to.
+With seaborn, there's a lot of other possible arguments.
+You want to pass through seaborn down to the underlying matplotlib.
+Remember, we said that seaborn is built on matplotlib.
+And there's lots of options for matplotlib
+that you won't find this specific argument,
+like hue in the seaborn documentation.
+Well, it probably means it's an attribute that you set in matplotlib.
+And so to do that, you can use this scatter under-bar KWS
+if it's a scatterplot.
+And notice it's a Python dictionary.
+So in this case, I'm only setting one of these.
+I'm sitting alpha.
+Remember, alpha is transparency.
+And I'm setting it to 0.3.
+But I could have others here, too.
+I could go comma something, something, something, colon,
+whatever that value is, et cetera.
+So I could have as many of these matplotlib arguments
+as I need in my dictionary.
+And also, this LM plot is a scatterplot type.
+The default is to put a linear model or a linear regression line on the plot.
+I don't want that right now.
+So I'm just going to say false.
+But you might want to experiment with that, see what happens when it's true.
+Then I can simply add my labels that I need.
+And notice in my title here, I've said auto price
+versus city miles per gallon, line feed, new, with fuel type by color.
+So let me show you what happens when we run all that.
+After a long explanation.
+
+And there you go.
+There's the plot.
+As advertised, city miles per gallon on the x-axis, auto price on the y-axis.
+My title.
+And you see, here's my hue.
+Here's my legend of the hue.
+Gas in blue.
+So gas engine cars on blue.
+Diesel engine cars in red.
+And then something really interesting emerges from this.
+Remember when we did this before, we had quite a bit
+of what appeared to be dispersion in price for different miles per gallon.
+But now we can see what's going on.
+Apparently, for a given level of fuel efficiency,
+you're going to pay more for a diesel car than a gas car in general.
+You see almost all the red dots are above the blue dots.
+And also, there are just not that many diesel cars.
+You see the big clusters here that we worked on
+before when we looked at the hexbin plot and the contour plot, et cetera,
+are all for gas cars.
+So that's how we've just projected one new dimension, which
+is just fuel type, which only in this case had two values,
+using hue or color.
+We could have done maybe five or six categories.
+You get too many more than that and it's just going to be a mess.
+People are going to have a really hard time telling one fine grain
+color difference from another.
+Human eye just isn't that good at it.
+So keep that in mind so you can make really nice plots
+that your audience and you will understand.
+[MUSIC PLAYING]

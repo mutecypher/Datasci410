@@ -1,0 +1,55 @@
+[MUSIC PLAYING]
+
+Hi.
+So up till now in this lesson, we've focused on two dimensional plots.
+We have either looked at scatter plots or some other effectively
+two dimensional plots, like hexbin plots, heat map, line plot.
+And we've added only one aesthetic to it,
+which is we looked at using transparency to deal with over plotting.
+But there are other aesthetics we can apply.
+And they're interesting aesthetics, because they
+let us project additional dimensions.
+Notice that all the data sets we've looked at up till now are all--
+the views of this current data set we've looked up
+till now have been two dimensional.
+And, for example, when we looked at line plot,
+it was just number of sunspots versus date-- just two dimensions.
+And this is a real problem in graphics, because we're always
+looking at graphics.
+Regardless of whether they're printed on paper or on our computer screen,
+it's a two dimensional view of a very complex,
+typically multi-dimensional world.
+So let's talk about some specific aesthetics
+we can use so that we can project more dimensions onto our 2D screens.
+So there are really three aesthetics we're
+going to discuss in these next few sequences,
+and there are different ways you can use them.
+So for example, color--
+you can use color for a categorical variable, and we'll look at that.
+You see different categories of data.
+Size-- so size of the marker.
+We can use that directly as a numeric indicator,
+like how big is the marker indicates some proportion to the numeric value.
+Or if you have an ordered categorical variable, like, say, small, medium,
+large or something like that where order actually matters in the categories,
+then you can use a few different marker size.
+There's also marker shape.
+We've just been using dots for our scatter plots up till now,
+but we could use squares, and triangles, and plus signs, and even
+alphanumeric characters like the letter H or the letter B or something
+like that.
+And again, we can use those to project a categorical variable onto our two
+dimensional surface.
+I'll talk about this a bit as we go, but really, notice this warning.
+If you use too many colors, too many shapes, too many fine grain differences
+in size, you wind up with a mess.
+And you wind up obfuscating what you're trying to show
+rather than illuminating it.
+And so don't go overboard with these aesthetics in terms
+of projecting additional dimensions.
+Sometimes you may have to aggregate categories
+or really think about what you're trying to project.
+So with that background in mind, let's go ahead and one by one,
+we'll go through those three types of aesthetics.
+And I'll show you how we can use them to project additional dimensions.
+[MUSIC PLAYING]

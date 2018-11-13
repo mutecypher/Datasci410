@@ -1,0 +1,154 @@
+
+So we've looked at a number of plot types, now 2D plot types.
+We've dealt several methods or explored several methods
+for dealing with overplotting problem, which
+is a huge problem in large, complex datasets.
+But let's go beyond two dimensions.
+So everything we've done so far is just two dimensional plots
+because we've just had a vertical axis, horizontal axis.
+And essentially, we're stuck with it.
+We're plotting on a computer screen or printing on paper.
+The world is of visualization is stuck in a 2D projection.
+But there's things we can do to break out of that.
+And let's look at--
+I'm going to a little table here of some ways you can get around that.
+
+So here we're going to show the aesthetic,
+and over here we're going to talk about which data types it works with.
+
+And first we're going to try size.
+
+So we can certainly use size, size of whatever it is we're plotting,
+whether it's a marker or a length or size and length.
+
+We can certainly use that for numeric.
+
+The size could be proportional to some numeric value.
+You can also use it with an ordered categorical variable.
+So if we had a categorical variable like small, medium, large,
+we could use marker sizes small, medium, and large.
+We can then look at marker shape, and generally marker shape is really
+only good for categorical variables.
+
+So we just simply have a shape that's unique to each category
+that we want to show, and finally we have color.
+
+And color can be used for categorical.
+So you have a color per category, but if you have a color like a scale--
+like dark blue to light blue or something like that or shades of gray--
+you can also use it for numeric.
+
+So this gives us a fair number of items we can use.
+Oh, and I should say there's area.
+
+And generally, we use that for numeric.
+
+So I did these in a certain order.
+It turns out people have done experiments on these aesthetics.
+Which ones do humans perceive the best?
+It turns out our eyes are really good at telling differences in size and length.
+So that's kind of our number one go to.
+We're also pretty good at telling shapes apart as long
+as they're fairly distinct.
+So that's probably our number three.
+We're not so great, as it turns out, as telling colors apart.
+If they're really very distinct colors, sure.
+But some people are colorblind, especially men tend to be--
+there's a tendency for a fair number of males to be red green color blind.
+But we can still do some stuff with color.
+And area-- it turns out we're not so good at perceiving area.
+So area's may be best, a very gross estimate.
+And these tests I was talking about-- for example, one of the famous ones
+was done by William Cleveland at Bell Labs,
+and he actually took other Bell Labs scientists,
+guys who look at plots all day and had them test how well they
+perceived differences in plots.
+And so, this wasn't just like taking some random bunch of people
+from who knows where.
+And so this was his ranking he came up with.
+Other people have done similar things.
+And so, this has been made a little more systematic over time.
+So let's talk about what we can do here.
+So with length, the obvious plot that you do with length--
+for example, we can do a bar plot.
+And typically you want to order your bar plot so that--
+it can be from biggest to smallest or smallest to biggest.
+But you want to do that because, I get this one.
+And it's pretty clear those two bars are quite different, whatever they are.
+But then what if I get a bunch like this which are just only slightly different?
+If they were all over the chart, I wouldn't be able to tell that.
+But by ordering them, I can tell, well, that one
+is a little bigger than that one, a little bigger than that one.
+So that's an example of using length.
+Another example of using length might be if I
+have some variable which has a lot of categories, and then I have a numeric.
+This way I can create a whole bunch of box plots like this.
+
+And I'm able to tell, because my eye is sensitive to length,
+I'm able to tell quite a bit about the differences in dispersion
+and what of those variables.
+So that's something to keep in mind when you have--
+again, this could be a way to get around overplotting
+if you have a categorical variable with a lot of cat--
+even not so many categories, but it works
+with a huge number of categories in a numeric variable
+and you want to plot some relationship there.
+
+So then, moving on, we can talk about marker shape.
+So one of the tricks about marker shape that various people have
+researched and come up with is, you want to make sure you pick distinct markers.
+Like I could do something like this.
+Maybe I have a circle, a triangle for some of my data points,
+and maybe a square.
+So I can pretty well tell, by markers shape here,
+that those are three distinct categorical variables
+and maybe these are two you know numeric variables.
+So now I've got three dimensions on this plot.
+I could also do things like--
+for the same, I could do letters.
+You could do letters and numbers.
+But what you want to do is things that look different.
+Those don't look like each other.
+But don't do a and b.
+Don't do, or h and b.
+don't do o and q because this people aren't going to see those differences.
+So be sensible.
+And also when you're doing like shapes, you
+can see we're pretty quickly going to run out of how many shapes
+our mind can wrap around.
+If you have 20 categories and all kinds of little subtle differences in shapes,
+people aren't going to understand your plots.
+You may not understand your plots, even if you use letters or numbers.
+
+So let's move on here then to color.
+So I'll put my axes here.
+
+So again, you can't use too many colors.
+Maybe I'll use green.
+
+And then I can come along and I can use yellow.
+But you see already, my yellow and my green, boy, that looks pretty similar.
+Am I really going to tell the difference?
+Certainly blue looks different.
+
+And maybe orange looks-- yeah, orange looks a little different.
+But again, it's not that different from the yellow, is it?
+So again, the point is make sure you pick distinctive colors.
+Don't use too many colors.
+Don't use too many shapes, or you're going to wind up with a mess
+that nobody understands.
+And finally, a little bit about area.
+The problem with area is, as I've already alluded to,
+if I have a shape or a marker like that and a marker that's
+just a little bit bigger and a marker that's maybe right in between,
+I mean, it's very hard to tell what the differences.
+I need differences that are like that where
+I can really see a big difference.
+So if you're trying to do something that's just general relative ordering,
+area is a great way to do it.
+But don't expect to get the same kind of granularity
+you can get with, say, length.
+That's why I put size and length up here as my first go
+to aesthetic, shape as my next one, color, and finally area.
+So that's an overview of some tools we can use to project five,
+six, even seven dimensions sometimes onto our 2D surfaces.

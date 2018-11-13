@@ -1,0 +1,90 @@
+
+So now that we've got four dimensions on our plot surface, let's
+go for a fifth dimension.
+And we're going to use marker shape to do that.
+There's quite a bit of new code here, so let me walk you through that.
+I have to do this in a somewhat different way.
+Marker shape is a little hard to do in any of the Python plotting packages,
+but it's not too bad.
+So the first thing I need to do is create two dictionaries.
+One is the markers that I want to use.
+
+So for standard-- we're going to do aspiration.
+So standard aspiration, I'm going to use this marker, the little arrow pointing
+right.
+For turbo cars, I'm going to use the little marker pointing left.
+So they've got two different distinct marker shapes, and that's important.
+When you pick your marker shapes, make sure you pick ones
+that really look different to the eye.
+Don't use a big, you know, 0 and a small o.
+Or another notorious one is a and b.
+The characters and b look pretty similar when
+you get lots of them lying on a page.
+And for fuels-- again, I'm going to create a similar--
+for diesel, red; gas, blue.
+OK.
+So I've got these additional attributes or additional aesthetics now defined
+in these dictionaries.
+And I've created this function here.
+So we're going to use Seaborn.
+So, as always, we define our axis.
+We have two loops here, so we're going to get val1 in markers and val2
+in colors.
+So we iterate over these dictionary keys, and we--
+basically, we want to make a temporary data
+frame for where we have val1, which is whatever the value of the--
+so that will be markers, be standard or turbo.
+And then "and," whichever for the color parameter, which will be diesel or gas.
+And then we can just keep putting what's called a reg plot, which
+is another kind of Seaborn scatterplot.
+We're just going to lay one over the other,
+but it will all look integrated when we're done.
+They're all on the same axis, you see.
+So, again, the first part's obvious here, the x and the y in the data frame
+we're using.
+We're not going to show the model fit.
+You could try it with the model fit, but you're going to get something funny,
+because there's four different ones here.
+Then again, we go scatter KWS.
+So this case, we're going to do "color" is
+our color choice from that dictionary, and our alpha and our engine size.
+OK?
+And then we get the marker equals--
+and that's why I used reg plot, because it has a marker value.
+
+And then the rest is title and all the usual stuff.
+So let's go ahead and run that.
+
+And so we have a very long title for our plot,
+but that's very important, because you've
+got to know what you're plotting.
+And you'll see, as usual, we've got city MPG auto price,
+and then we've got red and blue, red for diesel, blue for gas.
+The size of the marker-- you can see kind of these cheap cars
+with high fuel efficiency have pretty small engines.
+Our big, expensive gas guzzlers have big marker size.
+These guys in the middle are sort of intermediate.
+And you can see standard cars with the little arrow
+pointing to the right and turbo cars with the little arrow pointing
+to the left.
+And you notice, most of the diesel cars are turbo,
+and a fair number of gas cars, especially in this price and fuel
+economy range, tend to be turbo cars, too.
+And then most of these high fuel efficiency,
+cheap cars are standard, OK?
+So think about a second.
+How many dimensions do we actually have on this page now?
+It's quite a few.
+
+If you decided that the answer was five, you're
+correct, because we have the two axes--
+price on the vertical, city miles per gallon on the horizontal.
+Then we have color for the type of fuel, the engine uses.
+We have marker size for the size of the engine.
+And, finally, we have marker shape to tell us
+whether it's a standard aspiration car or a turbo car.
+So you can see just using a scatterplot, but with three different aesthetics,
+we've gone from the ability to project two dimensions to five
+dimensions, which is really kind of cool and very useful
+in terms of presenting your graphics to your colleagues
+or exploring data for yourself.

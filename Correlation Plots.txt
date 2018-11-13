@@ -1,0 +1,95 @@
+[MUSIC PLAYING]
+
+So now we're going to look at high-dimensional plots,
+plots that use many sets of axes to look at higher dimensional data.
+And there's three we're going to go through.
+And the first one is a correlation plot.
+So on my screen here, we'll look at just computing covariance and correlations.
+So let's go ahead.
+So we're just going to look at some of the numeric variables
+in this auto price dataset, which is wheelbase,
+curb weight, engine size, city miles per gallon, and price, OK?
+So we're going to compute the covariance.
+And we do that just by subsetting that data frame and use the cov method,
+C-O-V, or cov function.
+So that's just going to print a covariance matrix.
+And there you have it.
+So I always find these hard to interpret.
+You see, like the covariance of wheelbase with curve weight is 2,500,
+the covariance of wheelbase with engine size is 145,
+roughly, the correlation or the covariance of wheelbase with city
+miles per gallon is minus 20.
+So what does that mean?
+It's very hard to understand because it's just these numbers.
+It's not normalized.
+So what we want to compute is correlation,
+which is the normalized version of covariance.
+So we normalize by the product of the variances
+of the two variables being correlated.
+And we can just subset the data frame.
+And we have this core method or function.
+And we'll just have a look at what comes out of that.
+And it's something much more sensible, certainly in my view.
+First off, any variable correlated with itself,
+it's correlation is 1.0 because it's perfectly correlated.
+It's exactly the same.
+And now correlation is on a scale of minus one to one.
+So the closer something like wheelbase and curb rate has about a 0.78
+almost 0.8 correlation, or curb weight and engine size
+even higher, 0.86, that makes sense.
+Bigger, heavier cars need bigger engines,
+and they tend to be a bit longer.
+You see other things like wheelbase and price is pretty weakly correlated.
+It's just 0.58.
+So we're not sure that really means much.
+So it's much easier, in my view, to interpret.
+But what about a plot?
+So we can do a number of plots here.
+And the one I'm going to show you here is a heat map plot of correlation.
+But keep in mind, there's lots of other options within the Python universe
+to do cool correlation ellipses and things like that.
+But we're just going to do heat map for now.
+So I don't [? under-par ?] core is our matrix of correlation matrix.
+And we're going to center it at zero.
+And we want it square.
+And we want-- it's skinny lines.
+And this is an obscure one.
+We want to shrink it so that you don't have big margins
+between the blocks or the squares.
+So let's go ahead and run that.
+And you can see, so correlation matrix for numeric features.
+And you see nice labels along the y-axis.
+It says wheelbase, curb weight, engine size, et cetera.
+And then notice how they get rotated here so there's no over printing
+wheelbase.
+See, all these labels are rotated 90 degrees on the heat map?
+That's all very nice.
+Here's our color map range from dark.
+Dark blue is highly negatively correlated to deep red
+is highly positively correlated.
+And if we just look at the--
+maybe let's just look at price.
+So we see city miles per gallon is fairly highly negatively
+correlated with price, right?
+That jumps off the page with us, which we already knew from our scatterplots.
+And you can see engine size and curb weight are pretty highly
+positively correlated with price.
+So that is big, heavy cars with big engines cost more money.
+So with the correlation methods and correlation plot,
+we now have a method to look at a high number of dimensions.
+I need to caution you, however, about one very important thing, which
+I've already mentioned, is correlation is not causation,
+and high correlation doesn't necessarily mean importance either.
+There's a tendency to say, oh, look, those are highly correlated.
+They must be an important relationship.
+Well, maybe they are.
+Maybe they're not.
+You need to do more exploration.
+You need to maybe do some scatter plots or something else to really understand
+what's going on.
+Likewise, if you have strange non-linear relationships between variables,
+correlation is a linear process.
+You may get low correlations, yet you have very high
+dependency if you did some sort of other transform of those data.
+So don't fall into those pitfalls and look naive when you use correlation.
+[MUSIC PLAYING]

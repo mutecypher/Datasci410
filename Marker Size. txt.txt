@@ -1,0 +1,40 @@
+[MUSIC PLAYING]
+
+So we looked at color, and we use color as an aesthetic
+to add another dimension to our plot.
+So we had three dimensions at that point.
+Let's add a fourth dimension to that same plot.
+And we're going to do that using marker size, and we
+can use marker size for a numeric variable
+or as we said possibly an ordered categorical variable.
+So on my screen, I have the code that I'm going to demonstrate here.
+And everything is the same that we already
+talked about for the color example where we set hue
+based on the two values of fuel type.
+But size, it turns out, there's nothing in seaborne
+that lets me set marker size.
+But there's this s argument for scatter plots and matplotlib, and that is size.
+So we're just going to do auto [INAUDIBLE] price of engine size.
+So now our marker size is going to change depending
+on how big the engine of the car is.
+And you notice all I've done is this is still a Python dictionary,
+but I've got a comma here, a new key, which is s,
+and then the value for that key, which is the engine size.
+And everything else is the same except I've now added yet another line
+to my plot title.
+Let me run that for you, and we'll scroll down here.
+And a long title up there, but it's worth saying what that is.
+And again, we have our first aesthetic we dealt with which was color or hue.
+So gas and diesel as before.
+But now notice that the bubbles, some of these are kind of small
+and some of them up here, like our really expensive cars,
+have really big engines.
+Not too surprising in a way that the more you pay, the bigger the engine
+you get.
+
+So now if you think about it, we've got four dimensions projected
+onto a two dimensional plot surface.
+We have the city miles per gallon, we have the price on the axes,
+then we have fuel type of the engine as color.
+And we're showing some relative engine size as the size of those markers.
+[MUSIC PLAYING]

@@ -1,0 +1,71 @@
+[MUSIC PLAYING]
+
+Hi, we have just one more 2D plot we're going to explore here
+and that is the line chart.
+And a line chart is similar to scatterplot
+that we've been working with, but it has one important difference--
+the dots are connected by lines, the actual data points are dots.
+And so we use a line chart when we have data that has some order.
+For example, time series has an order.
+You have samples in time so you can plot them as a line chart,
+from the earliest samples on the left to the last samples on the right.
+And there are other status types like that, that have an order.
+If there's no order, then definitely use a scatterplot
+because you'll just get a scrambled bunch of lines going randomly
+everywhere.
+So let's have a look at how we actually do this.
+We're going to look at a famous example in science, which is the sunspot data.
+It's actually one of the longest time series--
+longest in terms of the time period it covers, and astronomers
+have been making monthly counts of the sunspot cycle for about two centuries
+now.
+So let's have a look at the plot of that.
+So on my screen here, I have some code.
+And the first thing we have to do is we have a little CSV file,
+we're just going to load that sunspots data.
+And once we have it loaded, then we need to create a time series index.
+We'll talk about this more later, but for now,
+we're just going to change the pandas DataFrame
+index from just being numbers--
+zero, one two, three, four--
+to an actual date time type.
+So that'll give us a nice plot with dates on the x-axis.
+And then, we're just going to look at the head and tail of it,
+just to see what we've done.
+So what you see is our first date--
+I told you, this is a long time series--
+1749 so January of 1749, there were 58 sunspots noticed.
+And up to the last one, in this particular file, happens to be in 2013,
+there were 37 sunspots noticed.
+So you can see, it spans about over 250 years so more than two centuries,
+like I said.
+So let's talk about how we plot this.
+So you shouldn't be too surprised, we're going
+to create a figure with a certain plot size.
+And create an axis around that.
+And we'll just use the pandas plot method here
+and we just want it on spots.
+Spots are the number of sunspots in that month.
+And we just use the plot method with no other arguments.
+It's not scatter.
+It's that kind equals scatter or anything like that.
+It's just plot that.
+So the default actually in pandas, is a line block that we're talking about.
+And then, we'll give it some proper titles.
+So let me make that plot, and you'll see the results.
+
+And here you have it.
+Let me scroll down so you guys can see that.
+So you see, my title at the top--
+time series of sunspots.
+And we got the number of sunspots.
+And you see the dates.
+
+The dates are there across the bottom, starting in the 18th century
+going into the 21st century.
+And you see, there's this nice periodic behavior.
+This is a well-known phenomenon in science,
+that sunspots have approximately, an 11-year cycle.
+So that's how we can make a really beautiful line plot.
+And notice, that we used very little code up here, to actually do that.
+[MUSIC PLAYING]

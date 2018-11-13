@@ -1,0 +1,134 @@
+
+So there's one more way we can project multiple axes
+into an array that's very powerful.
+It's been invented by a number of people, William Cleveland, Edward Tufte
+among them.
+I think they did it more or less at the same time
+without knowing each other were doing it.
+Tufte called it method of small multiples.
+
+It's also been called facet plotting or pairwise plotting.
+It's got a number of names, but we'll call it facet plotting in this lesson.
+And so the general idea is you do a group-by operation.
+So you subset by some typically categorical variable, your data.
+And then you look at subplots on some array.
+And I'll show you some examples of that.
+And you do it side by side by side.
+And generally you make sure the axes are exactly
+the same length so you can make exact comparisons.
+So let's look at some examples of how that might work
+and why it's a very powerful method.
+It takes some work.
+You're going to have to kind of think about this
+to wrap your head around how to best use it.
+But it's really cool and important method.
+So within Seaborn there's the Facet Grid method.
+And what we do is we build a grid, or a facet grid.
+And so in this case, we're going to build a grid
+with just the columns divided by--
+so the group-by variable for the columns of our plot array
+is going to be drive wheels.
+And then we map a histogram, see plot.hist, of price onto that grid.
+So you'll see what happens here when we run the magic.
+So you can see, so we have drive wheels.
+So there's three categories of drive wheels.
+So you can see we have three histograms.
+The vertical axes of count is exactly the same.
+It's a little hard to see this, but the horizontal axis of price
+is exactly the same.
+And then we have the categories of drive wheels-- rear-wheel drive,
+front-wheel drive, four-wheel drive.
+And the main thing that sticks out here is that rear-wheel drive cars
+have the biggest range of price.
+So it looks like compared to four-wheel drive and front-wheel drive cars, all
+the most expensive cars are real-wheel drive cars.
+It also looks like the front-wheel drive cars are heavily
+skewed toward low-price cars.
+So we've learned something interesting about our data set
+by using this facet grid method, where we grouped on just one
+variable, in this case, drive wheel.
+So we actually have three dimensions on this plot, which is price,
+number for the histogram, and then type of drive wheels.
+But let's go a little further.
+We can make histograms by, let's do, columns of aspiration and row
+by fuel type.
+And we're going to, again, just do histogram.
+So we make our grid with columns as aspiration, rows as fuel type.
+And when we map that, we're going to map it again to plot hist.
+Or we're going to map plot.hist onto that grid,
+is how I should say that, of price.
+So here we go.
+
+And so you see how they print this.
+It's fuel type equals gas.
+Aspiration equal standard.
+Fuel type equals gas.
+Aspiration equals turbo.
+And then we've got our two diesels categories down here.
+And what's interesting is for gas standard cars, there's a lot of skew
+toward cheap cars, right, because, remember, this is price.
+
+And then there's this clump of more expensive cars, which you don't see
+for turbo gas cars, turbo diesel cars.
+Or they're not very many.
+You can see there's just a few standard diesel cars.
+But you can see like the turbo diesel cars
+tend to be more expensive than the standard diesel cars, et cetera.
+So again, we've learned some interesting things
+and we've projected another dimension by having now a two-by-two grid
+of this categorical variable.
+So let's try one more example here.
+And this is going to be a scatterplot.
+So this time we're going to map a scatterplot onto the grid.
+And I'm going to set the columns as drive wheels, the rows as body style.
+And we're going to use the hew equals fuel type with something called the set
+one pallet.
+It's another pallet.
+And let's see what happens.
+
+So it gets a little messy.
+When you do this, don't go overboard.
+Don't have too many variables.
+But body style equals convertible.
+It's a little hard to read.
+But I think it's drive wheels equals rear, front, four-wheel drive.
+And you can see, some of these, like, there are no convertibles that
+are four-wheel drive.
+There's only one rear-wheel drive convertible apparently.
+
+I'm sorry.
+These are rear-wheel drives.
+There's only one front-wheel drive convertible.
+And you can see there's a fair number of--
+
+say, hatchbacks are pretty numerous.
+So we got hatchbacks on this row.
+And we've got most hatchbacks being front-wheel drive, and especially
+the cheaper ones.
+See, only the most expensive hatchbacks are rear-wheel drive.
+And we've got only one four-wheel drive hatchback.
+So you can wind up with--
+if you don't have enough data points, you
+can wind up with a lot of blank squares here, et cetera.
+And you can see the difference between--
+in this case, we've switched the colors.
+So blue is now diesel.
+Red is now gas, et cetera.
+And so you could see we could quickly see a lot of important detail
+by doing this group-by operation, which you can do, generally,
+on at least two variables.
+Sometimes you can do three.
+It can get kind of messy.
+You can add other aesthetics, like, in this case, we used hew on fuel type
+to separate those.
+But you could do other things as well.
+And you can project quite a few more dimensions
+onto your page using a facet grid.
+But it takes some thinking.
+And you can also wind up with just a mess, where
+the plots are too small, nobody can see them,
+or too many plots with not enough data points in them, or something like that.
+So use some care.
+Use some effort.
+But it's a really powerful method to show some relationships that there
+really is no better way to do it.

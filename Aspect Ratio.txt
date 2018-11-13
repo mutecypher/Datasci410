@@ -1,0 +1,57 @@
+[MUSIC PLAYING]
+
+So we've looked at aesthetics for projecting additional dimensions.
+But there's one other aesthetic I wanted to show you,
+which has nothing to do with that.
+But it has everything to do with how people will perceive your plot.
+And that's the aspect ratio of your plot.
+If you, say, use a high-aspect ratio plot,
+it's going to be sort of long and skinny.
+Or a low-aspect ratio plot might be tall and skinny on the x-axis.
+So the way you pick aspect ratio can completely change people's perception.
+It changes the slopes of lines.
+It changes how a set of points seems to increase a lot or maybe not.
+So don't just pick some arbitrary aspect ratio.
+If you really want to understand what's going on,
+you may have to play around with this and find what aspect ratio actually
+shows what you're using.
+And also, you'll probably see that some aspect ratios
+obfuscate important relationships.
+So on my screen here, I have a little demo of that.
+Recall, we plot at the sunspot data.
+And I'm just going to scroll back up here.
+And I'll show you.
+Just keep this in mind.
+And there's an aspect to this sunspot data that's probably hard to see.
+You can see it's periodic.
+And I told you, it's about an 11-year period.
+But there's something about how each of these cycles is structured that's--
+maybe you can see it here, maybe you can't.
+I see it, because I know what I'm looking for.
+I'm not sure someone just coming onto this would.
+But let's change the aspect ratio.
+And you'll see something maybe kind of interesting.
+So how do I do that?
+So I've changed the aspect ratio to 6--
+when I set the fig size to 6 by 1.5.
+So this is going to be a long, skinny plot area that I'm creating.
+Everything else is the same as what I did before for plotting
+the line plot or the time series plot.
+
+All right, so now we can see this.
+And what's, to me, more apparent here is look at the shapes of these.
+And you notice that most of these 11-year cycles
+seem to start very strongly.
+The numbers of spots goes up really fast.
+And then it decays very slowly.
+Especially, you can see it in this cycle, or maybe,
+like, the cycle, or this cycle.
+So by increasing the aspect ratio but reducing how big a physical range
+we're plotting this vertical number, the number of spots,
+we bring out an aspect of this data that probably wasn't obvious to people
+just coming into this cold.
+So keep that in mind.
+Aspect ratio can really change people's perception
+or obfuscate it if you pick the wrong one for any kind of plot
+you're creating.
+[MUSIC PLAYING]
