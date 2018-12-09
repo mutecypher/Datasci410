@@ -1,0 +1,45 @@
+
+So now we're going to talk about conditional probabilities.
+And so by conditional probability, I can write, for example, P of A given B.
+So if you look at this diagram, you can kind of see what I'm talking about.
+So A has these 6 events out of 10.
+B has 4 events out of 10.
+But the conditional probability of A given B,
+we know that it has to be in B and A, is really just the intersection, right?
+
+But it needs to be normalized, so we can't just
+say it's the intersection like that.
+So it's the probability of what?
+Of the intersection of A and B normalized by the probability of B,
+right?
+Because it's not-- this would just give us 2/10, right.
+This gives us 4/10.
+So what we wind up with is 0.2 over 0.4.
+So we have 2/10 over 4/10, so it just equals 0.5,
+which has got to be correct, because we have 4 points here in B So that's--
+so we want to know the probability of A given B. So 4 in B. 2
+also happen to be in A, so it has to be 0.5.
+Now let's look what happens if we have some independent events here.
+Let's draw another--
+I'm just going to add some points.
+Another subset I'm going to call D here.
+And just give it a few points.
+So now we have 15 points.
+So what is the probability of D given say, A?
+Well, does this even matter?
+No, it doesn't because it just has to be the probability of D,
+because you see that there is no overlap there.
+They're independent.
+They're mutually independent.
+But be careful, because there's a little trick here.
+For example, probability of D given A does not
+have to equal, in fact, in this case is not
+equal to the probability of A given D.
+So there is not like a commutative property for conditional probability.
+So keep that in mind when you're working with them.
+So just to recap, very simple concept, in a way,
+conditional probability just means the probability of some event being
+in one set, given that it's also in another, and if they're independent,
+well it doesn't matter, like D and A, or B and D are independent.
+But it's not commutative.
+So that's just in a nutshell conditional probabilities.

@@ -1,0 +1,47 @@
+
+So there's one concept that's related to probability,
+but not quite probability, which is called odds.
+And odds do show up in data science.
+They mostly they show up in gambling.
+But the general idea of odds is it's basically
+the count in favor to the count against.
+
+OK, so let's say we want to-- what's the odds, odds of a 6?
+
+When you're playing dice, that the one dice is going to come up 6.
+So there's one chance in favor.
+Basically, there's only one way.
+If you're rolling a single die, there's only one way to roll a 1 or a 6.
+And there's five possible ways you can roll other numbers.
+So you say the odds of rolling a 6, when you throw a single die is 1 in 5.
+And there's a relationship between probability and odds.
+It's a little messy.
+But let's go through it.
+So we say that the probability of some event A is, you know,
+as we said before is the count of possible ways
+A can happen over the possible--
+all possible events in our sample space, S.
+So we can rewrite that as A over S minus A plus A.
+All right, that seems a little weird.
+But some brackets there.
+And that then equals A over A plus B. So we're going to call this B.
+And that is count in favor over count in favor.
+See that's our A. Look S minus A are the possible ways you cannot get A.
+So plus count against.
+
+So let's do a simple example here.
+What's the probability of heads when we roll a fair
+or when we flip a fair coin?
+
+So there's one way to do it.
+So basically the odds--
+the odds for heads, if it's a fair coin is 1 to 1, right?
+There is one way it can be heads, one way it cannot be heads, right?
+So if we plug into this formula, you got 1
+plus 1, which counts in favor, count against is again, just 1.
+So it equals 1/2.
+So that looks like it works.
+So that's just the odds.
+Odds are used sometimes, not as much as probability,
+but remember it says count in favor to count against,
+and you can transform between probability and odds if you so need to.

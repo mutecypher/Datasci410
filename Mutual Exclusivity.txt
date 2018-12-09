@@ -1,0 +1,42 @@
+
+So there are two concepts in probability that people often get confused,
+but they're really different.
+So let's spend a little time on those.
+And those are independence.
+
+And the other one is mutual exclusivity.
+
+OK, so independence, we've kind of talked about that actually.
+So what we said was that the probability of the union of A and B
+equals the probability of A plus the probability of B,
+if and only if the probability of A intersection with B
+is empty or a null set, so that is independent.
+So by independence, we--
+so it has other implications in terms of conditional probabilities don't matter,
+you know, for example, the probability of B
+given A equals just the probability of B, If they're independent right.
+Now let's talk about exclusivity.
+So what we mean by that is, again, we say
+the probability of A intersected with B equals an empty set, right,
+and the probability of A, the union of A and B equals probability of A
+plus the probability of B.
+So that's just the independence.
+It's the same as independence.
+But this can happen if and only if one of two things happen,
+that probability of A equals 0 or empty set or the probability of B
+is an empty set.
+So that basically says they're mutually exclusive.
+If you have B, you can't have A. So it's an or there.
+
+Or either have B and you don't, and there's no A, or you have B, or A,
+and there's no B.
+So if either those conditions are true and it's an or, if they're both true,
+then you just have, and then you don't have anything.
+But if that's true, then you have this kind of mutual exclusivity.
+So only A can happen, or only B can happen.
+And that's what we mean by mutual exclusivity.
+So keep that in mind.
+There's independence, there's mutually exclusivity.
+And they're not really the same concepts.
+They seem kind of similar, and they give similar kinds of results in some cases,
+but they're really not the same.

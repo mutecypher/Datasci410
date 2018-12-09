@@ -1,0 +1,56 @@
+[INTRO MUSIC PLAYING]
+
+So we've introduced discrete probability,
+and we did a little bit of work with it, but there's three axioms of probability
+that really you should always keep in mind,
+because if you're doing something, or somebody tells you
+something, that violates any of these axioms, you know it's wrong.
+And you'd be surprised how often this comes out.
+
+OK, so the first one--
+
+the first one is that for any set of events, A,
+the probability has to be between 0 and 1.
+We can't have negative probabilities--
+we can have 0 probabilities.
+We can have events that just can't possibly
+happen, we can have events that are absolutely certain to happen,
+which have a probability of 1, and we can have events with anywhere
+in between 0 and 1, but they can't be out of that range.
+So that's absolutely the case.
+The other thing is we have to--
+if we have a set of events, that's our whole sample space,
+which we're going to call S. So if we sum over all possible events--
+let's call that A sub I --in this sample space--
+so the events must be in the sample space,
+so it's the complete sample space.
+So the probability has to add up to 1.
+So probabilities always sum to 1.
+If you're dealing with continuous distributions, they integrate to 1,
+but in this case we're just talking about summing
+probabilities-- discrete events --to 1.
+Because something has to happen, even if it's a nothing--
+even if nothing is one of the possibilities in this probability space
+that we're sampling.
+Nothing could happen, or other things could happen.
+But whatever it is that can happen, the probability that something happens,
+or nothing, being part of the sample space, has to be 1.
+And finally there's this business of independence.
+So our third axiom probability is that if we look at the union of A and B,
+if it happens to equal the probability of A plus the probability of B,
+that can happen if and only if--
+in mathematics we use IIF for if and only if --the intersection of A and B
+is a null set or an empty set.
+So if you have independent events A and B,
+you can compute their probabilities just by the probability
+of A plus the probability of B, but that only happens if they're independent.
+And if they're independent, the intersection of A and B
+has to be a null or empty set.
+So that's it, our three axioms of probability, not too much to remember.
+They have to be on the interval from 0 to 1.
+All of the events in whatever sample space have to add up to 1.
+And if you have independent events-- that
+is, no intersection between them --the probability of A with the union of B
+is just the probability of A plus the probability of B.
+That's all there is to it.
+[OUTRO MUSIC PLAYING]

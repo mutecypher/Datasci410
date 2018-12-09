@@ -1,0 +1,37 @@
+[INTRO MUSIC PLAYING]
+
+So let's talk about some basics of discrete probability.
+By discrete probability, we mean events--
+for example, there can be events that either happen or don't happen,
+or there could be a count--
+like two people, three people, six people--
+those are discrete events, because they happen in discrete numbers.
+You can basically, maybe, have countable number of integers or something
+like that, so it's discrete, as opposed to continuous variables.
+Temperature is a continuous, so it's not discrete.
+So here's an example here.
+So we have this sample space--
+let's call it C --which I've drawn in this box,
+and you can see I've got 10 dots in C. And I've got
+these subspaces that are my subsamples.
+So one is called A, one is called B, and you can see they have an intersection
+here.
+So we can do a number of things with this.
+We can start out by computing what's the probability of A. So
+that's the probability that one of these events--
+say these events are going to occur, and there's 10 possible events here.
+So the probability of A equals the number in A
+over the number in the whole set--
+the whole sample space, which we're going to call S. And that
+happens to be the same as C. And in this case we find out that it's 0.6.
+Because we have six out of 10 events occurred in A.
+We can do the same thing for B. I'm going
+to switch colors here, so I'll keep blue for B. So the probability of B--
+again, it's just the number in B divided by the number in the entire sample
+space, and that is 0.4, because you see there's four events out of 10 that
+happened in B.
+So it's pretty simple, right.
+We have these sets, and we can simply work with these sets--
+sets and subsets, and compute probabilities just
+based on counts in this case.
+[OUTRO MUSIC PLAYING]

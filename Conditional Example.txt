@@ -1,0 +1,110 @@
+
+So having talked about conditional probabilities,
+let's look at an example that has a surprising outcome.
+Let's say that we have to evaluate the claims of a medical test company,
+and they, for a rare disease, claim that their test is 99% accurate.
+Now on the face of it, that sounds really great, you know, only 1% errors.
+But it's a rare disease.
+So we need to really dig into that and compute the conditional probabilities
+to understand whether this test is actually useful for anything or not.
+So on my screen here, I've created what's called a conditional probability
+tree or graph model.
+So we have our population of people that are going to get this test over here
+on the left.
+And then we have the probability that a person
+has that disease and a probability that the person doesn't have the disease.
+And then we're going to use this notation, P circle plus given S.
+So this is the probability of a correct test that is--
+we detect the disease, we have a positive result,
+given that that particular subject has this disease.
+There's also a chance that we missed some people, right?
+Because we said the test is only 99% accurate.
+So we can have this probability of missing
+if we're misdetecting the disease given that the person really has the disease.
+We can also have another type of error here, which is the probability that we
+say that person has the disease, whereas in fact they're
+from that population that does not have the disease.
+And finally, at the bottom here, we have the probability
+of saying that a person doesn't have that disease given that they in fact
+don't have the disease.
+So those are all the possible outcomes here for the conditional probabilities.
+So let's go ahead and compute those.
+
+And you can see the two error types that we're going to pay attention to
+are this type two error, which is where we say someone--
+where we're computing the probability that the test comes
+up negative given that the person has the disease or a type one error
+where we say the person has the disease, given that they actually
+don't have the disease.
+So here's some probabilities for that disease.
+So the probability in this whole population
+that somebody has this disease is roughly 3 out of 10,000.
+OK, and so the probability that someone doesn't have this disease
+is 1 minus this number.
+Our probability that the test comes up correct is 0.99.
+The probability that the test comes up in error is simply 1 minus that.
+So it's going to be 0.01.
+The probability, the conditional probability
+that they have the correct--
+that we're going to get this correct given disease,
+is the probability of disease times the probability
+of a correct diagnosis or a correct test.
+The probability correct that they don't have the disease is also fairly simple.
+It's just the probability that they don't
+have the disease right times the probability of a correct test.
+So let's run that, and we'll just print the results.
+So this looks pretty good, right?
+
+So pretty much the probability that someone with the disease, which is low,
+gets detected is this.
+The probability that we say someone doesn't have the disease, who
+in fact doesn't is almost 0.99.
+So far, this looks pretty promising.
+But let's look at those errors.
+So we've got the probability of error, given that they have the disease.
+That's the probability that we misdiagnosed
+someone who really has the disease, or in this case,
+this is the probability of error given that they don't have the disease.
+So this is a case where we say they have the disease.
+But in fact, they don't.
+So let's go ahead and compute those conditional probabilities
+and print them out.
+
+And now you start to see what the problem is here.
+So very small chance in this population missing the disease, right?
+Basically 3 out of a million.
+But the chance of a missed diagnosis of someone who doesn't actually
+have the disease is nearly 1%, right.
+So say 1,000 people come through or 10,000 people,
+we're going to say 100 of those 10,000 have the disease that
+actually don't have the disease.
+We will find most of the 3.125 people who
+do have the disease out of that 10,000.
+But we're going to have several orders of magnitude
+more errors than true diagnosis.
+So do you think this test is actually useful?
+Let's go ahead and look at those outcomes here.
+So this is back to our probability graph,
+and you see the probability of someone having the disease and being--
+or having a correct test, given that they have the disease is pretty good.
+The probability of having an incorrect test, given that they have the disease
+also looks pretty good.
+See it's a couple orders of magnitude less.
+The probability of being diagnosed as not
+having the disease if you don't have the disease, again, looks reasonably good.
+But here's the rub.
+The probability of having a positive test for someone who
+doesn't have the disease is nearly 1%.
+And we only get that by working through these conditional probabilities.
+So we're just going to do one last thing here.
+We're just going to add up.
+We're going to make sure we haven't made an error here.
+So the probability of all these 4 outcomes has to add up to 1.
+So let's just make sure that that really is true.
+And it's pretty darn close.
+It's point as many nines as our computer can display.
+So I hope this has given you some interesting insight
+into why we should pay attention to conditional probabilities
+and how correctly understanding conditional probabilities
+can totally change our perception of a claim
+like our medical test is 99% accurate.

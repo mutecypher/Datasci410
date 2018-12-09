@@ -1,0 +1,75 @@
+[INTRO MUSIC PLAYING]
+
+So there's a lot of simple examples we can
+draw on probability from various games.
+For example, dice is a very simple game in the sense
+that you can compute the probabilities of any possible numbers
+that the two dice can roll.
+So let's have a look at how we can do that,
+and do a little analysis on what those probabilities are.
+So first, on my screen here, I'm going to load some packages.
+I'm also going to set a few styles here for our plots, just so they look nice.
+And I'm going to load a few more packages.
+And the first thing I'm going to do, I'm going to use itertools.product,
+and range 1 to 7.
+So basically a dice, you can roll anywhere from one to six, of course,
+so range 1 to 7 gives me 1 to 6, and the product method gives me
+the complete Cartesian product of all possible dice rolls.
+So let me run that, and you see what I mean.
+You can get 1, 1; 1, 2; 1, 3; and then 2, 1; 2, 2; et cetera for all our dice,
+down to 6, 6.
+So those are 36 possible outcomes of rolling two dice.
+And you can see what the frequencies of those are--
+I've summarized here.
+
+So for example, for a 7, there's six ways
+you can roll a 7, but only one way you can roll a 2,
+and only one way you can roll a 12, and three
+ways you can roll a 10, et cetera.
+
+So let's go ahead and do that in code.
+So we've got two dice.
+We're going to give them some column names, and we're going to add the sum,
+and we're going to add another column which
+is-- so the sum is the total score, and we're
+going to add another column which says whether it's
+a double, that is if both dice have the same number come up.
+So you can see the first one is dice1.
+Dice2 is one.
+The sum is 2, and it is a double, because 1 and 1, right?
+So our next double would be 2 and 2.
+The sum is 4, and that's a double.
+So you see, there aren't that many doubles,
+but there are 36 possible rolls here.
+So let's get a count, how many different ways--
+and I showed you that in that table, but how many ways can I
+roll different numbers of dice?
+So you can see I can roll a 7 six ways, and 8 five ways.
+The most frequent is 7--
+six ways.
+And then 12's and 2, you can only roll one way.
+So this gives you some idea of the expected frequency of these dice rolls.
+You expect 7 to be the most frequent, and 2 and 12 to be the least frequent.
+So that's starting to tell us something about probability.
+And so we can normalize these counts--
+so this is count.
+So it's not really in terms of probabilities.
+It's just in terms of frequencies.
+But to make it a probability, we just have
+to normalize by the sum of all the possible counts.
+And we get a similar table.
+And you can see there's a 16.7% chance of rolling a 7, but only a 2.8% chance
+of rolling a 2, for example--
+or a 12.
+So those are the actual probabilities, and they should add up to 1.
+And just to make that a little clearer, let's
+go ahead and plot those probabilities as a bar plot.
+And here's our bar plot.
+And as I said, 7 is the most frequent--
+a little over 16%.
+2 and 12 are the least frequent, with almost 3% chance.
+And you can see all the other numbers are in between.
+So it makes a nice ordered set here, by frequency or probability.
+So that's just some simple essentially combinatorics
+that we then, by normalization, turn into probabilities for rolling dice.
+[OUTRO MUSIC PLAYING]

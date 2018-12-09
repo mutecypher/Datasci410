@@ -1,0 +1,16 @@
+[MUSIC PLAYING]
+
+So now we've spent some time previously on [INAUDIBLE]..
+And you've looked at combinations and permutations and how we compute them.
+But we can now take that and use those as the basis
+to compute discrete probabilities of various things, like for example, dice.
+Because you can look at-- dice can--
+they're independent.
+So there's two dice you typically roll.
+And they can, independent of each other, come up anywhere from 1 to 6
+and your total score is the sum of that.
+So you can have total scores from 2 to 12.
+And by looking at the possible permutations of that,
+you can compute the frequency that you expect each score to come up with.
+But also normalized to the probability.
+[MUSIC PLAYING]

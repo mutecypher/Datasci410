@@ -1,0 +1,45 @@
+
+Hi, and welcome.
+In this part of the lesson, we're going to talk about combinatorics.
+Combinatorics is the basis of a lot of discrete probability
+theory, which is why we're going to spend a little bit of time on it.
+It also, combinatorics happens to be the largest branch of mathematics.
+If you looked at the number of papers published in math, especially
+applied math, you'd find combinatorics was like a huge number,
+more than any other branch of mathematics.
+And we're going to treat combinatorics here
+by two different-- there are two different kind of major ways
+we can figure out the number of ways something can happen,
+which is the core to understanding discrete probability.
+So there's permutations, and there's combinations.
+
+So let's start with just a simple example here of combinations.
+We'll get to permutations in a little bit here.
+So let's say we're going to make a sandwich.
+And we have four types of bread.
+
+We have five kinds of meat.
+
+And we have four possible toppings.
+
+So you know, like our bread could be white, wheat, multi-grain, rye.
+Meat could be like turkey and ham and roast beef for whatever.
+Toppings, mustard, mayo, ketchup, you know, whatever.
+So let's say we can only take one from each of these.
+So we're going to make a very simple sandwich here.
+It's just going to have bread, meat, a topping, just one of each.
+So we can use something called the multiplication principle
+to find out how many combinations our simple sandwich,
+so we just get one of each of these.
+And so basically, we start out, and we can pick any one of four breads.
+We can pick any one of five meats, and we can pick any one of four toppings.
+And that gives us 80.
+So there's essentially 80 unique sandwiches
+we can build from this limited set of choices
+by creating the combinations of each of these.
+So the choices-- so the reason this is a multiplication, the reason it's
+a combination is my choice of meat is independent of my choice of bread.
+My choice of topping is independent of my choice of meat or bread.
+So I simply can multiply those out using this multiplication principle,
+and so that's a simple concept and just the multiplication principle
+is a good way to compute combinations.

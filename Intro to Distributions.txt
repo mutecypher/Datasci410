@@ -1,0 +1,22 @@
+
+So now we're going to talk about probability distribution.
+So we've talked about combinatorics, and we've used some of that
+to compute probabilities, mostly discrete probabilities,
+and we looked at some examples.
+We've looked at conditional probability.
+Now let's talk about some particular probability distributions
+that we use over and over again in data science.
+So this section, I'm just going to go through a number of those,
+so you gain some understanding of what those distributions are
+and why we use them.
+So this whole thing of probability distributions
+and a lot of the modern study of probability
+started with this guy, Jacob Bernoulli, looking very dapper
+with his collar and everything.
+And he was a very famous, you know, productive 17th century,
+late 17th century mathematician and probabilist.
+He wrote a book, which he never quite finished,
+and it wasn't published until 1813, about eight years after his death.
+And it's the first kind of a textbook or a monograph on probability theory.
+So you know, Bernoulli was a big guy in probability theory.
+He really pioneered it, and he wrote the first book.

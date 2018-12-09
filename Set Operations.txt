@@ -1,0 +1,44 @@
+[MUSIC PLAYING]
+
+So we've looked at some basics of discrete probability.
+We've talked about the axioms of probability.
+Let's talk about how we can-- and it looks like from my diagram here,
+we can do some set operations because we have our sample space.
+We have some subsets.
+So what kind of set operations can you do on discrete probabilities?
+Well, for one thing, you can do intersection.
+
+So we can say, the probability of the intersection of A--
+we use an upside down U for that--
+with B equals, well, it's just those two.
+So it's 2 out of 10 equals 0.2.
+So that's our intersection.
+We can do a union.
+
+Not too surprising, since we did an intersection.
+So in this case, we use a right-side up U. And we see there's 8 out of 10.
+So our union has a probability of 0.8 because that's
+all the points that are in A and B.
+But we can also expand this, right?
+We can expand this, and we can say it's the probability of A
+plus the probability of B--
+but that's going to give us too big a number--
+minus the probability of that intersection, A intersection B.
+So that's the union.
+
+And what else can we do?
+We can do negation.
+
+So we can write something like P not A. And that is, as you can see,
+4 out of 10 equals 0.4.
+We can also expand that in a similar way we did this.
+And you could do some complex set operation, like you could say,
+what's the probability of not the union A, B, you'd say.
+And that is just then the probability of the union of not A not B
+because you can just play through by the negation, which is, in this case,
+just 2 out of 10 equals 0.2.
+So that's just some basic set operations, intersection, union,
+negation.
+And given those, we can do more complex set operations
+as we might need to to compute various probabilities.
+[MUSIC PLAYING]
