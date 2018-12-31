@@ -76,3 +76,12 @@ print(summy)
 print(seven.loc['HeadCount'])
 blech = [1]
 guesses = pd.DataFrame({'HeadCount': seven.loc['HeadCount'], 'TablesOcc' : seven.loc['TablesOcc'], 'TableOpen' : seven.loc['TablesOpen'], 'Hours' : 7}, index = blech)
+
+ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings','kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],'Rank': [1, 2, 2, 3, 3,4 ,1 ,1,2 , 4,1,2],'Year': [2014,2015,2014,2015,2014,2014,2016,2016,2016,2014,2014,2014],'Points':[876,789,863,673,741,812,756,788,694,701,804,690]}
+df = pd.DataFrame(ipl_data)
+
+Tem = df.groupby('Team')
+print(Tem)
+print(Tem.head())
+Tom = df.groupby(['Team', 'Year']).sum()
+print(Tom)

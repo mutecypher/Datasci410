@@ -1,0 +1,69 @@
+
+Hi, and welcome.
+So this lesson, we're going to talk about sampling.
+And sampling is very important in data science,
+because in general, we don't deal with entire populations of data.
+We deal with samples from a sub-population or a selected
+population.
+We'll talk about what that means as we go through these lessons.
+So this is a very important topic and it's not real complicated,
+but it's important to think about.
+So there's three main goals we have in this lesson.
+I want you to develop an understanding of why sampling is so important,
+why we're always dealing with samples.
+
+And in terms of properties of the samples,
+you need to recognize that we're always making
+any kind of statistical inference, model construction,
+or whatever it is on a sample of the population,
+not generally on the whole population.
+And we can do things like estimate sample variance, which
+may be like a point estimate that tells us
+something about the variability within a population.
+But we're not actually computing the variance of the entire population.
+So it may seem a little abstract, but I think
+you'll get the idea as we go through the lesson.
+But just try to keep those three points in mind.
+And what are some use cases?
+Well, say, A/B testing on a website.
+We have users and we show them two different versions of our web site.
+We randomly sample and some users get site A, some users get sample B,
+and we try to determine whether website A
+or B is more effective for our purpose.
+But when you think about what's the total population,
+it's all possible users past, present and future.
+Well, we may have records on all the past users.
+We don't necessarily know about the present users.
+And we surely are only making inferences about the future users,
+assuming they're somewhat like the past users that we have data from.
+So right there we're forced to deal with a sample of the entire population,
+which is all possible users, because all possible users have never come
+to our website and they never will.
+Another example might be if we're interested in sports statistics,
+we look at World Cup soccer statistics maybe
+for the 32 teams that qualify in one season.
+That's a sample.
+But a complete population would be all the national teams
+of the past, the present, and the future that might compete in World Cup soccer.
+So again, we may have records on all the past World Cup soccer eliminations.
+We certainly don't know about the present ones until the games are done.
+And we're never going to know the future until the future occurs.
+So again, we're forced to talk about a sample.
+And a third example, let's say we want to know the average height of data
+science students.
+So we could actually, conceivably, have everybody in this program
+measure their own height somehow and report it.
+And we'd have a sample of data science students in the UW program.
+But if our goal really was all data science
+students who were taking classes worldwide, it's extremely hard to do.
+It's too big.
+Even if we think we've found every one, we may not.
+You know, there are many programs and it might be really hard.
+BUT we could make some inference about data science students
+just by measuring the ones we have available, which is in the UW program.
+
+So the key takeaways from this intro are we're always dealing with samples, not
+the whole population.
+And any inferences we make about the population
+are done from samples, which includes same machine learning
+model construction.
