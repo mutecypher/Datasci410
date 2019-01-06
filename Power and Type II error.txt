@@ -1,0 +1,89 @@
+[MUSIC PLAYING]
+
+So now we're going to talk about an important topic in hypothesis testing,
+which is the test power.
+Why do we care about the test power?
+So power of a test equals the probability
+that we reject H0, given that HA is true.
+
+So basically it's the probability that we detect--
+so equals probability that we detect--
+
+we call it detect the effect, the effect we're looking for.
+
+That we get a positive test, the alternative hypothesis.
+So that's test power.
+And how do we visualize that?
+So let's draw a little sketch here and you can see.
+So say I have one distribution that's like this,
+and I have another distribution that's like that.
+And there's a crossover point here, so below this--
+so if my result is out in this region, I reject H0.
+Over here, I accept.
+
+So my probability to reject H0 is this whole--
+whatever the probability of this whole region out here.
+So that's my power.
+So this is power.
+But I can make this type II error-- my probability of a type II error--
+
+well, actually we do that with Roman numerals.
+
+So that's my probability that I accept and H0, even though the HA is true.
+
+Actually, I should say--
+we should say that.
+Make sure you guys understand it's a conditional probability.
+
+So that's type II error.
+OK.
+So what does this depend--
+so it's actually hard to compute this.
+It's not like the test statistics we've been dealing with,
+like the T-statistic where there's analytical results that
+have been worked on since the early 20th century basically.
+So generally do it by some kind of simulation or route finding exercise.
+Fortunately, we have fast computers.
+Our laptops nowadays even can do this, so it's a good idea to test it.
+And it depends on fourth things besides the test you pick.
+So it's the number of samples.
+
+So if you have a small effect that you're looking for,
+obviously having a bigger sample gives you a better chance of finding it.
+That kind of makes sense, right?
+You have the different-- the effect size.
+
+So if it's a difference in means, how big do you expect that to be?
+If it's number of clicks to the old website versus the new web site,
+how much better do you expect the new website to be?
+So you might have to try various values of that.
+It depends on the significance level, a.k.a. the cutoff.
+
+If you're willing to accept 80%, then maybe
+you don't need such a big sample or effect size.
+If you want to only accept 99.999%, you're
+going to need a bigger sample and maybe a bigger effect size.
+But you're going to need that.
+And, of course, it totally depends on the type of test.
+
+And as I've said, the more restrictive assumptions usually equals more power.
+
+That's just an unfortunate fact of life.
+If you want a very generalized test, you have
+to accept lower power, a lower chance that you're
+going to reject H0 when HA is true.
+So that's the concept of power.
+It's an important thing to think about, especially
+when you're designing an experiment to collect data,
+like if you're going to do an A/B test, like how many customers do you want?
+How big a sample size should you collect given
+that you're expecting a certain effect size
+and you'll need a certain significance level, things like that,
+and you're going to use certain T-tests, like Welch's T-test or something
+like that.
+So you want to simulate that and understand
+whether your sample is sufficient.
+So there's a lot of uses of power, and it's really
+something good to think about when you're designing
+an experiment for collecting data.
+[MUSIC PLAYING]
