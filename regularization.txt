@@ -1,0 +1,33 @@
+[MUSIC PLAYING]
+
+Now that we have explored both manual and stepwise regression,
+we will examine regularization methods.
+Regularization methods stabilize the inverse of the model matrix.
+Remember, that linear regression has problems with dependent features
+which cause the inverse solving of our matrices to be numerically unstable.
+In this section, we will use singular value decomposition method
+to stabilize a model matrix.
+You may well wonder, why we need regularization methods when
+we have tools like stepwise regression.
+Two important reasons are, that stepwise regression
+is a computationally intensive process since we
+must recompute the model many times.
+There are methods that allow computation of the updated model,
+but with a large number of features, there
+are numerous permutations of them.
+We need methods that can handle hundreds, thousands,
+or even millions of features.
+For example, consider a small data set with only 20 features.
+The amount of possible linear models with no interaction terms
+is given by this formula, which is the sum of the 21st row of the Pascal's
+triangle.
+This comes out to be well over a million possibilities.
+Although, according to algorithm, this would be the maximum number of models
+you need to compute a brute force method.
+You can see how this becomes computationally hard.
+With stepwise regression, a feature is either in or out of the model.
+This may not be the best choice.
+Perhaps, a re-waiting on the features, in some way, may be better.
+Stepwise regression also suffers from issues
+inherent in multiple comparisons.
+[MUSIC PLAYING]

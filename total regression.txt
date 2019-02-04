@@ -1,0 +1,55 @@
+[MUSIC PLAYING]
+
+Now since we are introducing variance of linear regression,
+it's a good time to introduce what's called total regression.
+So total regression, this type of regression is also known--
+we've explained this before as Deming regression or orthogonal distance
+regression.
+So here we are interested in minimizing the total error
+in the y values and the x values.
+So in order to do that, we will be interested in minimizing
+the distance between the point and the best fit line for all available points.
+Here is a visual explanation of the distance we wish to minimize.
+Regular regression is minimizing that we've
+talked about, the vertical gray lines.
+And total regression will minimize these diagonal red dash lines.
+So the question is when would we use total regression?
+That's when you would have uncertainty in both the y and the x values,
+when both x and y values have the same scales and units.
+Note that it's recommended to scale the x and y values before you do this.
+There are alternative methods here that will scale the distance
+metric to be proportional to both the x and y measurement scales.
+However, such methods are not covered in this class.
+And you can go to this documentation here for orthogonal distance
+representation in scientific Python and read about how to do that.
+But it's very standard to normalize both the x and y.
+So let's do this here.
+Let's compare the results to regular linear regression.
+So here are beta coefficients.
+Here's the residual variance.
+And it says it found a solution by minimizing the sum of squares.
+And here is our slope and our intercept so let's naively
+compare the sum of squared residuals.
+So in order to do that, we have our original regression.
+And here's a plotting of errors.
+Here's the regular some of squared errors
+and a total sum of squared errors.
+And we can see that the total sum of squared errors is larger.
+This is as expected because both sum of squared errors here computations
+are based off the vertical distance.
+So let's compute a new sum of square for the total regression that
+is the sum of square of the total distance of the red dashed lines
+in the prior figures.
+So if we do this, we can do this very easily
+because we have prior calculated all the pairs of points in that plot
+from above.
+So if we compute this, we have--
+
+let's see if we can do this--
+these pairs of points.
+And if we compute the new sum of squares,
+we can see that indeed it is lower.
+Note, however, that it is harder to define sum of square totals here.
+As a result, any definition of r squared metric is arbitrary and not
+very comparable to the regular linear regression.
+[MUSIC PLAYING]

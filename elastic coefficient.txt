@@ -1,0 +1,55 @@
+[MUSIC PLAYING]
+
+Now there is another way to regularize the coefficients of our linear model
+with what's called lasso regression.
+We can do this using different norms.
+So we had the L2 norm for ridge aggression.
+Now we are going to apply what's called the L1 norm for lasso regression.
+Lasso or L1 regularization limits the sum of the absolute values of the model
+coefficients.
+The L1 norm is as otherwise known as the Manhattan norm,
+since its distance is as measured as if you were traveling
+on a rectangular grid of streets.
+You can also think of the last regression
+is limiting the L1 norm of the values of the model coefficient vector.
+The value of lambda determines how much the norm of the coefficient vector
+constrains the solution.
+You can see a view of this geometric interpretation
+just like with ridge regression below.
+So here, any term for the coefficients restricted inside this dash space
+has the same value in any solution.
+Outside this dashed line is going to be constricted to not the solution.
+So we'll do the same thing here.
+We're going to set the alpha argument in ridge regression equal to 1,
+which will give us lasso aggression.
+In the code below, we will compute and evaluate a lasso regression model
+with 20 different values of lambda and store the coefficients and r-squared
+and do the exact same plots as before.
+Note that this code is almost exactly equivalent to ridge regression,
+except for a different value of alpha in the function.
+So we will also plot how our coefficients vary with our r-squared.
+And notice that the model coefficients are much more tightly constrained
+than for L2 regularization.
+In fact, only two of the possible model coefficients
+have nonzero values at all.
+This is typical of lasso or L1 regression.
+We have alluded to elastic net regression before,
+but know that this is just a generalization
+of combining weighted lasso and ridge regression into one regression.
+If we do that, it's called elastic net.
+The elastic net algorithm again, weights these combinations of L2 and L1.
+And as you can see, the same function, we're
+going to do the exact same code as before, except this time we
+will change the weight.
+So as you can see, the same function as used.
+We will change the weighting argument.
+And this argument determines how much weight
+goes to L1 norm of the partial slopes.
+And again, if L1 weight is 0, the regularization
+is pure L2, which is ridge regression.
+If L1 weight is 1, we have pure L1 or lasso regression.
+We're going to do the exact same code where
+we're going to do L1 weight of 0.75 to get a mix of the two.
+And if we plot the coefficients, we'll see
+that we get a combination of behavior as before.
+[MUSIC PLAYING]

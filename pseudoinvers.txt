@@ -1,0 +1,114 @@
+[MUSIC PLAYING]
+
+Great.
+So now that we've introduced the singular value decomposition
+and that we can calculate the SVD of a matrix,
+and we know that the resulting matrices has special transformation properties,
+the question is why are we interested in it?
+It turns out that the three resulting matrices have really nice properties
+when it pertains to their inverses.
+While we started with one matrix A, we really
+know nothing about it besides the dimensions.
+But after we calculate the singular value decomposition of A,
+we can use the knowledge of the resulting matrices
+to find the inverse of A. So if the matrix A has a singular value
+decomposition of U times S times V transpose,
+then the inverse can be calculated as follows.
+So if we apply the inverse here, we can distribute the inverse
+by reversing the order.
+So we have V transpose inverse times S inverse times U inverse.
+From before we know that you-- and you can verify with numb pi operations--
+that the inverse of the matrices V and U are there transposes.
+In other words, U inverse is equal to U transpose.
+And V inverse is equal to V transpose.
+Also remember that S is a diagonal square matrix
+with zeros on the off diagonal.
+The inverse of S is easy to calculate as follows.
+So if S is a diagonal of the singular values here, the inverse of S
+is the diagonal of 1 over of those values.
+So we end up with the inverse of A is easier to compute right here.
+This representation of A inverse is called the pseudo inverse.
+It is also known as the Moore Penrose inverse,
+and is denotated it here by a really neat symbol, A dagger.
+
+The dagger is one of the neater looking mathematical symbols,
+but it's also the Moore Penrose or the pseudo inverse.
+And it is commonly written as V D plus U transpose, where
+D plus is the diagonal matrix of the inverse singular values, which
+are significantly greater than 0.
+All other terms that are not significantly greater than 0
+are set to 0.
+U transpose is the transpose of the right singular value matrix.
+And V is the left singular matrix.
+The matrix A may not be a full rank.
+The types of long and narrow matrices that we're interested in and by m
+that we encounter in machine learning, many observations
+are typically ranked deficient.
+A ranked deficient matrix arises when there is linear dependency
+between one or more of the columns.
+As an example, a matrix with correlated or maybe nearly correlated, not
+necessarily perfectly correlated columns,
+is going to be ranked deficient or nearly
+ranked deficient, making it hard to compute the inverse.
+A matrix is considered rank deficient if it has one or more of the m singular
+values approximately equal to 0.
+In this case, we substitute exact values of 0
+on the diagonal of the D plus matrix where
+the singular values are close to 0.
+In fact, we want all similar values to be significantly greater than 0.
+Let's try an example.
+The code here computes the singular value decomposition
+of a matrix of random numbers chosen from a normal distribution.
+The pseudo inverse is computed and multiplied by the original matrix.
+So here, we will create C, which is a random matrix, 3 by 3.
+We find the singular value decomposition, compute the D plus,
+the inverse matrix of singular values, find the pseudo inverse,
+and then verify that we get something near the identity matrix
+in the end, which indeed, we do.
+Notice that the singular values are of similar magnitude, and none of them
+are near 0, which is nice.
+This means that the matrix is not ranked deficient.
+For another example, let's create a matrix and replace one of the columns
+and make it linearly dependent on the others.
+So what we're going to do is we're going to create a 4
+by 4 matrix of numbers drawn from normal distribution,
+and then substitute values in the fourth column
+to make them a linear combination of the other three columns.
+Then we'll proceed with the same methods, same steps.
+We will compute the inverse diagonal matrix
+of the singular values, what can be the pseudo inverse of the matrix.
+And then multiply it to see what we get.
+So here, the step that we're changing in a 4 by 4 matrix is right here.
+We're creating the fourth column, Python index [INAUDIBLE] 3.
+The third index at 0 here, a linear combination of the prior three columns.
+If we do that, we'll see some issues is that our fourth singular
+value is indeed, 0, which makes the inverse of that infinite.
+And the pseudo inverse here is a problem, is that it's all infinite
+and the inverse is not a number.
+So notice the following about this result.
+Again, the fourth singular value is nearly 0.
+It is ranked deficient.
+And the product of the pseudo inverse is not
+close to being the identity matrix at all.
+This is the result of taking the unstable inverse,
+and using the rank deficient matrix.
+To combat this problem, let's set the inverse of it equal to 0.
+So what we're going to do is take the fourth singular value
+and set it equal to 0, and proceed in the exact same way.
+So you can see, instead of it being infinite, we set it equal to 0.
+And we look at the result. The result here definitely
+is not the identity matrix, but it's definitely
+not a matrix of infinity infinite values.
+And if you look, at least in this first 3 by 3,
+we have values that are close to the identity matrix.
+Down the diagonal, the first three values are close to 1.
+And off that value are closer to 0.
+Of course, we've ruined our values in the fourth column and fourth row.
+But note that our fourth and fourth column are not
+close at all to what we would expect.
+This makes sense because we had strict dependents in the fourth column.
+And we can represent all our data variance with just three features.
+So what we have done is a form of regularization on regression.
+We've manually modified some values in our inverse computation
+to follow some constraints.
+[MUSIC PLAYING]

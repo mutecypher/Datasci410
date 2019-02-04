@@ -1,0 +1,53 @@
+[MUSIC PLAYING]
+
+Now to start, we will go through an example using stepwise regression
+using the Galton family height data.
+You can find more information about the Galton height data at this URL here.
+The goal of our modeling is to predict the height
+of an adult, given information on the height of their parents.
+As a first step, we will create a data set for just the adult male children.
+The code in the cell below, first subsets the data
+to just the male population.
+Then we compute two new features, each heights of the parent squared.
+We will also scale all the features, including
+the square of the parents' heights.
+In regularized regression it is important to scale
+the independent features, and sometimes even the dependent y target variable
+as well.
+We will talk more about this in the individual regularization sections,
+but be aware that we will perform the normal scaling
+method by subtracting the mean and dividing by the standard deviation.
+For the code, remember we want to import the libraries that we will use.
+And we will load our data here in the first part.
+We will create the height data here, subset for the male and female data
+for later on usage.
+Here, we add the square of the mother and father heights
+and label the data for plotting purposes,
+and stick that in a data frame.
+If we look at the head of the data frame,
+here is the columns that we've created.
+Now that we have loaded our data, we want
+to perform regular linear regression for comparison to other models.
+First, we will also scale the data.
+So here is everything but the dependent data scale.
+
+Now less computer model with all the features.
+And here's the output for that.
+
+We compute the model.
+If we look at the coefficients for all of them,
+we can see that there are a lot of coefficients
+that are failing the t-test for significance,
+which means that there is probably a lot of dependents going on here.
+If we look, it is important to note the AIC values here.
+So the AIC values here, for this model is 2101.
+And we will see if we can use stepwise regression to reduce that.
+So this is with all of the features.
+It is clear from the summary here that this model is over parametrized,
+only the intercept is significant.
+In other words, we are computing the average value of the child heights
+feature, but nothing more.
+Examination of the residual plots shows them
+to be mostly well-behaved with a bit of curvature
+in the standardized residual plot.
+[MUSIC PLAYING]

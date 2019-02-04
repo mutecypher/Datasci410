@@ -1,0 +1,40 @@
+[MUSIC PLAYING]
+
+To introduce the identity matrix, we first make a comparison
+to real numbers and multiplication.
+To get the identity object, we ask what number can we multiply by
+to get back the same number.
+The answer, when dealing with numbers and multiplication is 1.
+For example, 5 times 1 is that we get back 5.
+This means that the number 1 is the identity value for multiplication
+among real numbers.
+When dealing with matrices and multiplication,
+the equivalent identity holds for square matrices.
+A times B is equal to the identity times A times B, which
+is equal to A times B times I. The identity is a square matrix with ones
+down the diagonal and zeroes elsewhere.
+So here, we have that equation where I times AB is communitive.
+So we can execute this code here and see that the identity we indeed
+get back the results we would expect.
+Number systems may also have inverses.
+If we go back to the real numbers and multiplication,
+we have already observed that the number 1 is the identity.
+We can also ask, given a number, what do we multiply
+it to get the identity as a result?
+So for example, what do we multiply 5 by to get 1?
+We multiply it by 1/5 to get the identity.
+This means that the inverse of 5 is 1/5.
+Matrices also may have an inverse.
+We just have to ask, given a square matrix
+A, what do I have to multiply it by to get the identity matrix?
+Whatever that is, that will be the inverse of A.
+In principle, we can compute and denote it as such.
+Here is how we would denote it, a inverse times A,
+we get back the identity.
+So here's how we can compute it.
+Accessing the linear algebra methods in numb pi, we can call the inverse of m--
+m is a two by two matrix here--
+and here is its inverse.
+If we multiply it by the inverse, we indeed get the identity out.
+And it's the same if you left multiply or right multiply.
+[MUSIC PLAYING]

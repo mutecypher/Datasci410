@@ -1,0 +1,21 @@
+[MUSIC PLYING]
+
+So it found here, the optimal AIC of 2145.
+And remember, that this is higher than the full model we computed before.
+The reason is, is that after the algorithm added father as a feature,
+it found that adding any one variable increased the AIC more.
+This is a problem with stepwise regression in general.
+It does not consider adding two or more features at a time.
+Next, we have code here that illustrates backwards stepwise regression.
+So here, the code is almost exactly the same and does the exact same thing,
+except we start with all of the possible factors and our potential factors
+that we consider will be ones that we try to remove.
+So here, you will need to fill out two spots,
+where we compute our optimal first, best AIC.
+And the other spot that you want to compute is our current AIC values.
+And we do the exact same thing.
+Remember, that you may end up with a different optimal formula
+as these two algorithms start with different features to begin with.
+This is a good time to stop and let you fill out
+three missing parts for the backwards stepwise regression.
+[MUSIC PLAYING]
