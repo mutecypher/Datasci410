@@ -1,0 +1,43 @@
+[MUSIC PLAYING]
+
+We've looked at a autoregressive, or AR, process.
+We've looked at a moving average, or MA, process.
+We've looked at an autoregressive moving average, or ARMA, process.
+But this whole section was titled, autoregressive integrative moving
+average so what's the integrative part?
+The integrative part being a random walk component.
+And that can be of different orders.
+It can be first order, second order, et cetera.
+And recall, that earlier in this lesson, we generated a first order random
+walk because we simply did the cumulative sum
+of a set of normal innovations.
+And we got something that just--
+a time series that wandered off and had very non-stationary properties.
+So let's have a look at a simple model that we
+can use to model that kind of random walk and remove that component.
+So on my screen here, recall, we called that random walk time
+series we generated previously, walk.
+And so if we do walk.diff--
+diff is a first order difference operator.
+You can change this argument, it could be second or third order.
+In this case, we're just going to do first order.
+And walk_diff is the resulting time series.
+And it'll be one lag short because you have to keep computing differences.
+So we can plot that and we'll just look at what that looks like.
+And you can see, it looks pretty darn random.
+So we went from a random walk which just walked off in one direction,
+was very non-stationary.
+To this time series, which is more random.
+It sticks to zero.
+There doesn't seem to be any particular trend or seasonality.
+There's a few big innovations here, but generally, it's pretty much random.
+And that's what we expected by doing a first order difference on a first order
+random walk.
+So the point is, we had a first order random
+walk where we took just the cumulative sum of a set of normal innovations.
+We called that series, walk.
+We then, did first order differencing on it and what we're left with
+is what appears to be a white noise series.
+And now it will be up to you to look at some other properties of that series
+and decide whether it's really white and stationary.
+[MUSIC PLAYING]

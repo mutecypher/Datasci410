@@ -1,0 +1,51 @@
+[MUSIC PLAYING]
+
+So we've talked about different parts of these models
+so we're talking about these ARIMA models.
+And we've talked about the autoregressive, the moving average,
+the autoregressive moving average.
+So what's this I?
+So we call it the integrative or integration term.
+And so go back and recall, that AR model and MA model are stationary.
+And we tend to do those after we've done STL decomposition.
+
+So we wind up with a remainder, which is what we've been modeling,
+but what if we have something in the remainder?
+Remember, the random walk was xt equals xt minus 1 plus Wt.
+We call it a first order random walk because there's just one here.
+
+And this is non-stationary now.
+
+So what do we do about this?
+Well, we need to deal with this non-stationary part here.
+And we can do this by a difference operator.
+
+And it has an order d--
+order d.
+
+And we can simply write that, that the difference operator of the first order
+is just xt minus xt minus 1, which is just going to give us then, innovation.
+So we convert a random walk--
+so this is the random walk.
+
+We convert it to a white noise series by using a difference operator.
+And that's what we want in the end.
+We want to remove the autoregressive component, the moving
+average component, and any random walk.
+And we want to end up with a white noise series.
+So in the end, we can write an ARIMA model--
+and you can do second order, third order, whatever,
+but generally, first order--
+of p, d, q.
+So it's got an AR component of p, an, integrated component order of d,
+and a moving average component of q.
+So that's it.
+So now we've pulled all the parts of an ARIMA model together.
+Autoregressive and moving average-- we've talked about.
+They're applied to this, and we've removed the non-stationary components
+with STL decomposition.
+Things like random walk, which might be a first order random walk.
+We use a difference operator in this case.
+Order d is just one first order difference.
+And we wind up with our ARIMA model of order p, d, q.
+[MUSIC PLAYING]
