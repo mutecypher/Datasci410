@@ -1,0 +1,63 @@
+[MUSIC PLAYING]
+
+So let's look at an example of a white noise time series.
+So we'll generate a white noise time series
+and look at some of its distributional properties.
+We'll also talk about why it's stationary.
+So on my screen here, I have some code.
+The first bit of code is just a helper function
+we're going to use over and over again in these lessons.
+And I call this function plot_ts.
+And you give it a label and that will give you an overall chart label.
+It plots that time series using a plot method.
+And gives a y label and an x label.
+So the next thing we're going to do is generate a white noise time
+series using a panda series so the values are
+drawn from a normal distribution.
+Notice in this case, it's a standard normal.
+We're just using standard deviation one mean 0 or location zero.
+And we're giving it in the index in this date range,
+ranging from January 1st of 2014 to December 31st of 2015.
+So that's daily.
+So let's go ahead and run that, and we'll plot it,
+and you'll see what the results look like.
+And you can see, indeed, it is pretty random looking.
+It looks like a fuzzy caterpillar or something.
+There's some wiggle up and down, but it basically, moves around zero.
+There's occasionally, a value that's fairly out there, but are a few.
+Because it's a normal distribution, the tails die off pretty quickly.
+And there's no-- if you look at this, you can just tell by eyeball,
+that the variance isn't changing along here.
+It's just constant and we know that from the way it was generated.
+So that makes this a stationary time series.
+The other thing we can do here is let's look at the distributional properties.
+Again, this won't be a big surprise, but I just want to show you how you do it.
+So I have this function [? dist timeseries ?] And it makes two
+plots side-by-side on two sets of axes--
+axis one and axis two.
+And on axis one, we're going to plot a histogram.
+And we're going to use whatever number of bins we've specified here
+and we're to give it a little bit of transparency,
+just to make it look nice.
+And we'll give it some labels.
+And then, we're going to do a QQ normal plot using the scipy.stats prob plot
+function and that'll be on the right set of axes.
+So let me plot both of those for white noise
+and we see that this is pretty close to a bell-shaped curve,
+but it's not ideal.
+There's always some raggedyness.
+And even with 730 samples here, this is not a perfect bell-shaped curve
+by any means, but it's very close.
+So empirically, we'd say that looks pretty normal.
+Not too surprisingly, we have the quantiles of a theoretical normal here.
+We have the quantiles of the sample we generated for the 730 values.
+And they're lining up pretty close to the straight line.
+There's a little bit of wiggle at the ends,
+but basically, it's a normal distribution.
+And so that's what we expect.
+We expect a white noise series has normally distributed, independent--
+they're identically distributed.
+They're normally distributed.
+And they're independent so there's no dependency of one value on the next.
+So the variance tends to be constant and so it's a stationary time series.
+[MUSIC PLAYING]

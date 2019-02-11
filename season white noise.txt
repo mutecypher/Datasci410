@@ -1,0 +1,55 @@
+[MUSIC PLAYING]
+
+So we've looked at white noise.
+We've looked at random walk.
+We've looked at what happens when we have trend time series.
+What happens when we add a seasonal component to a time series?
+A seasonal component is a periodic variation
+in the time series that can have-- it doesn't just have
+to be seasons of the year, of course.
+So it could be months.
+It could be days.
+It could be days of the week.
+Or even, on the scale in nanoseconds, depending on the time series
+we're dealing with.
+So let's see how that changes the properties of time series.
+So from math, I'm importing the constant pi here and you'll see why in a minute.
+And I've created a function called seasonal_ts.
+And again, we're going to go from January 1990 to January of 2015,
+by months.
+There's a slope parameter here, which we're going
+to use so we're going to have a slope.
+We're going to have a standard deviation of one and a mean zero for the noise.
+And we're going to add a seasonal component
+so this is very similar to what I did in the last demonstration.
+But in this case, again, we just create the series with the constant slope.
+We add white noise to the series.
+You see, the normal so this is our independent identically
+distributed normal white noise.
+Now we add a seasonal component.
+And this is where pi comes in so we've got
+a periodicity that makes sense here.
+And you'll see how that works when we plot this.
+And again, we just do that as a list comprehension.
+And I've added a half to that, just to bias the whole series up
+a little bit so we don't have any negative values.
+And that'll help us later in the lesson.
+So let's go ahead and generate that and look at the result.
+And now we have something different.
+Remember before, our white noise plus trend looked like this.
+
+Now we have something that looks like this.
+So you can see, there's a periodic behavior, but there's also,
+a white noise component on top of that and the trend.
+So again, when you look at this and you ask yourself, is this stationary?
+Is this a stationary time series?
+And again, we have to answer, no.
+First off, we have the trend which we know,
+but even if we didn't have the trend, the fact that--
+depending on where we took our samples to compute variance--
+there's this change in values with the seasonality,
+with the periodicity also indicates that we
+would have variance that wasn't constant and hence, non-stationarity.
+So that's a trend, white noise, and seasonal component in a time series.
+And this is very typical in real world, that you get those kind of time series.
+[MUSIC PLAYING]

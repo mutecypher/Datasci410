@@ -1,0 +1,55 @@
+[MUSIC PLAYING]
+
+So let's look at how we can compute and display
+the autocorrelation function and the partial autocorrelation function.
+Recall, that the autocorrelation function
+is the correlation of the time series with itself at different lag values--
+fairly simple.
+The partial autocorrelation function is the autocorrelation function
+of the time series with itself at different lag values,
+but removing the autocorrelation effect from smaller lags--
+a little bit harder to wrap your head around that.
+But they're distinct measures of how the time series
+values are related one to the other.
+So my screen here, I have some very simple code that actually does this.
+So in statsmodels.graphics.tsaplots, I'm going to import that as SPLT.
+And within that library, there's plot.acf and plot.pacf,
+which do exactly what you expect.
+And so, I'm going to do this for 40 lag values and we'll see what happens.
+And we're doing that for the white noise series
+we looked at in the previous sequence.
+So first up is the partial autocorrelation function.
+The blue area here-- the area in this blue shaded area--
+is a 95% confidence interval.
+So basically, any values within or close to that, we say are effectively zero.
+And so you see, only zero lag of the partial autocorrelation
+has a value of 1, which by definition, it must have--
+that's axiomatic.
+And you see, no other partial autocorrelation values are significant.
+We go to the autocorrelation function, it's exactly the same.
+It's got a zero lag value of 1, which it must have.
+The series is perfectly correlated with itself, at zero lag.
+There are no other really significant autocorrelation values
+at any other lag.
+Let me just give you a side note here-- if you work with some other more
+stats-oriented packages--
+like R, or SPSS, or something like that-- you
+may see plots where the partial autocorrelation zero lag
+value is not plotted.
+That's by the convention in statistics.
+This plot that is used in [? site by stats, ?] is more following
+an engineering convention where you do plot the zero lag value
+for partial autocorrelation.
+So don't be confused by that.
+But what's the big takeaway here?
+The big takeaway is there effectively is no autocorrelation because we said,
+those values were generated from independent identically distributed
+values so there's no change in variance.
+There's no dependency from one value to the other on the previous values
+in the time series.
+So they're independent identically distributed.
+There's no autocorrelation, except at zero, which is effectively,
+proof that we do indeed, have a stationary time series because there's
+no change in variance.
+There's no dependency in time.
+[MUSIC PLAYING]

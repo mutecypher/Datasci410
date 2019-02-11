@@ -1,0 +1,41 @@
+[MUSIC PLAYING]
+
+Let's talk about how we can compute and look at the properties of random walk.
+So recall, a random walk has an innovation
+and so we jump whichever way the random innovation-- the innovation is random,
+but we jump whichever way it goes.
+So we essentially, zig and zag in some way.
+And on my screen here, I have some code to generate a random walk
+and we're going to plot the random walk.
+So we can define a random walk just from 1990 to 2015.
+We're going to use monthly data this time.
+We're going to give it a standard deviation of one.
+A mean of zero.
+So we get dates as the PD.
+Date range, start/end frequency.
+And we're going to generate a series of the normals so whatever mean
+and scale and size is the length of the date series we created here.
+And then, what we're going to return is the cumulative sum of those.
+So that's why I said, we jump whichever way the innovation takes us.
+So this is where we compute our innovations.
+And the random walk is the cumulative sum of those innovations.
+And so we're just going to create walk and we're
+going to plot that time series.
+And when we look at this, we see--
+in this particular case--
+our time series is just wandering off toward a very negative number.
+And you can imagine, the variance is changing.
+It's getting larger and larger as this random walk wanders,
+but the random walk could wander up and down or whatever.
+But regardless of how it wanders, we're going
+to wind up with increasing variance, which
+is as the time series grows to infinite length, is going to become infinity.
+So this is not a stationary process.
+Random walks are not stationary.
+And they have this property that they just wander off, one way or the other.
+So that's just a simple way we could generate
+a random walk using the cumulative distribution of a set of innovations.
+And we saw-- very visually-- that because the random walk really
+is a random walk, there's no bound on the variance
+and therefore, it is not a stationary process.
+[MUSIC PLAYING]

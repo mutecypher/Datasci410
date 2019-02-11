@@ -1,0 +1,83 @@
+[MUSIC PLAYING]
+
+So we talked about and looked at white noise and white noise,
+every value in the time series is independent of every other value.
+But that needn't be the case.
+In fact, most times series in the real world, it's not.
+If you think about stock price, well, it's correlated.
+The stock price of some company yesterday
+is probably, going to help you predict the closing price of that same company
+stock today, unless something really bizarre happens.
+But generally, that's a highly correlated time series.
+The temperature 10 minutes from now is highly correlated to the temperature
+outside right now.
+So how do we quantify that?
+And what's a correlation measure we can use?
+And we call this autocorrelation, and we call
+it autocorrelation because it's the correlation of the time
+series with itself.
+So that's the important thing to keep in mind.
+And we use this little Greek symbol rho.
+So in general, we can say the autocorrelation of a time series is--
+
+So what does all this mean?
+So it means that the difference between the time series value and its average--
+so mu equals the mean--
+
+at some lag, K. So we've offset the time index by some K, here--
+I'm sorry, that should be K. Didn't write that very well.
+It's just this correlation.
+And then the normalization is just sigma and N because we want
+this to be in the range of zero to one.
+So rho sub I is between minus 1 and plus 1.
+Just like any normal linear correlation, but this
+is autocorrelation between the time series and its own values offset.
+So at K equals zero--
+so that's row zero--
+and that always equals one.
+Something correlated with itself has got to have a correlation of one.
+K equals 1.
+Rho is some value and you can think of that as,
+you've got the values of the time series--
+x1, x2, x3, x4, et cetera.
+And then we subtract one so x1, x2, x3.
+And you can see, there's kind of a end effect here,
+but we're not going to worry about that.
+So it's the correlation of the time series with itself, shift at one.
+So that gives us, row one is modeled this way.
+So that's the basic idea.
+And we can do K as many--
+this is called the lag--
+and we can do as many lags as we would like.
+And we can also write this--
+if you care-- as the covariance divided by sigma N. So the covariance
+would just be this quantity here, if we didn't have this bit.
+
+And sigma, of course, is the variance of the time series, here.
+So that's autocorrelation.
+This is a fundamental property here.
+So keep that in mind, whenever you see a time series chart,
+you're going to see autocorrelation of zero is always one.
+And then, we have this other concept which
+is a little harder to wrap your head around it
+and it's hard to write out mathematically,
+but it's called partial autocorrelation.
+
+In partial autocorrelation, so at lag K, it's
+the autocorrelation minus the autocorrelation at lags one, two,
+and K minus 1.
+So basically, we're removing the effect of previous autocorrelations--
+that's what we call it partial because we've removed
+the autocorrelation of previous lags.
+And the partial autocorrelation function of zero
+is also equal to one, just like the autocorrelation.
+So keep that in mind.
+
+So that's the key point.
+We have this auto correlation which is like the correlation of the time
+series with itself, shifted by K lag values, like here's K equals 1.
+And it can have a range from minus 1 to 1, like any correlation.
+And we have this partial autocorrelation that
+tells us something about the remainder or the residual correlation
+after we've removed correlations at higher lag values.
+[MUSIC PLAYING]

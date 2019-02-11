@@ -1,0 +1,145 @@
+[MUSIC PLAYING]
+
+An autoregressive model is a very simple time series
+model where each time series value depends on the values
+that some previous lag--
+some number of lags, whatever the order of the model is that's how many
+lags it depends on--
+plus a random noise component.
+So it's a really simple idea.
+And in this sequence, we're going to generate
+an artificial autoregressive time series.
+We're going to plot it.
+We'll look at some of its properties.
+And we'll try to model it to see if we can recover the known coefficient
+values that we should get back.
+So on my screen here, I have this function
+that's going to generate an autoregressive time series for us.
+We can also generate a moving average time series with this same code,
+but we're going to ignore that part for now.
+So we have a set of autoregressive coefficients
+and we're going to create a model--
+I'm going to call this ts_series_ar2 because there's
+going to be a second order AR model--
+autoregressive model.
+And my AR coefficients are going to be one--
+the first coefficient always has to be one.
+Now notice, even though I'm not worrying about the moving average component
+at the moment, I have to put a 1 there or else it just doesn't work.
+So then my two AR coefficients for my second order model are 0.75, 0.25.
+So each time series value is going to depend on 0.75 t minus lag,
+0.25 t minus 2 lag, plus some random noise-- which
+is a standard normal in this case because we
+haven't, anywhere in this function, specified anything different.
+So I create a set of dates.
+I generate my ARMA process from statsmodels.tsa.arima process
+using either, in this case, just AR coefficients.
+And then I can apply some tests.
+This should be stationary and we'll test whether it's stationary.
+And invertible simply means that if you took the roots of this polynomial,
+that they're not laying on the unit circle.
+So we're not going to worry about that too much,
+but it just means it's a stable time series, that we
+can solve the AR problem for it.
+We can estimate the coefficients.
+So let's go ahead and run this and see what happens.
+And we see, is it stationary?
+Yup.
+Is it invertible?
+Yes.
+So that's a good start.
+So we have an AR two process with these coefficients.
+So let's plot this.
+What does this thing look like?
+So I've created a little time series plot helper function here,
+that just gives it a title and then the date and the value.
+And here we go.
+
+And this is what an AR two process looks like.
+So each value-- like this second value here--
+well, let's take this value here.
+So this value here depends on 0.75 times this value, plus 0.25 times
+that value, plus some random noise.
+And notice, the sign can change and things like that.
+So it looks kind of jaggedy.
+There's some random noise in there.
+Remember, standard normal distribution.
+
+So what do the autocorrelation and partial autocorrelation
+of an AR two process look like?
+
+So first off, let's just start with the autocorrelation, in this case.
+In this case, we have only a single non-zero lag that's significant,
+maybe two.
+But what's really important here is the first two
+non-zero partial autocorrelation lags here.
+And that tells us that this is an AR two process
+because we have two significant partial autocorrelation lag
+values that are non-zero.
+And this may be from noise.
+
+Or it may just be because of the way we did the generation.
+So now, in reality, we wouldn't know how we generated this time series.
+We know this here because we did it synthetically.
+We know what the coefficients are.
+But we know we also added some noise so let's
+see how close we can come to recovering those coefficients.
+So I've created, again, a function to help us.
+And we're going to give an order.
+In this case, we're giving an order 2, 0, 0 so it's an ARIMA model.
+So this means it's an AR process of order two that we're going to model.
+We give it that time series so there's only two arguments.
+And again, from statsmodels.tsa.arimamodel, I'm
+going to input ARIMA and so, we put in that time series.
+We put in the order.
+We get the model.
+Then we have to do a fit on that model.
+We're going to use maximum likelihood estimator
+and we're going to assume the trend has been removed
+and there's no displacement.
+So we're going to print a summary And?
+We're going to return that model fit, as well, so we can use it for other things
+later.
+But let's go ahead and use this function and see what the results
+look like when we print its summary.
+And just some stuff to keep us on track to what we're doing here--
+so we've got the number of observations, 120--
+which we knew.
+The model is an ARMA 2, 0 so it's an AR two process.
+And there's some statistics here we're going to use later, to compare models--
+how good the model fit is.
+But let's cut to the chase.
+So at this point, remember, the coefficients were the 0.75, 0.25.
+And what we came out with was, notice, they're negative in this case,
+but negative 0.84.
+Well, that's pretty close to 0.75.
+And roughly, 0.5, which is close-ish 0.25.
+But more importantly, the p-values are small.
+And the confidence intervals-- notice-- these confidence
+intervals on this coefficient go from almost one to a little below 0.7.
+So our original 0.75 is certainly in that range.
+Our maximum likelihood estimate is in that range.
+Similarly, for this coefficient-- which the model was generated-- was 0.25.
+And you see, minus 0.25 is not actually, in this range which is interesting.
+So the noise has caused a little bit of a shift here,
+but this coefficient is within this range.
+So we're getting a pretty good recovery of those coefficients,
+but not perfectly.
+
+So we've done a bunch of things in this sequence-- quite a bit.
+We've generated an AR two time series.
+We plotted it.
+And you saw that it was fairly random.
+We looked at the autocorrelation, which had some non-zero significant lags.
+More importantly, we looked at the partial autocorrelation,
+which had two non-zero significant lags, telling us that we were probably,
+needing to model an AR two process--
+which, of course, was true.
+Then we computed the coefficients.
+We got the first one pretty close.
+Second one was a little off, but that's because we
+had added the standard normal white noise to the time series
+so we didn't expect exact results.
+So that gives you an idea of some properties
+of an autoregressive of time series.
+[MUSIC PLAYING]

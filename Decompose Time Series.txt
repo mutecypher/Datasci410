@@ -1,0 +1,60 @@
+[MUSIC PLAYING]
+
+We can decompose time series into components--
+the seasonal, the, trend and the lag or the residual.
+And there's methods in Python to do that.
+So we can actually, have a look at what these estimates of these parts are.
+So let's give that a try.
+So my screen here, I've created a function
+from the statsmodels.tsa.seasonal, which I'm calling STS.
+And you can see, sts.seasonal_decompose of the time series.
+And there's two model types--
+as you now know-- a model of additive model and a multiplicative model.
+And I've just made additive the default here, but it doesn't have to be.
+And then, the rest of the work here, we're
+going to make a plot so there's a plot method for a decomposed time series.
+And we're going to create a data frame that we're
+going to return of the residual, the trend, and the seasonal components.
+So we're going to go ahead and run that.
+We're going to print the first 12 rows.
+And see that plot, as well.
+So first thing we see is, where we're just looking at the print here.
+So they come out in whatever order.
+So this is the print.
+And notice, that because we have a periodicity
+here that's going to be six months--
+which is how we generated this time series.
+Remember, this was our white noise plus trend
+plus seasonal time series that we're using here, which we called seasonal.
+Residual and trend come up with NA values.
+They just can't be fit at the end.
+But if we look at more in the middle of the time series or--
+I'm sorry-- if we look at the last 12 months also, we see, again,
+the six values--
+the last six months--
+of seasonal and trend can't be fit here.
+So that's printing that.
+And then, let's look at this plot.
+So the plot has four subplots.
+The first one is our original seasonal time series,
+which you can see the trend, the seasonality, and the jaggedyness
+from the white noise.
+And here's the trend.
+Remember, the trend was perfectly linear, but in this case,
+it's picking up some noise so it's a little bumpy
+using the non-linear regression method they used to fit this.
+Our seasonal method-- notice-- goes from 2 to minus 2
+and it really looks like it captured it.
+And what's left is the residual.
+And it's mostly-- remember, this should be
+pretty much white noise at this point and it kind of looks that way.
+So it's a good way to have a quick look and understand
+what the decomposition of the time series
+looks like so you know what you're up against.
+Is there a strong trend?
+Yes, in this case, there definitely is.
+Is there a strong seasonal component?
+Yes, in this case, there definitely is.
+And what you have left is a residual, which ideally, you need
+to reduce to a white noise component.
+[MUSIC PLAYING]

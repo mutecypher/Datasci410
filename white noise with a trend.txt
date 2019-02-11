@@ -1,0 +1,84 @@
+[MUSIC PLAYING]
+
+So we've looked at the properties of white noise
+where we saw it was stationary.
+We saw that it, obviously, was normally distributed values.
+It had autocorrelation and partial autocorrelation with only zero
+significant lag values because it's stationary.
+We also looked at a random walk, which is not stationary.
+Let's look at another case which is, if we had a trend
+to time series-- and time series typically,
+do have trends in the real world.
+Long-term economic growth, if you're dealing with econometrics.
+Changes in temperature, if you're doing with various experimental data.
+Things like that, where there's a trend.
+So what happens when we add a trend to time series?
+And in this case, we're going to look at white noise series, but with a trend.
+So on my screen here, I have some code to generate a time
+series with white noise and a trend.
+And we're going to do it for a date range from January 1990
+to January of 2015.
+And we're going to do it as monthly.
+We've specified a slope parameter and some parameters for the noise.
+Then we generate our date values here, which we use as the index
+so we get a time series.
+And then the first thing we do is, we just have slope--
+which is that slope parameter times x for x
+in, basically, the length of the dates, the number of months we have.
+And then we add to that, normally distributed noise--
+simple enough.
+And we're going to plot that.
+And so you'll see what this looks like.
+
+And you see that we have, again, fairly random noise around a slope.
+Notice, we did white noise before, it sort of stuck around zero,
+but this is increasing.
+And because it's increasing, you should ask yourself,
+could this possibly be a stationary time series?
+Give that a minute's thought.
+And the answer is no because you can see that this--
+say if you computed the variance of this part of the time series
+and then, maybe, that part of the time series,
+and then that part of the time series, you'd see the variance kept increasing.
+So the variance isn't constant with time here or with sample size.
+And so, therefore, it is not a stationary time series.
+So when you add a trend, there is no stationarity.
+And let's go ahead and look at the distributional properties of this.
+
+And we get a somewhat skewed--
+it's not that normal now.
+Notice how it's skewed to the right--
+this curve.
+It's not a perfect bell-shaped curve even to begin with.
+It's pretty raggedy, but it's definitely skewed.
+And you see that skew, that we're starting
+to get an S-shape in the quantile quantile plot.
+You see how these values deviate off that way.
+These values deviate from the straight line off that way.
+And so the last thing we should look at is the autocorrelation function
+and the partial of autocorrelation function for this.
+
+So let me look at the autocorrelation function, first.
+And this is quite diagnostic and this, again, points to non-stationary.
+Remember, the blue-shaded area is the 95% confidence interval so as always,
+lag zero.
+Has a value of 1.
+No surprise there.
+But look at how slowly this autocorrelation
+dies off with lag, all the way out to 40.
+And it doesn't become insignificant until maybe, 25 lags.
+That's because when we're adding the trend,
+each value is dependent on the previous values for quite some range in the time
+series because we've got a trend.
+And we see a similar thing happen with partial autocorrelation.
+Although, it dies off much more quickly, we still
+have some significant non-zero lags of the partial autocorrelation
+for the same thing.
+Both indicating that this is not a stationary time series.
+So you can see, when you add trend any, even a white noise
+series which is stationary, you wind up with something
+that's different properties.
+It's no longer stationary.
+It's no longer-- even though the noise was normally distributed,
+the time series values themselves, are no longer normally distributed.
+[MUSIC PLAYING]

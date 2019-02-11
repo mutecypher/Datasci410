@@ -1,0 +1,90 @@
+[MUSIC PLAYING]
+
+So we've talked about some basic properties of time series
+and looked at different combinations of white noise series and random walk
+series and what their autocorrelation and partial autocorrelation
+properties are.
+So now, let's look at some more complex time series.
+And basically, what we're going to look at is a model called, the STL model.
+And it stands for seasonal trend--
+
+and the L, you'd never guess--
+is basically, the remainder.
+Historical reasons why it's L.
+So what are some examples?
+So trend in the real world, we can have trends where-- for example--
+if you're doing macroeconomics, gross domestic product
+tends to increase dramatically over time.
+If you look at the gross domestic product of the United States
+over the last 200 years, it's a curve with a very strong trend.
+It may not be a linear trend.
+It might have a second or even a third order component to it,
+but it is a strong trend.
+And you can't model that time series without a trend.
+Then we have this seasonal component and this is the one that's maybe,
+a little more mysterious.
+So for example, think about unemployment numbers
+that the US Commerce Department releases.
+They, so-call, seasonally adjust those and the reason
+is, they know that there are certain kinds of employment that
+are dependent on seasons.
+For example, construction employment-- maybe in really bad weather times
+like the winter, it might be lower.
+There might be a lot more activity in the summer.
+Employment in retail is seasonal.
+For example, there's a holiday season when
+people are more in a buying mood, that tends to be seasonal.
+You can have other seasonal effects.
+In capital markets, you have option expiration dates where you get,
+sometimes, funny jumps in stock prices or something
+like that because people are covering positions.
+You can have things like special days, like if you looked at beer sales
+in the United States, you'd probably see spikes
+around Super Bowl Sunday, the 4th of July, Memorial Day-- times
+when people get together with their friends and drink more beer.
+
+So there's a lot of possible seasonal effects
+that we need to model so we use this STL model to do that.
+And it's actually, a really simple model.
+So there's two versions of it.
+We have an additive model and we just say that the STL of the time series
+is the seasonal plus the trend plus the remainder.
+That's it.
+We just decompose it linearly into three components.
+And we hope that the sum of those three components
+adds up to the whole time series.
+So if we had a time series that looks like this, we have a trend component,
+and then you can see, there's a seasonal component-- well,
+it's a little cockeyed, but anyway.
+So that's a simple model.
+But the other model is what we call multiplicative.
+
+In that case, we say that STL equals S of t times T of t times R of t.
+And why would we have a model like that?
+Well, think about total employment in a country like the United States.
+If you plotted over a long time, our economy is growing on average--
+and I'm not going to worry about recessions and all that--
+so you might see something like this, where there's a seasonal component.
+And that seasonal component is getting bigger--
+I'm exaggerating this-- as the trend--
+you see, total employment-- the average is going up.
+And so the seasonal component.
+So there's a multiplicative effect between, say,
+trend, value, and seasonal value.
+So how do we deal with that?
+Well, it's very hard to model this so what we do
+is we actually do the log of our STL time series
+and then that gives us an additive model, which is just a linear model
+and we know how to deal with linear models really well.
+So that's a simple transformation that gets us from something-- so
+whenever you see a time series with the seasonal component increasing
+with time, think multiplicative model and think log transform.
+So that's all there is to it.
+You just decompose your time series into three components--
+
+seasonal, trend, remainder.
+And you can have an additive model, which just adds them up.
+It's just a linear model.
+Or a multiplicative model, which we transform to an additive model
+through a log transformation.
+[MUSIC PLAYING]

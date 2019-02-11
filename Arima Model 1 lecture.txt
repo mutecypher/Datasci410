@@ -1,0 +1,76 @@
+
+[MUSIC PLAYING]
+
+So we've talked about decomposing and we've
+had some experience decomposing time series into their seasonal trend
+and remainder components.
+So what do we do with this remainder component?
+How do we model that?
+Because there's still information in there, it's not a white noise series.
+And so we're going to start working on the different parts of what
+we call the ARIMA model.
+It's kind of a funny acronym.
+And ignore all the rest of this, but right now, what we're going to look at
+is AR equals autoregressive.
+
+And so I'll talk about what we mean by that.
+Remember, George Yule way back, wrote a paper in 1927?
+Well, he came up with this so-called, autoregressive model and that's kind
+of where a lot of time series analysis started.
+So what was Walker's model?
+It was xt equals some a1 xt minus 1 plus a2 xt plus however many dot, dot, dot,
+plus finally, some aN xt minus N. So the model is basically this,
+that this value of the time series is a linear combination of past values
+with these linear model coefficients--
+A1 through N. And that is the autoregressive model.
+
+But then, there's an error, of course, and so we have Wt
+and Wt is white noise, which remember, which we model as N 0, sigma.
+
+So it's not a perfect fit that we can predict
+this Xt because we've got this noise.
+So what are some properties of this autoregressive time series?
+So the autocorrelation zero is 1, but that's axiomatic.
+Autocorrelation of any other k not equal to zero is approximately, zero.
+The partial autocorrelation-- which we're going to call P0 is 1, of course.
+And Pk is approximately--
+well, it should be exactly, but, of course, it never
+is because of the noise and all that--
+ak.
+So if we see a time series with a partial autocorrelation
+with k significant partial autocorrelational lag values,
+we say, k--
+the biggest one kmax--
+we call that the order of the AR model.
+And we write that something like, AR--
+say, it's two.
+Maybe just the first two of these actually matter--
+that would be an AR (2) model.
+
+And so that's the order of our AR model.
+
+And what you're left with us--
+and the way this works, too, the other property you have to know about is--
+and it's true of ARIMA models in general-- but the AR model models
+stationary time series.
+
+And that's an important thing.
+That's why we remove the seasonal and trend components
+before we attempt to create an AR model because we have
+to deal with stationary time series.
+So that's the story.
+It's an autoregressive model.
+It's a really simple model.
+It's just the linear combination that the current value of our time series
+is a linear combination of these coefficients times past values
+plus some white noise term that has these autocorrelation properties, that
+lag zero is 1, of course.
+Lag any other k not equal to zero, should be about zero.
+Partial autocorrelation, zero is 1, again-- of course.
+And the number of significant lags, which is the order of the AR process
+that we are trying to assume, generate at this--
+and so, for example, we can write an AR (2) series--
+we'd just have two of these.
+And it's good for stationary time series.
+So that's the whole thing you should remember about AR models.
+[MUSIC PLAYING]

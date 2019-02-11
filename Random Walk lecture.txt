@@ -1,0 +1,63 @@
+[MUSIC PLAYING]
+
+So we've talked about two really fundamental properties of time series.
+We've talked about white noise and we've talked about autocorrelation
+and partial autocorrelation.
+And it should be clear to you that, a white noise series has,
+except for lag zero, it'll have autocorrelation of zero everywhere.
+So for white noise, sigma zero equals which is axiomatic--
+that's true of any time series.
+And sigma k not equal to zero should be approximately, but not exactly, zero
+because each value is not correlated with any other.
+And remember, we said that we could write the Xi's--
+we model them as a normal distribution, zero sigma.
+And sigma didn't change with time series index or anything else.
+So this is what we call stationary.
+
+But what other kinds of time series could there be?
+Just fundamental time series?
+Well, the next one we're going to talk about here is a random walk.
+
+And so what is the property of a random walk?
+Xi equals Xi minus 1 plus some W sub i and we call w sub i is the innovation.
+
+And we model that innovation as--
+for example-- a normal distribution, zero sigma.
+So the innovation now is modeled, rather than the value itself.
+So what does it do?
+It means, basically, that we're kicking--
+imagine a value and we give it a kick, which
+is a random kick up or down whatever the value of the next random draw we
+do from this normal distribution is.
+And so that gives us this random walk and you'll see this in the demo,
+but they tend to wander off and do funny things like this.
+And lots of real world processes are random walk.
+For example, prices of securities-- like stocks--
+are random walks and so that's why we care about them.
+And you can write this in another way.
+You can say that the innovation equals the last value minus the current value.
+And in finance, at least, we call that the return.
+But there's a really fundamental issue with this
+which is, that if you look at the covariance, it's t times sigma.
+
+It's a function of time.
+And it violates this assumption that this is stationary
+and so, therefore, we say this is non-stationary.
+
+And in fact, as t goes to infinity, the covariance goes to infinity.
+So not only is it non-stationary, it has unbounded variance with time
+because these can just wander off because it's just adding this kick--
+this innovation from usually, a normal distribution is how we model it,
+but you could do other things--
+over time.
+So that's the key point.
+The difference between white noise and a random walk
+is, white noise is just a random draw.
+It's independent.
+It's stationary.
+The random walk has this innovation.
+And it depends on the last value so it's the last value plus the innovation.
+And so it wanders and it has this rather odd property--
+when you first think about it--
+that the covariance varies with time and it's actually, unbounded.
+[MUSIC PLAYING]

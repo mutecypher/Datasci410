@@ -1,0 +1,44 @@
+[MUSIC PLAYING]
+
+So recall, we're working our way through this ARIMA model
+and we talked about autoregressive models.
+So let's talk about another part of the ARIMA model
+and that's the moving average.
+
+And you may wonder, well, didn't we just do a moving average model?
+Was the moving average of the past values of the time series?
+Well, yeah, we kind of did, but this is a moving average of the white noise
+component.
+So in this model, xt equals wt plus some beta 1 wt minus 1 plus beta 2 times wt
+minus 2 plus dot, dot, dot, beta N wt minus N. Or actually, let me say, q--
+I'm going to call that q, actually, for a reason here.
+
+So this basically means that our current value
+is the moving average of the noise terms-- these are white noise terms,
+wi is modeled as, again, N 0, sigma.
+So this is for--
+you guessed it-- a stationary series.
+
+So what are some of the properties here?
+Well, the autocorrelation lag zero is 1--
+of course.
+And lag k, not equal to zero is something like the beta, but it's--
+what was I going to say?
+And there's q that are significant.
+
+And so, we say we have an AR model.
+And so, say, the first three of these were significant
+so we could call that an AR (3) model.
+And what about partial autocorrelation-- p?
+So p of zero is 1 always.
+P of k not equal to zero-- should be approximately, equal to zero.
+And so it has no partial autocorrelation.
+So pretty simple, again.
+It's a moving average-- the MA is a moving average of the white noise
+process which is stationary.
+And we find the number of significant non-zero lag
+values, that gives us the order q.
+And the partial autocorrelations are all zero,
+assuming there's no error, except for the zeroth partial autocorrelation,
+which is, again, axiomatic.
+[MUSIC PLAYING]

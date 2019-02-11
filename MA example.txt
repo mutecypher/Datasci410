@@ -1,0 +1,92 @@
+[MUSIC PLAYING]
+
+So we've looked at AR process where it depended
+on some number of lags, whatever the order the AR process is of the values.
+An MA process is different.
+It depends on the white noise term--
+that there's a white noise component.
+And it depends on whatever number of lags that is.
+So like, an MA(2) process depends on the value--
+at the current lag depends on t minus 1 times 1 coefficient t minus two--
+so the second lag-- times another coefficient of the white noise term.
+So moving average processes just have to do with the noise series.
+And we can go ahead and synthesize ones.
+We'll just simulate one--
+look at its properties--
+it's partial autocorrelation and autocorrelation properties
+and the model.
+So on my screen here I have code to create an MA(1) time series, which
+I'm calling ts_series_ma1.
+And you see the AR coefficient is 1 now.
+So it doesn't depend on the values--
+the previous values-- at all.
+But it does depend on one previous value of a white noise series.
+So it has one MA coefficient of 0.75.
+So let's go ahead and generate that.
+And we'll look at some properties.
+And we'll look at the time series plot.
+So we can see that it's stationary, which is good.
+It's also invertible, which is good-- which
+means we can model this time series.
+And you can see it's again kind of a random-looking thing.
+It wiggles around.
+But it stays near zero because it is stationary.
+It doesn't have any trend or particular seasonality or periodicity.
+And, say, this value here, because it's an MA(1),
+only depends on the white noise value of the previous lag,
+plus whatever the new noise component is.
+So it's a pure noise series.
+So let's look at the ACF--
+the autocorrelation function-- and the PACF--
+partial autocorrelation function-- of this MA(1) series.
+So let me go first to the autocorrelation.
+That's the more interesting one.
+And you see, as always, the zero lag autocorrelation
+has a value of 1 axiomatically.
+There's one effectively non-zero lag autocorrelation value.
+And that's what we expect because it's an MA(1) process.
+So the autocorrelation of the white noise term only is for one lag value.
+These others are really not significant.
+They're either within or just barely outside the 95% confidence envelope
+here.
+Partial autocorrelation-- we do get a couple of non-zero lag terms.
+But that's a result of having the additional random noise component here.
+And you'll see that does have an effect when we go to create the model.
+So the last thing that we do is we will create the model.
+And so I'm going to use this model function I've already created.
+And I've got an MA(1)--
+
+my MA(1) series.
+And I'm going to model it with order 0, 01.
+So it's an MA(1) model.
+So let me run that, and we'll look at the summary of the model.
+Summary looks very similar to the AR model.
+And you can see the model type is an ARMA.
+
+So with MA coefficient-- so there's just one MA.
+So it's MA(1) model.
+We're using maximum likelihood.
+You can see the range of dates here.
+You can see the number of observations and some performance statistics
+that we'll use later.
+
+Now our coefficient estimate is pretty close to 0.75 in this particular case.
+But if you run this a number of times, you'll
+find you'll get different coefficient estimates.
+So in this case, it's 0.67, as opposed to 0.75.
+So 0.75 is well within this confidence interval of 0.56 to 0.78,
+but just barely.
+And you can see the p-value is really small.
+So this is a significant coefficient.
+So important points here are that the MA(1) function depends on--
+the value depends on the previous--
+the lag minus one white noise series only.
+And you saw that that gives a fairly random stationary series.
+You saw that the autocorrelation had one non-zero significant lag
+value because it was an MA(1) series.
+And we came close to recovering the coefficient that
+was the same as the one we started with in this particular case.
+But if you ran this a couple of more times,
+you might find different results because of the random noise
+that's added each time.
+[MUSIC PLAYING]
