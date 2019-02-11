@@ -1,0 +1,46 @@
+[MUSIC PLAYING]
+
+Hello, and welcome.
+In this lesson, we're going to talk about time series data
+and look at some of the very simplest, basic models
+that we use to work with time series data.
+They're linear models, which you should be familiar with by now.
+They're basically, specialized regression models,
+but we'll get to that.
+So why do we care about time series?
+And the reason is, there's so much data out there that in the real world,
+that's time series.
+For example, I've done work in logistics and so we do demand forecasting.
+
+So a demand forecast.
+So you've got demand for some product or maybe,
+traffic on a highway where there's demand or network
+traffic on the internet or something like that-- there's demand.
+And you want to understand the time sequence of periods
+of high and low demand and be able to make sensible forecasts.
+So probably, that's one of the most fundamental things
+we do with time series.
+A lot of medical data is time series-- electrocardiograms,
+electroencephalograms.
+Often, things a patient's blood pressure history can be viewed as time series.
+So there's a lot there.
+In engineering and science, there's just all kinds of experimental data
+that are time series.
+Signal processing is a time series process.
+Things like that.
+
+Markets, like capital markets, and macroeconomics.
+
+Time series data-- if you listen to the business news,
+you'll hear them say, that the Commerce Department announced today
+that seasonally adjusted unemployment is 4.7% or something like that.
+So we'll actually talk about that in this lesson.
+What do they mean by this seasonal adjustment stuff?
+How do they figure that out?
+So that's a fundamental thing and it shows up in all these domains and many,
+many more.
+I'm just scratching the surface here.
+But there is a huge number of data science problems that are time series.
+So that, I hope, gives you some motivation
+of why we're going to spend a whole lesson on time series data.
+[MUSIC PLAYING]

@@ -1,0 +1,41 @@
+[MUSIC PLAYING]
+
+So time series data are really important in data science,
+and they have a long history, time series analysis.
+And in the 1920s, there was a man named Walke and another one, Yule.
+Here's a picture of George Yule.
+And he published, in 1927, a really fundamental time series model
+called "The Autoregressive Model".
+It's one of the models we're going to look at in this lesson.
+And that was probably the start of modern time series analysis.
+It's a regression model.
+We'll talk about that more.
+Spool forward like another 20 years to the late 1940s, and this man--
+Norbert Wiener-- published models on stochastic time series.
+And it really gives us a basis to understand the properties of time
+series and their information content.
+If you have used streaming video today, or the fact
+that you're watching this video now, you owe a debt to Wiener
+because his theories are fundamental to the coding we
+use today for like streaming audio and streaming video and cell phone
+conversations and satellite communications-- all sorts of things
+that we can attribute to this pioneering work by Norbert Wiener.
+The specific models we're going to talk about today are--
+and I'll explain what all these terms mean as we go--
+Autoregressive, Integrative, Moving Average Model,
+so there's three components to that.
+But it was this man, George Box, who worked on this in the 1950s and 60s,
+and finally published this very influential book in 1970.
+It's now in like it's fourth edition.
+The original authors have passed, but there's a new author who's picked it up
+and continues to refresh it.
+You know, I don't know that I necessarily recommend it,
+but it is a pretty comprehensive book on this basic integrate-- you know,
+what we call ARIMA modeling of time series and many more topics.
+There's now lots and lots of books on time series.
+It's been an explosion since this 1970 book.
+But-- so you can gather that over a long time a lot of really smart people
+have worked on time series analysis.
+And we're just going to look at this one particular model, the ARIMA
+model, which gets us quite a long ways into understanding
+the properties of time series.

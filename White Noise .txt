@@ -1,0 +1,58 @@
+[MUSIC PLAYING]
+
+Hi.
+So let's start talking about properties of time series.
+What are some of the fundamental properties of time series?
+Well, probably, the most fundamental time series
+is what we call a white noise time series
+and when we say white noise, what we mean is it has a broad spectrum.
+The analogy is with white light, which contains every color of light.
+So how do we write mathematically, what a white noise time series is?
+So we could say that X of t--
+that's our time series and it has a time series index, t.
+So we could have t, could be one, two, three--
+We're talking about discrete time series.
+So what does it equal?
+It equals X1 plus X2 plus X3 plus dot, dot, dot, plus however many
+we want to go all the way out to XN.
+So we've got these N values--
+that's our time series.
+But when we say it's white noise, what we're really saying is,
+we're Xi is drawn from--
+
+so Xi is drawn from a normal distribution.
+It's a centered normal distribution.
+It has some standard deviation.
+
+So the interesting thing to notice about this
+is each sample in our time series--
+if you think about, maybe, it's like a patient's EKG, where
+we're monitoring some heart activity-- each time
+sample we take to analyze the noise there is simply,
+uncorrelated with every other.
+Notice, that sigma doesn't change.
+So let's say we're measuring some kind of signal,
+like a signal from outer space, that we think might just be purely random.
+So the sigma doesn't change, probably, over time.
+Or maybe it does-- that may be something we're trying to see.
+Is this just a white noise random signal?
+So the difference is this is white noise because this doesn't change with time
+so this is what we call stationary.
+
+Stationary meaning it doesn't change in time.
+An alternative would be, we can have something
+like this, where it's some function of Xi minus 1 or something like that.
+So it's some function that changes in time.
+
+this is white and this is not.
+And we call this non-stationary.
+
+So that's it, that's the concept.
+And when you're working with time series models, what you want leftover
+is the residual.
+The stuff that's left over at the end is a white noise series.
+A white noise series has no further information in it
+because there's no correlation.
+There's no dependency of these values one on another.
+And that's the big takeaway message here.
+[MUSIC PLAYING]
