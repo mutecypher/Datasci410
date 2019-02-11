@@ -1,0 +1,39 @@
+[MUSIC PLAYING]
+
+So we've looked at generating and the autocorrelation
+and partial autocorrelation properties of
+and modeling an autoregressive process where the value at a current time
+is equal to some coefficient times however
+many lag values for the order of that AR process.
+We looked at a MA process, where the current value
+has the white noise times the coefficients for however many lag
+values for the order of the MA process.
+In that case, we looked at just a MA one process.
+So we can combine these, of course, and we create what we call,
+an ARMA process--
+autoregressive moving average process.
+And on my screen here, I'm going to generate a synthetic ARMA process
+and it's going to be an ARMA (1, 1) process.
+So I'm calling it, TS_series_ARMA (1, 1).
+
+And I'm going to give it AR coefficients of 0.6 and 0.75 for the MA coefficient.
+And we're going to make a plot.
+So let's go ahead and do that.
+And fortunately, we see it's stationary and is invertible.
+And we have some wiggles and up and down here,
+but basically, it's staying pretty close to zero.
+Not a lot of wandering.
+There's no trend.
+There's no seasonality.
+So it is a stationary looking, kind of random process here.
+But it has both an autoregressive component
+where say, this lag value depends on that coefficient times the previous lag
+value plus whatever the white noise component was at this previous lag
+value plus some other noise.
+So you're going to look at the properties of this time series
+and you're going to compute a model of it.
+And that'll be for you to try.
+But you've seen how to do this now, for moving average and autoregressive
+processes so extending that thinking to an autoregressive moving
+average or ARMA model, shouldn't be too hard for you.
+[MUSIC PLAYING]

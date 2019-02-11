@@ -1,0 +1,30 @@
+[MUSIC PLAYING]
+
+So we've talked about the autoregressive model.
+And we've talked about the moving average model.
+Let's talk about a case here called the ARMA model, which you can guess
+is the autoregressive moving average model.
+I'm not going to write it all out for you.
+But that's what it is.
+So we're just combining those two models.
+So x t equals alpha 1 x t minus 1 plus alpha 2 x t minus 2 plus dot, dot, dot,
+plus alpha P, if we have order P, x t minus p.
+So at that point, you might go, well, short of a noise
+term, that's just our AR model.
+So this part here is just AR.
+And it's AR order P because we've got order P of these guys here.
+So then what else?
+So we've got, let's say, add the noise w t plus beta 1 wt minus 1 plus beta 2
+wt minus 2 plus dot, dot, dot, plus beta q wt minus q.
+
+Oh, what's that?
+That noise now is an MAQ model.
+So you guessed it.
+Yeah, so that's all there is to it.
+The ARMA model is just an AR plus MA component.
+And we write it as, like in this case, we say it's an ARMA pq model,
+because we have p order AR model and a q order MA model.
+So that's all there is to it.
+It's just adding the two models together.
+And you get an autoregressive moving average or ARMA model.
+[MUSIC PLAYING]
