@@ -1,0 +1,70 @@
+[MUSIC PLAYING]
+
+So we have used a regression model to compute the seasonal components
+and the trend components of this electric time series or more
+specifically, the log of the electric time series.
+And we've seen that fits pretty well, but there's still some residual there.
+So let's have a look at that and see if we can do something
+with an ARIMA model of that residual.
+So on my screen here, I have some code where we can start doing just that.
+And the first thing we need to do is just have a look at that residual.
+Let's see what it looks like.
+So it zigs and zags.
+It's pretty random.
+Might have a little bit of a random walk aspect to it
+so we need to keep our eye on that.
+But when we look at the distribution-- both the histogram and the QQ plot--
+it looks pretty close to normal.
+And one question, is this stationary?
+So we we'll apply what's the Dickey-Fuller test here
+and we'll look at what the result is.
+And you can see, it's marginal at 95%.
+
+The p-value is a little large at 0.056, roughly.
+But say, at 90% confidence interval, we would
+say that we would accept the null hypothesis
+or the alternative hypothesis that it is, in fact, a stationary time series.
+So we're going to go with that assumption.
+And in the real world, there's always some gap there
+and you can't be super strict with this or you'll never do anything.
+So we're going to use our step ARIMA function that we've used before,
+but we're going to use maximum orders of 4, 3, 4.
+And we'll have a look at what happens here.
+
+So we tried quite a few combinations with that grid search.
+We found the best order was a 3, 0, 3 model
+and it had this BIC of minus 1890.
+But that's a pretty high order model so I'm wondering,
+let's just test how well that computes just on its own.
+So we'll use our model _arima function we've used a bunch of times now.
+And we're going to compute that.
+So first off, we'll look at the p-values.
+They're all very small.
+The confidence intervals for these coefficients
+don't seem to include zero so that's all good.
+But there's this warning, and it's saying
+that the inverting Hessian failed.
+Maximum likelihood to fail to converge.
+So it may be that this is a little high order model.
+Maybe it's a little unstable.
+So the next best model was a 2, 0, 0 model-- much lower order--
+but next best.
+I determined that by scrolling through this entire list of BICs
+and finding the next smallest one, from minus 1890.
+So it's quite a different model really, but it had a little bit worse BIC.
+So we see pretty narrow confidence intervals on the model coefficients
+and again, very small p-values.
+And no warning method about being unstable.
+So let's go with that.
+
+So what we've done now is we've found an ARIMA model that, we hope,
+fits the residual after we had subtracted out the seasonal and trend
+components of the time series.
+And we tested two different candidates actually,
+and found the more complicated one might have some computational problems
+so we're going to go with the simpler model.
+That's always a good idea.
+If you can find a simpler model that's almost as
+good as the complicated model, the simpler model
+is just less likely to go wrong and to generalize well.
+[MUSIC PLAYING]

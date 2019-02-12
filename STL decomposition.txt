@@ -1,0 +1,93 @@
+[MUSIC PLAYING]
+
+So in the previous sequence, we loaded some time series data,
+long-term series, for the production of chocolate, beer, and electricity
+in the nation of Australia.
+We determined that the electric production was probably
+a better modeled as the log of the values
+because it made the seasonal component look more uniform over time.
+So let's go ahead and try to decompose that electric time series--
+the log of that electric time series into its seasonal trend
+and residual components.
+And we'll do some examination of the properties of that residual component
+to see how we did.
+
+So not too surprisingly, we're going to use the function we set up earlier--
+decomp_ts.
+And we're going to do that on the log of electricity production.
+And we'll just print the head and the tail of that time series.
+And recall, again, because it's monthly time series,
+the first six lag values of residual and trend are going to be not known number.
+They're just not there.
+But we do get the seasonal component.
+And similar for the last six lag values so just keep that in mind
+when we're modeling.
+So here's our log of electric production.
+Here's the trend of the electric production-- looks pretty good.
+Looks like we nailed it.
+Here's the seasonal component.
+You can see, it's a fairly strong signal.
+It's from about 0.15--
+remember, it's on a log scale-- to minus 0.15.
+And then we've got what looks like a fairly constant variance term here,
+but I think there is some funniness going on at the end here.
+You see how this starts to look more seasonal toward the end,
+less like white noise?
+
+But it looks like generally, this simple STL decomposition
+gave us the idea that we have a trend that we can model fairly well.
+It's pretty close to linear.
+We have a seasonal component that looks pretty repeatable.
+And the residual we have left from that isn't too terribly bad.
+So we can apply a formal test here now, to determine
+how stationary that residual is, if you'd like.
+And we're going to use something called the Dickey-Fuller test or more
+specifically, we're using an adjusted Dickey-Fuller test, which we
+can find in statsmodels.tsa.statstools.
+So we're going to import add AD Fuller.
+And so we get a whole list of statistics out of this test
+and you can look at the documentation for it,
+if you want to see what everything is.
+And I'm just going to print certain ones of them.
+And we'll go ahead and look at that.
+So the null hypothesis for a Dickey-Fuller test
+is that the time series is not stationary.
+But you see, we have a pretty large magnitude
+of the Dickey-Fuller statistic, almost eight or minus eight.
+The p-value was really tiny so we can probably reject that null hypothesis,
+that the time series is not stationary.
+We're doing this by looking at sets of 16 lags, where
+we check how much the variance changes.
+So we get different cutoffs at 5% and 10%,
+but look at how big that Dickey-Fuller statistic is for this 5% and 10%
+cut-off.
+So I don't think we have any problem in saying
+that the residual time series is, for all practical purposes, stationary.
+So one last thing we can do just while we're
+looking at this simple the composition, is the autocorrelation function
+and the partial autocorrelation function.
+Let's just look at those properties.
+And again, we're eliminating the first six
+and last six values of the residual.
+And our partial autocorrelation function.
+So there's a couple of things going on here.
+We may have one significant non-zero lag here.
+We also see some sign of that periodicity we saw,
+that hadn't quite been eliminated.
+And again, our autocorrelation has one significant non-zero lag.
+And maybe some evidence here of--
+notice that's lag six so it's 1, 2, 3, 4, 5--
+so it's about six from zero.
+And likewise, up here,
+So we haven't quite nailed the periodicity or the seasonality,
+but pretty much, we have.
+So it looks like maybe, we're shooting for something like an ARMA model
+that's AR1 MA1, kind of model.
+But we'll continue and we'll keep working on this.
+So the upshot is, the decomposition looked pretty good
+in terms of being able to remove a linear trend to pretty
+close to straight line trend.
+We had a fairly constant seasonal component.
+And a residual is stationary, but it's a little funny
+so we'll have to keep working on that as we want to make good forecasts.
+[MUSIC PLAYING]

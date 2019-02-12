@@ -1,0 +1,168 @@
+[MUSIC PLAYING]
+
+We've looked at the log of electric production for Australia
+so we decomposed it into its seasonal trend and residual components.
+We looked at some properties of the residual component.
+We actually found an optimal ARIMA model that fit that component.
+And now we're ready to do some forecasting.
+So we're going to create new models, but we're
+going to hold back that last 12 months of electricity production
+and we're going to see how well we can compute a trend.
+So we're going to do this in a slightly different way.
+We're going to build up a linear regression model of the trend.
+We're going to use a polynomial trend of second order.
+And then of the seasonal component, because we know the seasonal component
+was month to month so we're just going to have a regression
+coefficient for each month of the year.
+And then, we can go on later and do an ARIMA model of the residual.
+And we're going to put that all together at the end
+and actually compute a forecast.
+And we'll compare it to the real last 12 months of that time series.
+So we got to get started here.
+And I have some code--
+lots of code-- on my screen.
+So the first thing I need to do is create two new features,
+or two new columns, in that CBE model.
+So I want to have month count and month count squared.
+I'm just creating month count, it's just I plus one for I
+in the range of the length.
+And then the other one is x squared for x in month count.
+Pretty easy.
+So then we're going to normalize the features.
+There's a number of functions we could use.
+In this case, I'm going to use scipy.stats.zscore.
+So that's going to give us mean zero variance one or standard deviation one
+normalized version.
+So we're just going to replace month count and month count two
+with their z-score versions of that.
+And I'm going to use the Apply function to go on each column here.
+That's how that works with pandas.
+This is a data frame--
+two columns of the data frame, we apply the z-score function there.
+
+So then I also have to create some dummy variables for the month
+so I have to figure out how many years I have.
+And then I just make a list of months times the number of years.
+So I can use the pandas get dummies function--
+sounds weird, but that's what it is.
+So I have this new column called month, which
+just was January to December repeated however many years we had.
+And so it creates these dummy variables and we'll just go ahead and look
+at the first year of this--
+what our data frame looks like at this point.
+So we have columns of interest here.
+We have the log of the electric production.
+We have that normalized month count-- notice,
+it can be plus or minus because we z-score normalize it.
+The z-scored normalized month count squared.
+The actual month of the year.
+And then, you can see for January, the dummy variable is zero is one, zero.
+For February, it's a one here and zero everywhere else.
+For March, it's a one here and zero.
+That's why they're dummy variables.
+So we now have a binary variable that indicates which month of the year
+we're in for each of the 12 possible months.
+So now, we can use scikit-learn--
+sklearn.linearmodel.lm-- so our x matrix--
+our model matrix-- is going to be--
+
+so remember, we're not using the last 12 months
+so we're going to cut this off at December of 1989.
+So 1990 is not going to be used to train this model.
+And so we have month count, month count squared, and all the dummy variables
+for the months.
+And then we have to do as matrix of that because we
+need a NumPy for scikit-learn.
+And then, we have, again, the same thing for our label--
+label we're calling y--
+which is just the log of the electric production.
+Again, we have to do as.matrix so it's a NumPy array, not a pandas data frame.
+And so we got LM model is lm.linearregression fit
+intercept equals false.
+So we're just defining the model at this point.
+And why don't we want an intercept?
+Well, we don't want an intercept in a model like this
+because we have all these dummy variables which
+are already binary variables.
+So we don't need an intercept plus an offset for January
+or plus an offset for February, et cetera.
+We can just do the offsets for each month or the averages for each month.
+So we're just going to fit that model and we can then, create
+a prediction for that model and we're going
+to add a new column to that data frame called scores.
+And we only do that, again, for leaving off the last 12 months.
+And the same thing for the residuals.
+
+So let me just run all of that for you.
+And it's a linear model that runs pretty fast.
+
+So we can also plot the fit so we're just going to plot in red,
+we're going to plot whatever column we've specified here.
+And then the score.
+And we'll see the actual predicted values.
+And the actual column that we're going to specify
+is, of course, the log of the electric production for the nation of Australia.
+And we see that this looks pretty good.
+That, in general, we've got the trend pretty well.
+We've got the periodic or seasonal behavior pretty well.
+It's got a little problem at the end here
+so we should be concerned about that because it's this last 12
+months that we're trying to predict.
+So what is our error at this point?
+So our error is root mean squared error-- we can simply
+just use NumPy of the standard deviant.
+We just take the square root of the standard deviation of the difference
+and that's our RMS error-- root mean squared error.
+And so, we'll just compute that for the prediction
+versus for x, which is from December 31, 1989 to the end of the time series
+so it's the last 12 months.
+See where the colon is now?
+And we need all the features to make that prediction.
+And it'll just print the RMSE.
+So try to remember that number, it's 0.18, which isn't too bad.
+And we can also look at some residual plots.
+
+And so it's important whenever you do a regression model,
+you should always look at residual plots to see if there's
+something wrong with your model.
+And so here, we've got the time series of the residual of electric production.
+You see there's some long-term wobbliness here,
+maybe a little periodicity toward the end.
+But in general, these are very small values.
+See, 0.05 minus 0.05 is pretty much encapsulates them.
+And they're generally, around zero so it's not ideal, but it's not too bad.
+And you can see from both the histogram and the QQ plot,
+that they are pretty close to normal.
+And so there's a few more things we can do here.
+But for now.
+We'll just look at the Dickey-Fuller test of those residuals
+up to the end of 1989.
+And in this case, the stationarity is a little more questionable.
+You see, we've got a Dickey-Fuller statistic of minus 0.281
+and we have a p-value at the 95%, of 0.056.
+So probably, we would accept the null hypothesis at 5% confidence
+that the residual time series is not stationary.
+But you can see, the critical value at 5%
+is bigger than this Dickey-Fuller statistic.
+So supporting the idea that at 5% cut off or 95% overall confidence,
+we should accept the null hypothesis.
+But a 10% confidence, we can reject that null hypothesis,
+that this time series is not stationary.
+So it's kind of on the border here, but we're
+going to proceed as though we can assume non-stationary.
+So quite a bit that we've covered here, but we've basically-- in summary--
+we've created the linear model of trend in seasonality.
+We plotted that.
+Looked pretty good, just empirically.
+We looked at the residuals, again, they looked fairly good,
+but they had some periodicity still.
+The RMS error looked pretty good.
+
+The distribution of the residuals was pretty close to normal,
+which is good for regression model.
+The Dickey-Fuller test was kind of on the fence.
+But at least a 10% critical value, we could
+say that the residual series was stationary.
+So now we're ready to try a better forecast because we're
+going to include the ARIMA component.
+[MUSIC PLAYING]
