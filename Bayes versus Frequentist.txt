@@ -1,0 +1,63 @@
+[MUSIC PLAYING]
+
+So before we dig into these Bayesian models--
+these hierarchical Bayesian models and how we compute them, let's
+just review from where we've been at, where we've spent most of our time
+on frequentist models.
+And we'll contrast that with what we're doing with Bayesian.
+So like we've done linear models-- regression and things like that--
+and so what was our goal?
+Our goal was a point estimate, plus a confidence interval.
+
+And for example, with regression, that's what we did.
+We computed regression coefficients and we could get confidence intervals.
+Our goal with Bayesian as a posterior distribution and perhaps,
+a credible interval.
+
+And so that's different in a sense that we're
+trying to get a more complete characterization of--
+if we're doing regression, for example--
+what those coefficients are.
+What's the distribution of possible credible coefficients?
+So frequentists, they always start with the data--
+that's the claim to be objectivist.
+Frequentists say, we start with the data.
+We're objective.
+Only start with the data.
+Whereas, the Bayesian would say, well, wait.
+We probably know things about this problem
+or have some useful information we might want
+to impose on it so we start from a prior distribution.
+
+So the starting point's different.
+The goal's different.
+Starting point's different.
+What happens when a frequentist gets more data?
+Well, there's only one thing they can do.
+They have to recompute.
+They have to start over again.
+Whereas a Bayesian-- and we've seen this--
+you can update the model, which is very handy
+because as you gather more and more data, perhaps, over time,
+you just keep updating a Bayesian model.
+Your posterior distributions of maybe, your model parameters
+become presumably, narrower as you get more confidence
+in the model from more data.
+Now, you'll get a similar effect, of course, with frequentist statistics.
+And then, what are some examples?
+So for example, we've looked at the mean.
+We've done ANOVA.
+
+We've done linear regression, linear models.
+And what we're getting out of this, though,
+is going to be essentially, that-- the posterior
+distribution plus the credible interval or what we sometimes call,
+the highest density interval.
+So that's kind of the end results of these two methods.
+But keep in mind that given enough data, the frequentist method
+and the Bayesian methods--
+the inferences you draw converge so there really is ultimately,
+no difference in the very large sample case.
+But the way you proceed and think about the problem,
+they're really two different views, but fortunately, they ultimately
+get to the same place in the long run.

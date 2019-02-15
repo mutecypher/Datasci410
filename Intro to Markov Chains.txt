@@ -1,0 +1,89 @@
+[MUSIC PLAYING]
+
+We just discussed why grid sampling isn't going to work.
+We're going to have to use this thing called Markov chain Monte Carlo.
+And you may say, well, what are we talking about here?
+So to understand Markov chain Monte Carlo,
+first thing you need to understand is what is a Markov process?
+A Markov chain is just a chain of Markov samples,
+but if you don't know what a Markov process is, that doesn't mean anything.
+So let's talk about this.
+So let's say we have some states--
+S1, S2, S3-- and maybe, we can transition between those states.
+And these states could be--
+for example-- posterior probabilities.
+And I'm only going to worry about three of them
+here, just to keep things simple.
+
+So what do we say?
+If it's a Markov process--
+if this is a Markov process--
+this is the fundamental property that makes
+something a Markov process, [? unless it's ?] something else.
+When you can write that the probability of our state, i--
+step i-- given step i minus 1 step i minus 2 step i minus 3, dot, dot dot,
+step i minus n--
+whatever those last n states are.
+If I can just say that's just the probability of state i,
+given just what the last state was--
+and I don't need all this other history.
+I just need to know the last state I was in--
+and that gives me the probability of transitioning to another state.
+And we call these the transition probabilities.
+
+So that's what p is.
+Sometimes, we use pi for that.
+And you can take this and say, for a number of states,
+you can expand and create a transition matrix for a Markov process
+because it only depends on this one thing.
+So let's call that pi and that just equals the little pi 1, 2.
+Little pi 2, 1.
+Dot, dot, dot.
+Pi n1.
+
+Pi 2, 2.
+Pi 1, 2.
+Dot, dot, dot.
+Pi 1n.
+Dot, dot dot.
+Pi 2n.
+And with lots more dots here, eventually, pi n2.
+And down in the corner, of course, pi nn.
+So for our end states, this matrix gives us the transition probabilities
+for between any of those states.
+If we're in state 2, 2, we can see the probability of going from 2, 2 to 1,
+2, et cetera, by looking at this matrix of transition probabilities.
+And because this is a Markov process and because it has no memory,
+that brings up some important properties.
+So pi depends only on current state.
+
+Pi ij does not need to equal pi ji.
+For example, maybe one of these links doesn't even exist here so maybe
+I can never get back--
+if I transition from S2 to S3, maybe I can't get back.
+Maybe I have to go around some other way.
+But maybe on one step--
+at the current state, S3, maybe the transition probability
+back could even be zero.
+And another is a Markov process is a random walk.
+And that actually, is very important.
+Because it's a random walk and because it has this simplification that it only
+depends on the last state, that gives us some insight
+into why this is a good efficient approach to sampling, say,
+posterior probabilities.
+And so that's kind of the wrap-up.
+We have this Markov process which, by definition,
+the probability of transitioning to some state, i, from a current state,
+i minus 1, just depends on that current state.
+It doesn't depend on any of this history.
+And we can write this transition matrix.
+And from that, we see that pi depends only on the current state--
+whatever-- because there's no memory here.
+It's just whatever state we happen to be in,
+we can compute the probabilities of transitioning to another state.
+It's not symmetric because we may or may not--
+it could be higher probability go one way or the other or whatever.
+And the Markov process, as a result of all this,
+gives us a random walk, which means we can
+sample fairly complex distributions.
+[MUSIC PLAYING]

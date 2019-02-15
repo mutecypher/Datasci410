@@ -1,0 +1,36 @@
+[MUSIC PLAYING]
+
+So you may recall in the previous lesson,
+we used essentially a grid sampling approach.
+Remember, we uniformly sampled our likelihood and prior
+and used that to compute a uniformly sampled posterior.
+And you may ask, you know, why can't we just keep doing that?
+Why do we need more sophisticated computational methods?
+Well, let me try to give you some insight into that.
+So if I have a one-dimensional thing here,
+and so I can just take 10 samples, all right, easy enough.
+And I could get whatever the posterior distribution is here.
+If I add a second dimension now, I've got 10 more samples.
+So now I have 100 samples that I need for 2-D. So if I have two parameters,
+I need 100 samples instead of 10 samples.
+And unfortunately, the story gets worse and worse.
+So for three, I need 1,000 samples, right?
+For four I need 10,000 samples.
+For five parameters, I need--
+you can see where this is going--
+100,000 samples.
+And if I have a 100 parameter problem, which isn't too unusual,
+I need 10 to the 102 samples.
+Well, that's not even a huge problem in modern data science
+to have 100 parameters say in a regression or a classifier or something
+like that.
+But I'm never going to compute that kind of sampling to get this kind of density
+that we had before.
+So it's clear that grid sampling is not going to work.
+So what we're going to use instead, and what a lot of the rest of this lesson
+is about is what's called a Markov Chain Monte Carlo.
+So we're going to use this Markov Chain Monte Carlo, also known
+as MCMC in the business to overcome this,
+basically explosion of the number of samples we need
+if we just used simple grid sampling.
+[MUSIC PLAYING]

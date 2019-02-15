@@ -1,0 +1,142 @@
+[MUSIC PLAYING]
+
+Hi.
+So we've talked about what a Markov process is.
+We've talked about how you use the Markov process to build a Markov chain
+Monte Carlo.
+We've talked about this Metropolis-Hastings algorithm.
+So let's try an example where we use that concept to estimate
+some parameters of a model.
+So on my screen here, I have some code to do just that.
+First step, I'm going to just import my packages that I need.
+And now I'm going to compute a multi-variate-- actually,
+just a bivariate normal distribution.
+We'll use that to sample from.
+So our mean is 0.5, 0.5 on the x and the y.
+And we have this covariance structure here so it's one on the diagonals
+and 0.6 off the diagonals.
+And so it's got this fairly strong covariance
+so we expect an elliptical looking distribution.
+And then we'll just do an x, y scatterplot of that.
+
+And you see, as we expect, we get this fairly elliptical looking distribution.
+It gets denser and denser as we get toward the middle.
+And we can also look at the marginal distributions of the mean in x and--
+or just the marginal distributions.
+We're going to compute the means of those marginal distribution.
+So the marginal of x would be the histogram along the x-axis.
+The marginal of y is just going to be the histogram along the y-axis.
+So here's some code that does that.
+Nothing special about it, but you can see,
+it's just doing it for the x-axis and then the y-axis.
+
+And here's our x distribution and you can see, it's a little bit asymmetric.
+It's got a little bit of a steep drop off on one side.
+It's not a perfect normal, but that's OK.
+We know this was generated from a bivariate normal.
+So there's no reason to think the marginal distribution has
+to be truly normal.
+And likewise, you get slightly, sort of the opposite asymmetry in the y.
+
+So now we need to apply the Metropolis-Hastings
+algorithm to sample these data.
+So we've got these data here and determine the likelihood and whether we
+want to accept those points or not.
+So first off, we have a likelihood function here,
+which we're actually calling likelihood.
+And we compute a numerator, which is the normalization.
+And the denominator is just the normal likelihood.
+And you see, it's a little complicated because we
+have to do a determinant of the covariance matrix
+and invert the covariance matrix here and things like that.
+So there's a little bit of tricky math here--
+which you can look up, if you're interested.
+But basically, this just computes the likelihood that mu-- which is,
+in this case, a two-valued vector because we have an x and a y component
+of mu--
+what's the likelihood of that mu, given the observed data
+and that's what this evaluates.
+So we're going to start our chain at 4 minus 4.
+We're going to do 10,000 samples.
+We're going to say the current likelihood is
+the likelihood at our start.
+And then, we're going to keep track of-- remember,
+the Metropolis-Hasting algorithm has an acceptance or rejection criteria.
+So we'll just start counters at zero.
+And we're going to basically, chain length minus 1
+because we already have a first sample here.
+We just set an initial value of the likelihood.
+And so we basically, go through, we propose a new likelihood.
+You see, we take a delta here.
+
+And we're just using a multivariate normal, again--
+0, 0.
+And it's just, a very small standard deviation on the diagonal here--
+0.1, 0.1.
+So we're not taking big steps.
+We're not sampling wildly.
+So that's how we get our proposed likelihood.
+And then, we use the Metropolis-Hastings criteria here,
+where we decide whether this likelihood ratio between the proposed
+and the current is bigger or less than some sample
+from a uniform distribution.
+If it is, then we accept that step and we take the proposed likelihood
+and we append to the chain.
+If it's not, we reject.
+So as you recall, that's the MH algorithm.
+And at the end, we're going to make a little plot of what we sampled.
+And there you have it.
+And it looks pretty good, actually.
+It looks a lot like what we started with, but you'll notice,
+there's one exception here.
+There's this little tail.
+See the tail?
+Because we started at 4 minus 4 for x and y
+and apparently, we jumped this way and then, I'm not sure.
+And you can see, some places we visited almost twice nearby because we've
+got some overplotting here.
+But eventually, we wandered back into the area we really wanted to sample
+and this worked away.
+But this is a problem, and it's a problem in all Markov chain Monte
+Carlo, that you have this kind of burn in period
+where it takes a while for the chain to find
+the area it really wants to sample.
+And so we generally, throw these values away.
+So let's make this same scatterplot, but in this case,
+we're chopping off the first 1,000 values.
+And so we're just going to have 9,000 samples because we're getting rid
+of the first 1,000, which is our burn in period.
+And now we get something like this, that looks a whole lot more than
+like the bivariate normal distribution we
+started with in terms of the samples.
+And it does seem to get denser and denser and denser.
+And the center might be at 0.5, 0.5-- we'll have to look at that.
+So now that we've sampled, we can look at, again,
+those the marginal distributions, but in this case,
+it's the marginal distributions of these Markov chain Monte Carlo samples.
+And that will hopefully, look something like the marginal distributions
+of the original data.
+It looks like a normal distribution.
+And this one also.
+You can see, this one one's a little bit asymmetric
+and it looks a little more like the original.
+This one-- maybe, maybe.
+It's hard to tell, but they're not wildly off, that's for sure.
+And you can see the dispersion across here is very similar.
+So there's one last statistic we compute.
+What's the maximum a posteriori point?
+What's this high density point here?
+In this case, we're just going to simulate it with the mean
+because these are pretty close to normal distribution.
+So the map and the mean are probably, very close.
+And you see, we got 0.59 and 0.55.
+So pretty darn close to 0.5, 0.5.
+So that's the demonstration of the Metropolis-Hastings algorithm.
+You saw, we built the likelihood function
+for the bivariate normal likelihood.
+We sampled that 10,000 times.
+We applied that accept/reject criteria.
+And we got marginal distributions and maximum
+a posteriori points that were pretty close to the actual data we
+had generated.
+[MUSIC PLAYING]

@@ -1,0 +1,115 @@
+[MUSIC PLAYING]
+
+So now that we know what a Markov process is, let's
+look at how do we use that to sample a distribution, OK?
+And the oldest and still widely used method for doing this
+is something called the Metropolis-Hastings algorithm.
+
+And is developed-- their was original paper like, I think, in the 1940s
+or very early 1950s by Metropolis.
+The method was improved by Hastings some years later, but so
+what's the general idea here?
+So let's say we have a--
+
+we'll just look at a two-dimensional problem here, OK?
+And we start somewhere.
+So we can compute a likelihood of some of the data given
+the parameters at this point.
+So you know, this might be theta 1, theta 2-- so if we just
+have two parameters in our model.
+OK?
+And this is the vector of parameters.
+So then we think about--
+we have some distribution called the Sampling distribution,
+and it says, OK, based on the sampling distribution,
+we're going to try another point.
+Let's try a point here.
+OK?
+And sampling distributions could be a multivariate normal
+and often it's used.
+It turns out it doesn't matter that much, which sampling distribution you
+pick.
+The parameters you pick for it do, in fact,
+matter, which is a problem we'll talk about in a minute.
+And so, at this point, we get a likelihood
+of what we call the proposal.
+So let's call this the current likelihood.
+This is the proposal of D theta proposed, All right.
+And these are the currents.
+Current likelihood.
+Current theta.
+So the key to this thing then is we have these two likelihoods, and we need to--
+or they could be just probabilities, but I'm talking about them
+in terms of likelihoods.
+
+So here's what happens.
+If L proposed is greater than L current, we accept.
+So we say, oh, great.
+We have a better point.
+The probability of the likelihood is higher here.
+Let's stick with that one.
+OK?
+But what if it's not?
+What's the L's?
+And this is the tricky part, and this is the part
+that Hastings contributed actually.
+What it is is we have the acceptance probability equals--
+
+so with some probability that's proportional to how close those are.
+So if LP is much worse than LC, our acceptance probability is quite low.
+If they're nearly the same, our acceptance probability
+could be close to one.
+So that just gives us the acceptance probability,
+and we may take that move anyway, because we need to explore this space,
+right?
+We don't want to get stuck in a corner just because it
+happens to have high likelihood.
+What if this is a complex distribution that might have several modes?
+You know, we want to be able to eventually wander around and really
+sample the whole space.
+So that's the important part here, and so
+what are some properties of this thing, OK?
+So one is it's efficient, especially compared to grid sampling.
+It's much, much more efficient than grid sampling,
+because based on this likelihood ratio here,
+you're sampling more likely areas more often, OK?
+So you're spending more of your work where it counts.
+
+It'll eventually converge, and this is a problem, because the emphasis on, it
+is eventually.
+It will eventually converge.
+It may not converge in any reasonable compute time, but it will converge.
+It will eventually get around and sample everything in the posterior space,
+but you may have to--
+so that's a plus and a negative, right?
+There's high correlation, or serial correlations, or auto correlation.
+So we'll call it high autocorrelation.
+And what that means is because we don't want to take huge steps here
+we don't want to be jumping all over the place just
+randomly we need to take reasonable sized steps.
+So the probabilities, or likelihoods, from one step to the next
+are probably pretty similar.
+And what that means is that it's not as efficient
+as it could be if you had perfectly uncorrelated steps.
+And the other property is it's very sensitive to essentially--
+so it's sensitive to say, the variance of the sampling distribution.
+So what does that mean?
+It means if I pick a variance of this sampling distribution, which is how
+I determined my steps-- it's too large.
+I'm just going to jump randomly around, and even
+if I've found high likelihood areas because of this acceptance,
+I may be wasting a lot of time jumping all over the place.
+On the other hand, if I pick my variance of my sampling distribution too
+small and taking teeny, tiny steps, and I'm just not getting anywhere,
+and I need a lot of steps.
+So you have to tune the sampling distribution,
+and you know, that can be a real problem in practice.
+But still, the Metropolis-Hastings algorithm is used.
+It does work.
+It's based on this simple concept of what's
+the probability or likelihood of, you know,
+from where you currently are to where you propose
+to go based on a sampling distribution.
+You always accept a better step.
+You may or may not accept a worse step depending on the probability,
+and it just gives us a whole lot more efficiency compared to grid sampling.

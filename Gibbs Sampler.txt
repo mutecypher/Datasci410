@@ -1,0 +1,56 @@
+[MUSIC PLAYING]
+
+So we've talked about the Metropolis-Hastings algorithm
+when we just did an example of it and you saw how it worked.
+And it worked pretty well.
+But I remember, I mentioned there were some problems with Metropolis-Hastings,
+and we saw that in the example.
+We had to pick a variance or standard deviation of our sampling
+distribution, which I picked a good one, but maybe I could be a bad guesser
+and I might have to waste a lot of time going back and forth.
+Also, there was high covariance or autocorrelation between those samples.
+So how do you improve this?
+So there's a couple ways you can do that and we'll just talk about one
+right now, which is called the Gibbs sampler.
+
+And this was published by Gemen and Gemen, 1984.
+It really brought modern Markov chain Monte Carlo, Bayes methods
+into more of a mainstream.
+Because once you had a Gibbs sampler, you
+could more reliably create really good Bayes models, very complex Bayes
+models without worrying too much about all the sampling problems.
+So what's the general idea?
+So I'm going to draw a cartoon in two dimensions here.
+Let's say, we have theta one, theta two-- just two parameters of our model.
+And as you saw the Metropolis-Hastings algorithm,
+we would just wander around here based on that sampling distribution
+and the acceptance criteria.
+But what Gemen and Gemen observed was actually, you didn't need to do that.
+We could just sample along one dimension and then
+using that as a starting point, we'll sample on another dimension.
+And then, maybe, we'll go this way.
+And then, maybe, we'll go this way.
+So by going along the actual dimensions of the parameters,
+we've broken up a lot of that autocorrelation that was plaguing us
+in Metropolis-Hasting sampling.
+Also, we've gotten rid of the need for a sampling distribution
+where we have to set a parameter.
+So if we write this out in more mathematical terms,
+we can say that the probability of the parameters given the data--
+
+so probability of parameter one, parameter two.
+And then, the next one is the probability
+of parameter two given the data parameter one, et cetera.
+And we just keep going back and forth between-- if we just
+had two dimensions, we'd just keep going back and forth.
+If we had many dimensions, we just go round Robin through them,
+from one to end-- however many--
+one to end.
+
+So this is actually pretty simple sampling method,
+but based on this fairly sophisticated observation coming actually,
+from statistical mechanics-- which is why it's called a Gibbs sampler--
+and it is generally, an improvement over Metropolis-Hastings, but not always.
+So Metropolis-Hasting's still used.
+Gibbs sampling's probably used more often.
+[MUSIC PLAYING]
