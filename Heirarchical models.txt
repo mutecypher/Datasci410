@@ -1,0 +1,111 @@
+[MUSIC PLAYING]
+
+So we've talked about different sampling methods, the metropolis Hastings
+and now the Gibbs sampler.
+And now let's pull this together of how do we deal
+with models with multiple parameters.
+And this leads us to something called hierarchical Bayes.
+And so are these hierarchical Bayes models.
+And it's a little complicated, but bear with me,
+because this is how we can compute very complicated but very useful
+machine learning models using Bayes methods.
+So I'm going to take the simplest multi-parameter problem here.
+I'm just going to do linear regression.
+I've got some data here.
+I've got a regression line that ought to be straight but isn't quite,
+it looks like.
+And my y equals a, my intercept, plus b, my slope.
+And of course, it's kind of approximate.
+So maybe this is y hat.
+So how do I go about getting the posterior?
+I want two posterior distributions.
+I want to know the posterior distribution of a,
+and I want to know the posterior distribution of b.
+And so what I can say is my estimate--
+So let's put our Bayes hats on.
+So I say my estimate of the ith y equals--
+now, I'm going to say about a normal likelihood here,
+because it's a linear regression, basically.
+So the residuals should have a normal distribution.
+Of y hat i and something called tau.
+And tau is the standard deviation of my posterior.
+So this is my posterior.
+
+And this is what I really want.
+And so I want to know the posterior of my ys given these estimates.
+And so what do I have to do?
+So I've got two branches here, if you will.
+I've got to estimate this, and I've got to estimate that.
+And so let's take on y hat here.
+And I could draw a little cartoon of this.
+
+So this is my posterior of the residuals.
+Hopefully it's close to normal.
+
+But feeding into that, I need the posterior of a and b.
+So I've got y hat i equals a plus bx.
+So that's my regression model.
+So that feeds here.
+
+But I need priors for a and b.
+So I have my prior, whatever that is.
+And I'm going to use a normal prior here.
+So I've got a and b are modeled by some normal, maybe 0 sigma p.
+I could make them the same.
+They're sigma p.
+So now that gives me the priors for these guys.
+
+This gives me the prior for this and a way to compute the likelihood.
+So this is why we call it the hierarchical Bayes model.
+So I have what I really want.
+And it's normally distributed.
+That's my posterior of the ys.
+Then I get whatever that distribution is.
+But I have my regression model.
+And I have my prior and my regression coefficients.
+But we also have this guy tau here.
+So we better deal with that.
+And so standard deviation, you can't use a normal distribution,
+because you can't have standard deviation less than 0.
+So we might use a power distribution.
+And a power distribution looks something like that.
+
+And that's a power distribution.
+
+But I've got this guy here, so now I need yet another prior.
+
+I could make sigma p pretty wide here, because I don't necessarily have
+a good idea of what a and b might be.
+But now I need to do sigma.
+So maybe I'll do a uniform distribution on 0 to 100, something really wide
+so it's wide and flat.
+And that's for sigma.
+
+So now I have my prior for sigma.
+I have my power distribution.
+And that gives me a way to include tau, the standard deviation of my residuals
+into my posterior of y.
+So I realize this is pretty abstract.
+But just keep in mind, this is hierarchical Bayes.
+So what we really wanted to know was a and b.
+We wanted the posterior distributions of a and b
+so we can compute a regression model.
+And to do that, we need the muse, basically the y hat i,
+and we need the tau, which is the standard deviation of the posterior.
+And so y hat i is based on this regression model, which
+has these normal priors for the two parameters
+a and b, the intercept and the slope.
+And we had standard deviation, which we said,
+let's give it a power distribution which had one parameter, sigma.
+We gave that a nice flat, wide, uniform distribution,
+because we didn't feel that informed about what that should be.
+So that's hierarchical Bayes.
+And you can draw this out for a couple of parameters like that.
+But people do this for literally hundreds or thousands
+of parameters for very complex models.
+So it's a really powerful machine learning tool.
+Also, I should point out, if you know something
+about some of these parameters from previous experience or expert input
+or something like that, it's a way to input that kind of guidance
+into your model building.
+[MUSIC PLAYING]

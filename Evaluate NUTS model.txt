@@ -1,0 +1,143 @@
+[MUSIC PLAYING]
+
+So we defined our hierarchical Bayes model
+for our regression in the last sequence so let's see how the sampler did
+and how well this model actually works.
+So on my screen here, I'm going to sample from that model we defined.
+I'm going to do with just 1,000 samples and I'm going to do it on four chains.
+This is typical, where you use multiple chains.
+So let me let that run.
+
+Well, we ran this for a small number of steps-- as you see, just 1,000.
+So maybe we should have done more.
+It's a few warning messages, but I'm going to ignore that for the moment,
+just for the points of the demonstration.
+So let's look at the trace plots of these, just for A and B. So
+those are our two regression coefficients-- our intercept
+and or slope.
+
+Let's go ahead and we'll sample those.
+So you can see, our two parameters--
+A, which is the intercept, and B--
+and you see four different posterior distributions
+that were computed by the four chains.
+And they're fairly similar, but not exactly the same.
+You see a fair amount of wiggle there.
+And this parameter should be zero, but you see, probably
+because of the heavy noise we included, it's off by a little bit.
+This parameter should be one, but again, it
+looks like the estimate's a little off, but not very much.
+And then, let's look at the trace plot.
+So the colors used for four chains here are the same colors here.
+And you can see, it's all laid one in another and it looks good.
+It looks like a big fuzzy caterpillar.
+None of the chains is wandering off or doing something weird.
+They're all sampling around that posterior distribution fairly nicely.
+So we're very happy with this, in spite of the warnings.
+And we can print some summary statistics.
+PyMC3 has some nice capability to do that.
+And so we get the mean of A. Remember, it should be zero,
+but it's minus 1.3 so not too far off.
+Our B, our slope, is pretty much spot on.
+Here's the standard deviation.
+The Monte Carlo chain error is a little higher, but still an order of magnitude
+less for the mean of the intercept.
+It's really small for the slope.
+Our efficiency-- I'm not going to talk about these guys.
+But these are the quantiles so they look OK.
+The efficiency-- so this is the effective chain length.
+It looks pretty good, actually, given that we had such small samples.
+That may be unrealistic.
+And our hat-- we'll talk about this, the Gelman-Rubin statistic.
+So it's basically, what's the difference between sample and within sample
+variance of the chains?
+And it should be 1.0 and it's pretty darn close.
+So these chains are converging pretty well.
+
+So we can compute a linear model for this chain.
+
+And you see, A is 1.7.
+B is 1.008.
+Pretty comparable to these means we got, which are approximately,
+our maximum posterior points here--
+a little different.
+So a linear regression model, from scikit_learn looks pretty similar.
+
+So we can do this--
+basically, it's a cume plot function so I'm not
+going to go through all this plotting code,
+but the key is, we're going to plot the--
+well, let me just show you.
+It's easier to show it.
+
+So you see where the midpoint--
+so these are the quantiles of the chains for A and B. And you see,
+we have four chains--
+zero through three.
+And what we want to see is that they all look pretty similar
+and that this interquartile range between the lower quartile--
+
+the 2.5% point-- and the upper, 97.5%.
+So this is like the 95% confidence interval.
+And you can see where, for A, where it converged to.
+And B, where the slope should be one and this should be zero.
+So we've got pretty tight confidence intervals on our slope.
+Not so good on our intercept, which is what we knew already.
+And you can see each chain looks very similar.
+And again, that's very good for converging.
+So I talked about this Gelman-Rubin statistic already.
+It's the variance shrinkage between chains to the variance shrinkage
+within chains.
+So if you imagine, as the Markov chain Monte Carlo precedes,
+the variance within chains and the variance between chains
+should converge to the same thing and so that ratio--
+what we call the Gelman-Rubin statistic-- should converge to one.
+And we can look at that in a number of ways.
+First off, we can do what we call this forest plot-- which I'm showing here.
+This is where I have to switch screens.
+
+So we're going to ignore that.
+
+So I'll just say, we can do this forest plot--
+which I'm showing here-- for A and B. And you
+can see the 95% credible intervals here for A, which was our intercept.
+And our slope, which they're really tiny,
+you can't even really see them there.
+It's so different from A.
+And you see our hat is one on one--
+pretty close.
+So that's good.
+I'm going to switch screens, again.
+We can also just print those Gelman-Rubin statistics
+and we saw those already in that table.
+So they're one and one, basically.
+So those chains are converging to the same point really well.
+We can also look at the autocorrelation plots.
+And the autocorrelation plot shows us how many samples--
+what's the autocorrelation between the zero sample, one, two, three?
+So how much is each sample depending on its history?
+And they die off pretty quickly here.
+Just a few samples--
+they're pretty much, three, four samples.
+So this no U-turn sampler has very good effective sampling size.
+And just to review, the effective sampling size
+is the actual number of samples over one plus the two times this cumulative sum
+of this autocorrelation function.
+And we can go ahead and compute that.
+And you see-- we saw that already--
+1,400 and 1,400 samples.
+So it's fairly complicated what we did, in a way.
+We sampled.
+We did our no U-turn sampler of the data.
+We got our posterior distributions where we saw,
+we had a fairly wide dispersion or wide credible intervals on the intercept,
+but not on the slope.
+We saw by various means, that our chains--
+our four chains-- all converged very well.
+And that's the key thing when you're doing any kind of Markov chain Monte
+Carlo.
+You need to use multiple chains and you need
+to make sure they're converging to the same point.
+If not, something's wrong with your model or your method
+and you need to do something about it.
+[MUSIC PLAYING]

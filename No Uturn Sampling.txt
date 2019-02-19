@@ -1,0 +1,92 @@
+[MUSIC PLAYING]
+
+So there's one more thing I need to explain to you before we actually
+get to some code to compute our regression model
+and that is, we're actually going to yet, a different sample.
+There's lots of samplers that are used for Markov chain Monte Carlo.
+So we've talked about the original, which was the Metropolis-Hastings.
+We've talked about the Gibbs sampler.
+But there's another class or whole family
+of samplers that have proved to be highly efficient
+and they're called Hamiltonian sampling.
+And it's, again-- like Gibbs sampling-- it's an analogy
+from physics, this one from dynamics or dynamical mechanics.
+But actually, very specifically in PyMC3--
+the package we're going to use for sampling--
+they actually use an improvement on this called the no U-turn sampler,
+which is known as NUTS--
+nice acronym.
+
+So what's the idea here?
+So we've seen that with Gibbs sampling, we
+had this problem of having to pick a sampling distribution.
+It was also a little inefficient because we just randomly walked around.
+And based on the random walk property-- the Markov process,
+which I talked about before--
+and we had high auto correlation between the samples
+so it wasn't that efficient.
+We improved on that with the Gibbs sampler by sampling round robin,
+along the dimensions of our parameters that we wanted to sample.
+And that's quite a bit better because it breaks some of that autocorrelation.
+But maybe, you can do significantly better,
+and that's what the Hamiltonian sampler was all about.
+And by the way, I should say the NUTS sampler-- the original paper
+on that is only from 2011 so this is still a hot area of research.
+This is not ancient history, by any means.
+But let's just say, we're sampling a posterior distribution
+for one parameter--
+theta-- here.
+And maybe the map value is here.
+
+So we'll start and we'll just--
+and this is a little bit funny diagram because N
+is going to crease down as we sample.
+But you can think about this almost like a gravitational field
+or something with potential energy.
+If the posterior looks like this and you look at the reverse gradient,
+you're going to move uphill toward this highest density area.
+So let's say I start over here--
+that's my starting point-- and I take a sample
+and I see that the gradients trying to get me to go that way.
+So I go that way.
+And I go that way.
+And I go that way and I kind of converge.
+And maybe-- but what if I started over here?
+
+I'd move that way, also.
+So like I said, it's almost like gravitational attraction
+is moving me in toward where I want to go into these higher density sampling
+points.
+So this is why the Hamiltonian sampler works better in many cases
+than say, the Gibbs sampler.
+Because it's using the gradient of the likelihood to sample
+higher density parts of the posterior.
+But there is a problem with this--
+nothing's free, of course.
+There's no free lunch--
+and that is the step sizes.
+There's some relationship between the step sizes
+and the number of samples I'm going to take along here.
+And if I start at maybe, way over here and took two big step sizes,
+I might do something like this and then, I wind up going oops.
+I got to go back here.
+And I got to go back here.
+And eventually-- those are U-turns.
+So the no U-turn sampler uses--
+it basically, looks at this arc here or this cord
+across this arc to try to redirect us back toward the right path
+here so that we don't wind up off in the weeds somewhere
+and have to make a U-turn back to where we wanted to be.
+So it's just much more efficient--
+well, not much more efficient, but it also removes the need to--
+
+because of this property, it removes the need
+to have to set a parameter, which is like how many steps
+or step sizes you do.
+It kind of figures it out as it goes.
+So I know that's very heuristic description.
+The math is actually, very difficult for this,
+but I just wanted to give you a general idea
+of how Hamiltonian sampling and the no U-turn sampling works.
+And why it might be more efficient, in many cases, than the Gibbs sampler.
+[MUSIC PLAYING]
