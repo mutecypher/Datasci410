@@ -1,0 +1,7 @@
+My topic is Natural Language Processing in Insurance. The url for the article is https://www.proshareng.com/news/Insurance/Natural-Language-Processing-in-Insurance/44076 .
+
+From the title, the insurance industry is interested in Natural Language Processing. As you can imagine, the insurance industry handles many documents, written by people with many different skill levels – and with different fluencies in English. The article examines the strengths of different NLP product providers. IBM appears to have the most experience in NLP and AI. The use of NLP in the insurance industry appears to be in its infancy, with three of the hour companies only having one case study provided showing the success of their product, and one company (Progress Software) did not have any case studies at all.
+
+Each company ( IBM, Taiga, Health Fidelity, Progress Software) requires training on any customer’s claims. Health Fidelity claims to have techniques to detect fraud in claims. Progress Software offers a chatbot, built from NLP, that would guide a customer to the appropriate insurance policy.
+
+As I mentioned, it appears that Natural Language Processing can be a valuable tool for the insurance industry, but the implementation is still in the early stages.

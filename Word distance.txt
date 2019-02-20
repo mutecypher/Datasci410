@@ -1,0 +1,74 @@
+
+To start with quantifying text, we first talk
+about measuring a distance between strings.
+With data we can easily ask what is the distance between numeric data points.
+It is harder, however, to answer that question with text data.
+There are ways to quantify the distance between different text,
+but we have to be specific on how we measure the distance.
+Measuring the distance between words in a document
+is not as straightforward as it may seem.
+The choice of the distance metric can have a significant effect
+on the analytical results.
+This is particularly the case for unsupervised learning
+methods like cluster models.
+Let's first look at a few of the commonly used distant metrics.
+The first we will consider is called the Hamming distance.
+The Hamming distance lines up two strings
+and counts the number of positions that are different.
+It assumes that the strings are of the same length.
+Let's look at some examples.
+If we consider the string of numbers 101101 and 100011,
+we ask the Hamming distance between them,
+we line them up and say how many positions do they differ.
+And you can see that they differ in three positions.
+If we consider the Hamming distance between two words, beer and bear,
+we can see that there is one position that they are different.
+The Levenshtein distance, also called the edit distance,
+measures the distance between two strings via how many edit operations we
+have to perform to get the two strings equal.
+The three edit operations that we consider
+are insertion, deletion, and substitution.
+For example, we look at the Levenshtein distance between beer and bear.
+There is one edit distance substituting an E for an A,
+or an A for an E,s to make the strings equal.
+If we look at the two words banana and ban,
+there are three additions, insertions, to get ban into banana,
+or deletions to get banana into ban.
+Another distance metric is called the Jaccard index.
+This metric measures the size of intersection of characters
+divided by the size of union of the characters.
+e For example, if we have beer and bear, beer and bear,
+we have 1 minus their intersection, which is 3 out of 4,
+and the number of distinct letters in there, which is 4, which will be 1/4.
+Banana and ban, they have the same set of letters, B, A, and and N,
+as the intersection and the union.
+So their distance is 0.
+This may be a problem.
+So from this last example, we can see that there
+is an issue with the Jaccard index, and that the strings contain
+the same distinct letters.
+To address, this issue we introduce another metric
+called the weighted Jaccard index.
+The weighted Jaccard index calculates the minimum times
+each letter appears, lowercase m survive,
+and the maximum number of times each letter appears, capital M survive.
+Here's how to implement these distances in the code.
+So for the Hamming distance, we just make
+sure we assert that they are the same length and return how many, for each
+of these characters, are different.
+We can see that indeed we get three characters here,
+in our example, one character with beer and bear.
+Levenshtein distance is from our edit distance package.
+And if we run this, we can see that yes, their distances is 1 and 3.
+The Jaccard index, we calculate the set of characters in each
+and return 1 minus their intersection over their union.
+And this shows us that the distance between the problem that we
+found between banana and ban is 0.
+To address that, we write the weighted Jaccard distance.
+And for each character in their union, we
+calculate the min in the max and return 1 minus the sum of the mins
+over the sum of the maxes.
+If we do that, we can see that the weighted Jaccard index
+returns something for banana and ban.
+Now would be a good time to do a self-check
+to make sure that we can calculate the distances between two phrases.
